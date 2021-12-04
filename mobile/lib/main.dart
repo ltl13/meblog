@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/views/auth/login_screen.dart';
 import 'package:mobile/views/auth/register_screen.dart';
 import 'package:mobile/views/home/home_screen.dart';
 import 'package:sizer/sizer.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           initialRoute: '/register',
           routes: {
             '/register': (context) => RegisterScreen(),
+            '/login': (context) => LoginScreen(),
             '/home': (context) => HomeScreen(),
           },
         );

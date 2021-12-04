@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.sp),
             Text(
-              'Join MeBlog',
+              'Join MeBlog.',
               style: TextStyle(
                 fontFamily: 'Amaranth',
                 color: primaryTextColor,
@@ -82,7 +82,8 @@ class RegisterScreen extends StatelessWidget {
                           fontSize: 14.sp,
                           color: linkColor,
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => Navigator.pushNamed(context, '/login'),
                       ),
                     ],
                   ),
