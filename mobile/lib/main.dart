@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/views/auth/login_screen.dart';
-import 'package:mobile/views/auth/register_screen.dart';
+import 'package:mobile/views/auth/auth_screen.dart';
 import 'package:mobile/views/home/home_screen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -22,10 +21,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: '/register',
+          initialRoute: '/auth',
           routes: {
-            '/register': (context) => RegisterScreen(),
-            '/login': (context) => LoginScreen(),
+            '/auth': (context) => AuthScreen(),
             '/home': (context) => HomeScreen(),
           },
         );
