@@ -17,7 +17,7 @@ class LineWithText extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 80.sp),
           alignment: Alignment.center,
-          color: primaryColor,
+          color: primaryBackgroundColor,
           child: Text(
             text,
             style: TextStyle(
