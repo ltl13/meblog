@@ -22,7 +22,7 @@ class AuthScreen extends StatelessWidget {
             final _isRegisterProvider =
                 Provider.of<ValueNotifier<bool>>(context);
             return Container(
-              color: primaryBackgroundColor,
+              color: myBackgroundColor,
               padding: const EdgeInsets.symmetric(horizontal: myPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +33,7 @@ class AuthScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 50.sp,
                       fontFamily: 'Amaranth',
-                      color: primaryTextColor,
+                      color: myParagraphColor,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -44,7 +44,7 @@ class AuthScreen extends StatelessWidget {
                         : 'Welcome back.',
                     style: TextStyle(
                       fontFamily: 'Amaranth',
-                      color: primaryTextColor,
+                      color: myParagraphColor,
                       fontSize: 30.sp,
                     ),
                   ),
@@ -93,7 +93,7 @@ class AuthScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 14.sp,
-                                color: primaryTextColor,
+                                color: myParagraphColor,
                               ),
                             ),
                             TextSpan(
@@ -103,7 +103,7 @@ class AuthScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 14.sp,
-                                color: linkColor,
+                                color: myHighlightColor,
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {

@@ -22,28 +22,28 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: primaryBackgroundColor,
+      backgroundColor: myBackgroundColor,
       automaticallyImplyLeading: false,
       elevation: 1,
-      shadowColor: primaryTextColor,
+      shadowColor: myParagraphColor,
       bottom: TabBar(
         indicator: UnderlineTabIndicator(
-          borderSide: BorderSide(width: 2, color: titleColor),
+          borderSide: BorderSide(width: 2, color: myHeadlineColor),
           insets: const EdgeInsets.symmetric(horizontal: 0),
         ),
         labelStyle: TextStyle(
-          color: titleColor,
+          color: myHeadlineColor,
           fontSize: 14.sp,
           fontFamily: 'Roboto',
         ),
         unselectedLabelStyle: TextStyle(
-          color: secondaryTextColor,
+          color: mySubHeadlineColor,
           fontSize: 14.sp,
           fontFamily: 'Roboto',
         ),
         labelPadding: EdgeInsets.symmetric(horizontal: 10.sp),
-        labelColor: titleColor,
-        indicatorColor: titleColor,
+        labelColor: myHeadlineColor,
+        indicatorColor: myHeadlineColor,
         controller: _topTabController,
         tabs: _topTabs.map((tab) => Tab(text: tab)).toList(),
         isScrollable: true,
@@ -54,7 +54,7 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
           fontFamily: 'Roboto',
           fontWeight: FontWeight.bold,
           fontSize: 24.sp,
-          color: titleColor,
+          color: myHeadlineColor,
         ),
       ),
       actions: [
@@ -62,7 +62,7 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
           onPressed: null,
           icon: FaIcon(
             FontAwesomeIcons.bell,
-            color: titleColor,
+            color: myHeadlineColor,
             size: 20.sp,
           ),
         ),

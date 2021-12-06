@@ -13,17 +13,17 @@ class LineWithText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Divider(color: primaryButtonTextColor, thickness: 1),
+        Divider(color: myButtonTextColor, thickness: 1),
         Container(
           margin: EdgeInsets.symmetric(horizontal: 80.sp),
           alignment: Alignment.center,
-          color: primaryBackgroundColor,
+          color: myBackgroundColor,
           child: Text(
             text,
             style: TextStyle(
               fontFamily: 'Roboto',
               fontSize: 14.sp,
-              color: secondaryTextColor,
+              color: mySubHeadlineColor,
             ),
           ),
         )

@@ -1,10 +1,9 @@
 class Post {
-  final String image, title, content, author;
-  final DateTime timePost;
+  final String image, title, content, author, datePost;
   final int timeReading;
 
   Post({
-    required this.timePost,
+    required this.datePost,
     required this.timeReading,
     required this.image,
     required this.title,
@@ -18,7 +17,7 @@ List<Post> posts = [
     image: "assets/images/post0.jpg",
     title: "Joey Jordison, Founding Slipknot Drummer, Dead at 46",
     author: "Luan Le",
-    timePost: DateTime(2021, 12, 1),
+    datePost: "Dec 1",
     timeReading: 6,
     content: """
         Joey Jordison, Slipknot’s founding drummer and co-writer of many of their biggest hits, died on Monday at the age of 46. A rep for his family said he died “peacefully in his sleep” but did not specify a cause of death.
@@ -36,10 +35,9 @@ List<Post> posts = [
   ),
   Post(
     image: "assets/images/post1.jpeg",
-    title:
-        "Metallica Teaches You How to Rock (And Stay Together as a Band) in New Class",
+    title: "Metallica Teaches You How to Rock in New Class",
     author: "Luan Le",
-    timePost: DateTime(2021, 12, 2),
+    datePost: "Dec 2",
     timeReading: 6,
     content: """
         Metallica imparts their four-plus decades of rock & roll wisdom in their new course via MasterClass, which launched on Thursday. They are the first band to offer a class on the streaming platform. In the course, they teach strategies for growing and staying together as a band, how to collaborate creatively, and develop and maintain a relationship with an audience, among other topics.
@@ -59,7 +57,7 @@ List<Post> posts = [
     image: "assets/images/post2.png",
     title: "Making a Blog with Flutter and Hugo",
     author: "Gordon Hayes",
-    timePost: DateTime(2021, 11, 30),
+    datePost: "Nov 30",
     timeReading: 6,
     content: """
         Lets begin with a quick description for Flutter Web and Hugo, and then provide an overview and motivation for using these two technologies together.
@@ -73,7 +71,7 @@ List<Post> posts = [
     image: "assets/images/post3.png",
     title: "A Jolly Season 3 in Dodoland 🎄",
     author: "Zendodo Party",
-    timePost: DateTime(2021, 12, 4),
+    datePost: "Dec 4",
     timeReading: 6,
     content: """
         Winter is here and so is Season 3 ⛄️ The moment is here Heroes! Strap on to your sledge and get ready to hear what The ZenMother has in store for you this jolly winter 🚀 With various priority drops and the announcement of one of the rarest accolade to date, this is no time to get frozen in your tracks! 🏂
@@ -86,7 +84,7 @@ List<Post> posts = [
     image: "assets/images/post4.jpeg",
     title: "GAN — Why it is so hard to train Generative Adversarial Networks!",
     author: "Jonathan Hui",
-    timePost: DateTime(2021, 12, 5),
+    datePost: "Dec 5",
     timeReading: 6,
     content: """
         It is easier to recognize a Monet’s painting than drawing one. Generative models (creating data) are considered much harder comparing with the discriminative models (processing data). Training GAN is also hard. This article is part of the GAN series and we will investigate why the training is so elusive. Through the study, we understand some fundamental problems that drive the directions of many researchers. We will look into some disagreements so we know where the research may head to. Before looking into the problems, let’s have a quick recap on some of the GAN equations.

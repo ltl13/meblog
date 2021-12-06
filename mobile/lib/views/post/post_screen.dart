@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
-import 'package:mobile/models/Post.dart';
+import 'package:mobile/models/post.dart';
 import 'package:sizer/sizer.dart';
 
 class Post extends StatelessWidget {
@@ -19,7 +19,7 @@ class Post extends StatelessWidget {
             Text(
               posts[0].title,
               style: TextStyle(
-                color: titleColor,
+                color: myHeadlineColor,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto',
@@ -28,7 +28,7 @@ class Post extends StatelessWidget {
             Text(
               posts[0].author,
               style: TextStyle(
-                color: linkColor,
+                color: myHighlightColor,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto',
@@ -41,7 +41,7 @@ class Post extends StatelessWidget {
               text: TextSpan(
                 text: posts[0].content,
                 style: TextStyle(
-                  color: primaryTextColor,
+                  color: myParagraphColor,
                   fontFamily: 'Roboto',
                   fontSize: 14.sp,
                 ),
