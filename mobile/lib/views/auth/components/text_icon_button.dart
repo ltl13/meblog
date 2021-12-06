@@ -19,23 +19,22 @@ class TextIconButton extends StatelessWidget {
     return TextButton(
       onPressed: () => onPress(),
       style: TextButton.styleFrom(
-        backgroundColor: primaryButtonColor,
+        backgroundColor: myButtonColor,
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: primaryButtonTextColor),
           borderRadius: BorderRadius.circular(20.sp),
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          FaIcon(icon, size: 16.sp, color: primaryButtonTextColor),
+          FaIcon(icon, size: 16.sp, color: myButtonTextColor),
           Text(
             text,
             style: TextStyle(
               fontSize: 14.sp,
               fontFamily: 'Roboto',
               fontWeight: FontWeight.normal,
-              color: primaryButtonTextColor,
+              color: myButtonTextColor,
             ),
           ),
           SizedBox(width: 16.sp),

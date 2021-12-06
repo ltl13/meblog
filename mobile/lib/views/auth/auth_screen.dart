@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:mobile/constants.dart';
+import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/auth/components/line_with_text.dart';
 import 'package:mobile/views/auth/components/text_icon_button.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +22,7 @@ class AuthScreen extends StatelessWidget {
             final _isRegisterProvider =
                 Provider.of<ValueNotifier<bool>>(context);
             return Container(
-              color: primaryColor,
+              color: myBackgroundColor,
               padding: const EdgeInsets.symmetric(horizontal: myPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +33,7 @@ class AuthScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 50.sp,
                       fontFamily: 'Amaranth',
-                      color: primaryTextColor,
+                      color: myParagraphColor,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -42,7 +44,7 @@ class AuthScreen extends StatelessWidget {
                         : 'Welcome back.',
                     style: TextStyle(
                       fontFamily: 'Amaranth',
-                      color: primaryTextColor,
+                      color: myParagraphColor,
                       fontSize: 30.sp,
                     ),
                   ),
@@ -54,14 +56,14 @@ class AuthScreen extends StatelessWidget {
                         text: _isRegisterProvider.value
                             ? 'Sign up with Google'
                             : 'Sign in with Google',
-                        onPress: () {},
+                        onPress: () => Get.toNamed(AppRoutes.HOME),
                       ),
                       TextIconButton(
                         icon: FontAwesomeIcons.envelope,
                         text: _isRegisterProvider.value
                             ? 'Sign up with Email'
                             : 'Sign in with Email',
-                        onPress: () {},
+                        onPress: () => Get.toNamed(AppRoutes.HOME),
                       ),
                       SizedBox(height: 16.sp),
                       LineWithText(
@@ -91,7 +93,7 @@ class AuthScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 14.sp,
-                                color: primaryTextColor,
+                                color: myParagraphColor,
                               ),
                             ),
                             TextSpan(
@@ -101,7 +103,7 @@ class AuthScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 14.sp,
-                                color: linkColor,
+                                color: myHighlightColor,
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
