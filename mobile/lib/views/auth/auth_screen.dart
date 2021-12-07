@@ -18,7 +18,7 @@ class AuthScreen extends StatelessWidget {
     return Material(
       child: ChangeNotifierProvider<ValueNotifier<bool>>(
           create: (_) => ValueNotifier<bool>(true),
-          builder: (context, snapshot) {
+          builder: (context, widget) {
             final _isRegisterProvider =
                 Provider.of<ValueNotifier<bool>>(context);
             return Container(
@@ -56,14 +56,14 @@ class AuthScreen extends StatelessWidget {
                         text: _isRegisterProvider.value
                             ? 'Sign up with Google'
                             : 'Sign in with Google',
-                        onPress: () => Get.toNamed(AppRoutes.HOME),
+                        onPress: () => Get.toNamed(AppRoutes.MAIN),
                       ),
                       TextIconButton(
                         icon: FontAwesomeIcons.envelope,
                         text: _isRegisterProvider.value
                             ? 'Sign up with Email'
                             : 'Sign in with Email',
-                        onPress: () => Get.toNamed(AppRoutes.HOME),
+                        onPress: () => Get.toNamed(AppRoutes.MAIN),
                       ),
                       SizedBox(height: 16.sp),
                       LineWithText(
