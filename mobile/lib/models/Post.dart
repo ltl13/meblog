@@ -2,8 +2,10 @@ class Post {
   final String image, title, content, author, datePost;
   final int timeReading;
   final List<String> tags;
+  bool isFavorite;
 
   Post({
+    required this.isFavorite,
     required this.tags,
     required this.datePost,
     required this.timeReading,
@@ -22,6 +24,7 @@ List<Post> posts = [
     datePost: "Dec 1",
     timeReading: 6,
     tags: ["Rock & Roll"],
+    isFavorite: false,
     content: """
         Joey Jordison, Slipknot’s founding drummer and co-writer of many of their biggest hits, died on Monday at the age of 46. A rep for his family said he died “peacefully in his sleep” but did not specify a cause of death.
 
@@ -43,6 +46,7 @@ List<Post> posts = [
     datePost: "Dec 2",
     timeReading: 6,
     tags: ["Rock & Roll"],
+    isFavorite: false,
     content: """
         Metallica imparts their four-plus decades of rock & roll wisdom in their new course via MasterClass, which launched on Thursday. They are the first band to offer a class on the streaming platform. In the course, they teach strategies for growing and staying together as a band, how to collaborate creatively, and develop and maintain a relationship with an audience, among other topics.
 
@@ -64,6 +68,7 @@ List<Post> posts = [
     datePost: "Nov 30",
     timeReading: 6,
     tags: ["Programming"],
+    isFavorite: false,
     content: """
         Lets begin with a quick description for Flutter Web and Hugo, and then provide an overview and motivation for using these two technologies together.
         Flutter web is a code-compatible implementation of Flutter that is rendered using standards-based web technologies: HTML,CSS and JavaScript. With Flutter for web, you can compile existing Flutter code written in Dart into a client experience that can be embedded in the browser and deployed to any web server. You can use all the features of Flutter, and you don’t need a browser plug-in.
@@ -79,6 +84,7 @@ List<Post> posts = [
     datePost: "Dec 4",
     timeReading: 6,
     tags: ["Game", "Blockchain"],
+    isFavorite: false,
     content: """
         Winter is here and so is Season 3 ⛄️ The moment is here Heroes! Strap on to your sledge and get ready to hear what The ZenMother has in store for you this jolly winter 🚀 With various priority drops and the announcement of one of the rarest accolade to date, this is no time to get frozen in your tracks! 🏂
         This Season, our lovely ZenMother has 6 new Season 3 Base Zendodos for Heroes to obtain! Throughout the Season, Heroes can attain Evolution I — Gus from Drops and the Rally Pool💰! By taking 3 Zendodos of the same evolution, Heroes are then able to evolve it to a bigger, stronger, and tougher Zendodo of much higher power 🚀
@@ -93,6 +99,7 @@ List<Post> posts = [
     datePost: "Dec 5",
     timeReading: 6,
     tags: ["Deep learning"],
+    isFavorite: false,
     content: """
         It is easier to recognize a Monet’s painting than drawing one. Generative models (creating data) are considered much harder comparing with the discriminative models (processing data). Training GAN is also hard. This article is part of the GAN series and we will investigate why the training is so elusive. Through the study, we understand some fundamental problems that drive the directions of many researchers. We will look into some disagreements so we know where the research may head to. Before looking into the problems, let’s have a quick recap on some of the GAN equations.
         GAN samples noise z using normal or uniform distribution and utilizes a deep network generator G to create an image x (x=G(z)).
