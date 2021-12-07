@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
 import 'package:sizer/sizer.dart';
 
-class SmallTag extends StatelessWidget {
+enum TagSize { small, medium, big }
+
+class Tag extends StatelessWidget {
   final String tag;
-  const SmallTag({
+  final TagSize size;
+  const Tag({
     Key? key,
     required this.tag,
+    required this.size,
   }) : super(key: key);
 
   @override
@@ -15,7 +19,7 @@ class SmallTag extends StatelessWidget {
       margin: EdgeInsets.only(top: 5.sp, right: 5.sp),
       padding: EdgeInsets.all(5.sp),
       decoration: BoxDecoration(
-        color: myMainColor,
+        color: myTertiaryColor,
         borderRadius: BorderRadius.circular(20.sp),
       ),
       child: Text(
@@ -23,7 +27,11 @@ class SmallTag extends StatelessWidget {
         style: TextStyle(
           color: myButtonTextColor,
           fontFamily: 'Roboto',
-          fontSize: 10.sp,
+          fontSize: size == TagSize.small
+              ? 10.sp
+              : size == TagSize.medium
+                  ? 12.sp
+                  : 16.sp,
           fontWeight: FontWeight.normal,
         ),
       ),

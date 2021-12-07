@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/small_tag.dart';
+import 'package:mobile/views/home/components/tag.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -80,13 +80,16 @@ class PostCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    children: post.tags.map((e) => SmallTag(tag: e)).toList(),
+                    children: post.tags
+                        .map((e) => Tag(tag: e, size: TagSize.small))
+                        .toList(),
                   ),
                   Row(
                     children: [
                       IconButton(
                         onPressed: () {
-                          _isFavoriteProvider.value = !_isFavoriteProvider.value;
+                          _isFavoriteProvider.value =
+                              !_isFavoriteProvider.value;
                         },
                         icon: Consumer<ValueNotifier<bool>>(
                           builder: (context, isAdded, widget) => Icon(
