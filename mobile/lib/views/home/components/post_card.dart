@@ -17,7 +17,7 @@ class PostCard extends StatelessWidget {
     return ChangeNotifierProvider<ValueNotifier<bool>>(
         create: (context) => ValueNotifier<bool>(false),
         builder: (context, widget) {
-          final _isFavorite = Provider.of<ValueNotifier<bool>>(
+          final _isFavoriteProvider = Provider.of<ValueNotifier<bool>>(
             context,
             listen: post.isFavorite,
           );
@@ -86,7 +86,7 @@ class PostCard extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: () {
-                          _isFavorite.value = !_isFavorite.value;
+                          _isFavoriteProvider.value = !_isFavoriteProvider.value;
                         },
                         icon: Consumer<ValueNotifier<bool>>(
                           builder: (context, isAdded, widget) => Icon(
