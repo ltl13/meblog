@@ -63,7 +63,11 @@ class SearchBoxAndTags extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(myPadding / 2),
+            padding: const EdgeInsets.only(
+              left: myPadding / 2,
+              top: myPadding / 2,
+              bottom: myPadding / 2,
+            ),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(

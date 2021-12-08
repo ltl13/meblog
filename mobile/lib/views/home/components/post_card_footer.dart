@@ -29,7 +29,8 @@ class PostCardFooter extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                _isFavoriteProvider.value = !_isFavoriteProvider.value;
+                post.isFavorite = !post.isFavorite;
+                _isFavoriteProvider.value = post.isFavorite;
               },
               icon: Consumer<ValueNotifier<bool>>(
                 builder: (context, isAdded, widget) => Icon(

@@ -21,6 +21,7 @@ class PostBriefInfo extends StatelessWidget {
           flex: 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 post.title,
@@ -46,12 +47,18 @@ class PostBriefInfo extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 10.sp),
+        SizedBox(width: 5.sp),
         Flexible(
           flex: 1,
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Image.asset(post.image),
+          child: Container(
+            height: 60.sp,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(post.image),
+              ),
+            ),
           ),
         ),
       ],

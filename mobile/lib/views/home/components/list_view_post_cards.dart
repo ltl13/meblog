@@ -21,7 +21,7 @@ class ListViewPostCards extends StatelessWidget {
             ),
             child: PostCard(post: posts[index]),
           ),
-          Divider(color: myStrokeColor, thickness: .5),
+          Divider(color: myStrokeColor, height: 1),
         ],
       ),
     );
