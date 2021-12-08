@@ -39,7 +39,7 @@ class ListRecommendedAuthors extends StatelessWidget {
               ],
             ),
           ),
-          Divider(color: myStrokeColor),
+          Divider(color: myStrokeColor, height: 1),
         ],
       ),
     );

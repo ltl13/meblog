@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile/constants.dart';
-import 'package:mobile/models/author.dart';
-import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/post_card.dart';
-import 'package:mobile/views/search/components/author_card.dart';
 import 'package:mobile/views/search/components/list_recommended_authors.dart';
 import 'package:mobile/views/search/components/search_app_bar.dart';
 import 'package:mobile/views/search/components/search_box_and_tags.dart';
@@ -16,12 +11,76 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
-        SearchAppBar(),
-        SearchBoxAndTags(),
-        SearchRecommendList(),
-        ListRecommendedAuthors(),
+        const SearchAppBar(),
+        const SearchBoxAndTags(),
+        const SearchRecommendList(),
+        const ListRecommendedAuthors(),
+        SliverList(
+          delegate: SliverChildListDelegate([
+            Container(
+              color: myParagraphColor,
+              padding: const EdgeInsets.symmetric(vertical: myPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: myPadding),
+                    child: Text(
+                      "What are people reading now?",
+                      style: TextStyle(
+                        color: myBackgroundColor,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w900,
+                        fontSize: 24.sp,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: myPadding,
+                      vertical: myPadding / 2,
+                    ),
+                    child: Text(
+                      "Explore the top trending.",
+                      style: TextStyle(
+                        color: myMainColor.withOpacity(.7),
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.start,
+                  //   children: [
+                  //     ...posts
+                  //         .map((e) => Padding(
+                  //               padding: const EdgeInsets.only(left: myPadding),
+                  //               child: Column(
+                  //                 crossAxisAlignment: CrossAxisAlignment.start,
+                  //                 children: [
+                  //                   Flexible(
+                  //                     flex: 1,
+                  //                     child: Image.asset(
+                  //                       e.image,
+                  //                       fit: BoxFit.scaleDown,
+                  //                     ),
+                  //                   ),
+
+                  //                 ],
+                  //               ),
+                  //             ))
+                  //         .toList(),
+                  //     const SizedBox(width: myPadding),
+                  //   ],
+                  // )
+                ],
+              ),
+            )
+          ]),
+        ),
       ],
     );
   }

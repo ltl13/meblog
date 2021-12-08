@@ -30,7 +30,7 @@ class AuthorCard extends StatelessWidget {
           ),
           RichText(
             textAlign: TextAlign.center,
-            overflow: TextOverflow.clip,
+            overflow: TextOverflow.ellipsis,
             maxLines: 1,
             text: TextSpan(
               text: author.name,

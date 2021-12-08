@@ -8,8 +8,8 @@ import 'package:sizer/sizer.dart';
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
   static final _listBodies = [
-    HomeScreen(),
-    SearchScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
     Container(),
     Container(),
   ];

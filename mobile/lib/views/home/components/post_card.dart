@@ -24,14 +24,23 @@ class PostCard extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                post.author,
-                style: TextStyle(
-                  color: myParagraphColor,
-                  fontSize: 12.sp,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.normal,
-                ),
+              Row(
+                children: [
+                  CircleAvatar(
+                    foregroundImage: AssetImage(post.author.image),
+                    radius: 7.sp,
+                  ),
+                  SizedBox(width: 5.sp),
+                  Text(
+                    post.author.name,
+                    style: TextStyle(
+                      color: myParagraphColor,
+                      fontSize: 12.sp,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.normal,
+                    ),
+                  )
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

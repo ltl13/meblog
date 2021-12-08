@@ -35,7 +35,7 @@ List<Author> authors = [
     image: "assets/images/author3.jpg",
   ),
   Author(
-    name: "Dan Christian",
+    name: "Christian Dan",
     username: "dan_codoc",
     description: "Christian pastor, our God, our soul",
     image: "assets/images/author4.jpg",
