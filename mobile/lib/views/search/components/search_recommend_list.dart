@@ -31,7 +31,7 @@ class SearchRecommendList extends StatelessWidget {
                 style: TextStyle(
                   color: mySubHeadlineColor,
                   fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.bold,
                   fontSize: 12.sp,
                 ),
               ),
