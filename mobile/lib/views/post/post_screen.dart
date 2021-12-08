@@ -3,9 +3,9 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:sizer/sizer.dart';
 
-class SinglePost extends StatelessWidget {
+class PostScreen extends StatelessWidget {
   final Post post;
-  const SinglePost({
+  const PostScreen({
     Key? key,
     required this.post,
   }) : super(key: key);
