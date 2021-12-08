@@ -23,13 +23,17 @@ class PostBriefInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                post.title,
-                style: TextStyle(
-                  color: myHeadlineColor,
-                  fontSize: 16.sp,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.bold,
+              RichText(
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                text: TextSpan(
+                  text: post.title,
+                  style: TextStyle(
+                    color: myHeadlineColor,
+                    fontSize: 16.sp,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               Text(
