@@ -3,9 +3,11 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:sizer/sizer.dart';
 
-class Post extends StatelessWidget {
-  const Post({
+class PostScreen extends StatelessWidget {
+  final Post post;
+  const PostScreen({
     Key? key,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class Post extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              posts[0].title,
+              post.title,
               style: TextStyle(
                 color: myHeadlineColor,
                 fontSize: 20.sp,
@@ -26,7 +28,7 @@ class Post extends StatelessWidget {
               ),
             ),
             Text(
-              posts[0].author,
+              post.author.name,
               style: TextStyle(
                 color: myHighlightColor,
                 fontSize: 16.sp,
@@ -34,12 +36,12 @@ class Post extends StatelessWidget {
                 fontFamily: 'Roboto',
               ),
             ),
-            Image.asset(posts[0].image),
+            Image.asset(post.image),
             RichText(
               textAlign: TextAlign.justify,
               textDirection: TextDirection.ltr,
               text: TextSpan(
-                text: posts[0].content,
+                text: post.content,
                 style: TextStyle(
                   color: myParagraphColor,
                   fontFamily: 'Roboto',

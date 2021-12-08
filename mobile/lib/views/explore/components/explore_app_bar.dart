@@ -10,7 +10,6 @@ class SearchAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      snap: false,
       pinned: false,
       floating: false,
       automaticallyImplyLeading: false,

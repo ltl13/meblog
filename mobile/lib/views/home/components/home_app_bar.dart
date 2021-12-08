@@ -6,11 +6,13 @@ import 'package:sizer/sizer.dart';
 class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final TabController _topTabController;
   final List<String> _topTabs;
+  final bool innerBoxIsScrolled;
 
   const HomeAppBar({
     Key? key,
     required TabController topTabController,
     required List<String> topTabs,
+    required this.innerBoxIsScrolled,
   })  : _topTabController = topTabController,
         _topTabs = topTabs,
         super(key: key);
@@ -21,7 +23,10 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
+      pinned: true,
+      floating: true,
+      forceElevated: true,
       backgroundColor: myBackgroundColor,
       automaticallyImplyLeading: false,
       elevation: 1,

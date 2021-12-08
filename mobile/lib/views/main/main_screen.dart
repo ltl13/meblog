@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
+import 'package:mobile/views/explore/explore_screen.dart';
 import 'package:mobile/views/home/home_screen.dart';
-import 'package:mobile/views/search/search_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
   static final _listBodies = [
-    HomeScreen(),
-    SearchScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
     Container(),
     Container(),
   ];

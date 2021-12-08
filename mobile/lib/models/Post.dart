@@ -1,5 +1,8 @@
+import 'package:mobile/models/author.dart';
+
 class Post {
-  final String image, title, content, author, datePost;
+  final String image, title, content, datePost;
+  final Author author;
   final int timeReading;
   final List<String> tags;
   bool isFavorite;
@@ -20,7 +23,7 @@ List<Post> posts = [
   Post(
     image: "assets/images/post0.jpg",
     title: "Joey Jordison, Founding Slipknot Drummer, Dead at 46",
-    author: "Luan Le",
+    author: authors[0],
     datePost: "Dec 1",
     timeReading: 6,
     tags: ["Rock & Roll"],
@@ -42,7 +45,7 @@ List<Post> posts = [
   Post(
     image: "assets/images/post1.jpeg",
     title: "Metallica Teaches You How to Rock in New Class",
-    author: "Luan Le",
+    author: authors[1],
     datePost: "Dec 2",
     timeReading: 6,
     tags: ["Rock & Roll"],
@@ -64,7 +67,7 @@ List<Post> posts = [
   Post(
     image: "assets/images/post2.png",
     title: "Making a Blog with Flutter and Hugo",
-    author: "Gordon Hayes",
+    author: authors[2],
     datePost: "Nov 30",
     timeReading: 6,
     tags: ["Programming"],
@@ -80,7 +83,7 @@ List<Post> posts = [
   Post(
     image: "assets/images/post3.png",
     title: "A Jolly Season 3 in Dodoland 🎄",
-    author: "Zendodo Party",
+    author: authors[3],
     datePost: "Dec 4",
     timeReading: 6,
     tags: ["Game", "Blockchain"],
@@ -95,7 +98,7 @@ List<Post> posts = [
   Post(
     image: "assets/images/post4.jpeg",
     title: "GAN — Why it is so hard to train Generative Adversarial Networks!",
-    author: "Jonathan Hui",
+    author: authors[4],
     datePost: "Dec 5",
     timeReading: 6,
     tags: ["Deep learning"],

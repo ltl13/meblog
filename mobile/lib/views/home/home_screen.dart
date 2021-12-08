@@ -26,17 +26,25 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: myBackgroundColor,
-      appBar: HomeAppBar(
-        topTabController: _topTabController,
-        topTabs: _topTabs,
-      ),
-      body: TabBarView(
-        controller: _topTabController,
-        children: const [
-          ListViewPostCards(),
-          ListViewPostCards(),
-        ],
-      ),
+      body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+                HomeAppBar(
+                  topTabController: _topTabController,
+                  topTabs: _topTabs,
+                  innerBoxIsScrolled: innerBoxIsScrolled,
+                ),
+              ],
+          body: MediaQuery.removePadding(
+            removeTop: true,
+            context: context,
+            child: TabBarView(
+              controller: _topTabController,
+              children: const [
+                ListViewPostCards(),
+                ListViewPostCards(),
+              ],
+            ),
+          )),
     );
   }
 }
