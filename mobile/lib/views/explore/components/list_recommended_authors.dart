@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/author.dart';
-import 'package:mobile/views/search/components/author_card.dart';
+import 'package:mobile/views/explore/components/author_card.dart';
 import 'package:sizer/sizer.dart';
 
 class ListRecommendedAuthors extends StatelessWidget {
