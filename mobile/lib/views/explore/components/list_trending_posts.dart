@@ -14,7 +14,7 @@ class ListTrendingPosts extends StatelessWidget {
     return SliverList(
       delegate: SliverChildListDelegate([
         Container(
-          color: myParagraphColor,
+          color: myTextColor,
           padding: const EdgeInsets.symmetric(vertical: myPadding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class ListTrendingPosts extends StatelessWidget {
                 child: Text(
                   "What are people reading now?",
                   style: TextStyle(
-                    color: myBackgroundColor,
+                    color: myMainColor,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w900,
                     fontSize: 24.sp,

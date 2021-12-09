@@ -27,10 +27,10 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
       pinned: true,
       floating: true,
       forceElevated: true,
-      backgroundColor: myBackgroundColor,
+      backgroundColor: myMainColor,
       automaticallyImplyLeading: false,
       elevation: 1,
-      shadowColor: myParagraphColor,
+      shadowColor: myTextColor,
       bottom: TabBar(
         indicator: UnderlineTabIndicator(
           borderSide: BorderSide(width: 2, color: myHeadlineColor),

@@ -10,7 +10,7 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: myBackgroundColor,
+      color: myMainColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: myPadding),
         child: ChangeNotifierProvider<ValueNotifier<bool>>(

@@ -35,7 +35,7 @@ class PostCardFooter extends StatelessWidget {
               icon: Consumer<ValueNotifier<bool>>(
                 builder: (context, isAdded, widget) => Icon(
                   isAdded.value ? Icons.bookmark_added : Icons.bookmark_add,
-                  color: isAdded.value ? mySecondaryColor : myTertiaryColor,
+                  color: isAdded.value ? myButtonColor : mySecondaryColor,
                 ),
               ),
             ),
@@ -48,7 +48,7 @@ class PostCardFooter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Roboto',
-                      color: myParagraphColor,
+                      color: myTextColor,
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ class PostCardFooter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Roboto',
-                      color: myParagraphColor,
+                      color: myTextColor,
                     ),
                   ),
                 ),
@@ -68,7 +68,7 @@ class PostCardFooter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Roboto',
-                      color: myParagraphColor,
+                      color: myTextColor,
                     ),
                   ),
                 ),

@@ -43,7 +43,7 @@ class PostScreen extends StatelessWidget {
               text: TextSpan(
                 text: post.content,
                 style: TextStyle(
-                  color: myParagraphColor,
+                  color: myTextColor,
                   fontFamily: 'Roboto',
                   fontSize: 14.sp,
                 ),

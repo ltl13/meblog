@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: myBackgroundColor,
+      backgroundColor: myMainColor,
       body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
                 HomeAppBar(

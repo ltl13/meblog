@@ -17,7 +17,7 @@ class SearchBoxAndTags extends StatelessWidget {
             padding: const EdgeInsets.all(myPadding / 2),
             child: TextField(
               style: TextStyle(
-                color: myParagraphColor,
+                color: myTextColor,
                 fontFamily: 'Roboto',
                 fontSize: 14.sp,
               ),
@@ -25,7 +25,7 @@ class SearchBoxAndTags extends StatelessWidget {
                 prefixIcon: Icon(
                   Icons.search,
                   size: 20.sp,
-                  color: myParagraphColor,
+                  color: myTextColor,
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide.none,
@@ -48,14 +48,14 @@ class SearchBoxAndTags extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.sp),
                 ),
                 filled: true,
-                fillColor: myTertiaryColor,
+                fillColor: mySecondaryColor,
                 hintText: "Search something...",
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: myPadding,
                   vertical: 5.sp,
                 ),
                 hintStyle: TextStyle(
-                  color: myParagraphColor,
+                  color: myTextColor,
                   fontFamily: 'Roboto',
                   fontSize: 14.sp,
                 ),

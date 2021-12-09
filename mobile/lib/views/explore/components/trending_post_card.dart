@@ -44,7 +44,7 @@ class TrendingPostCard extends StatelessWidget {
             text: TextSpan(
               text: post.title,
               style: TextStyle(
-                color: myBackgroundColor,
+                color: myMainColor,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.bold,
                 fontSize: 16.sp,

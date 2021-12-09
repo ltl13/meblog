@@ -15,7 +15,7 @@ class RoundIconButton extends StatelessWidget {
     return TextButton(
       onPressed: null,
       style: TextButton.styleFrom(
-        backgroundColor: myBackgroundColor,
+        backgroundColor: myMainColor,
         shape: CircleBorder(side: BorderSide(color: myButtonColor, width: 2)),
       ),
       child: FaIcon(
