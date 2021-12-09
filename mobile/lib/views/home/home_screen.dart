@@ -3,7 +3,6 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/home_app_bar.dart';
 import 'package:mobile/views/home/components/list_view_post_cards.dart';
-import 'package:mobile/views/home/components/post_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
