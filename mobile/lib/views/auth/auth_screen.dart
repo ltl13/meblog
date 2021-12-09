@@ -14,7 +14,7 @@ class AuthScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: myPadding),
         child: ChangeNotifierProvider<ValueNotifier<bool>>(
-            create: (context) => ValueNotifier<bool>(false),
+            create: (context) => ValueNotifier<bool>(true),
             builder: (context, snapshot) {
               final _isSignIn = Provider.of<ValueNotifier<bool>>(context);
               return _isSignIn.value

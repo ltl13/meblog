@@ -23,7 +23,7 @@ class RichTextWithTapableText extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Roboto',
               fontSize: 14.sp,
-              color: myParagraphColor,
+              color: mySubHeadlineColor,
             ),
           ),
           TextSpan(

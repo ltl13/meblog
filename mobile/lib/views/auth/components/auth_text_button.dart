@@ -4,15 +4,17 @@ import 'package:sizer/sizer.dart';
 
 class AuthTextButton extends StatelessWidget {
   final String text;
+  final Function onTap;
   const AuthTextButton({
     Key? key,
     required this.text,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: null,
+      onPressed: () => onTap(),
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(
           vertical: 10.sp,

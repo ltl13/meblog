@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:mobile/constants.dart';
+import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/auth/components/auth_text_button.dart';
 import 'package:mobile/views/auth/components/line_with_text.dart';
 import 'package:mobile/views/auth/components/richtext_with_tapable_text.dart';
@@ -19,12 +21,13 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           'Welcome back!',
           style: TextStyle(
             fontFamily: 'Amaranth',
-            color: myParagraphColor,
+            color: myHeadlineColor,
             fontSize: 30.sp,
           ),
         ),
@@ -41,17 +44,23 @@ class SignInForm extends StatelessWidget {
         SizedBox(height: 5.sp),
         Align(
           alignment: Alignment.centerRight,
-          child: Text(
-            "Forgot password?",
-            style: TextStyle(
-              color: myHighlightColor,
-              fontFamily: 'Roboto',
-              fontSize: 14.sp,
+          child: GestureDetector(
+            onTap: () => Get.toNamed(AppRoutes.RESET_PASSWORD),
+            child: Text(
+              "Forgot password?",
+              style: TextStyle(
+                color: myHighlightColor,
+                fontFamily: 'Roboto',
+                fontSize: 14.sp,
+              ),
             ),
           ),
         ),
         SizedBox(height: 30.sp),
-        const AuthTextButton(text: "Sign in"),
+        AuthTextButton(
+          text: "Sign in",
+          onTap: () => Get.toNamed(AppRoutes.MAIN),
+        ),
         SizedBox(height: 30.sp),
         const LineWithText(text: "Or, sign in with"),
         SizedBox(height: 30.sp),

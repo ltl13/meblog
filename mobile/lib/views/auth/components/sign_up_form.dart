@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:mobile/constants.dart';
+import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/auth/components/auth_text_button.dart';
 import 'package:mobile/views/auth/components/line_with_text.dart';
 import 'package:mobile/views/auth/components/richtext_with_tapable_text.dart';
@@ -19,12 +21,13 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           'Join Meblog.',
           style: TextStyle(
             fontFamily: 'Amaranth',
-            color: myParagraphColor,
+            color: myHeadlineColor,
             fontSize: 30.sp,
           ),
         ),
@@ -49,7 +52,10 @@ class SignUpForm extends StatelessWidget {
           hint: "Confirm password",
         ),
         SizedBox(height: 30.sp),
-        const AuthTextButton(text: "Sign up"),
+        AuthTextButton(
+          text: "Sign up",
+          onTap: () => Get.toNamed(AppRoutes.MAIN),
+        ),
         SizedBox(height: 30.sp),
         const LineWithText(text: "Or, sign up with"),
         SizedBox(height: 30.sp),
