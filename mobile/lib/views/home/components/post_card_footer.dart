@@ -19,8 +19,12 @@ class PostCardFooter extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          children:
-              post.tags.map((e) => Tag(tag: e, size: TagSize.small)).toList(),
+          children: post.tags.length >= 3
+              ? post.tags
+                  .map((e) => Tag(tag: e, size: TagSize.small))
+                  .toList()
+                  .sublist(0, 2)
+              : post.tags.map((e) => Tag(tag: e, size: TagSize.small)).toList(),
         ),
         Row(
           children: [

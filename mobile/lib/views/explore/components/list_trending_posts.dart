@@ -14,7 +14,7 @@ class ListTrendingPosts extends StatelessWidget {
     return SliverList(
       delegate: SliverChildListDelegate([
         Container(
-          color: myTextColor,
+          color: myButtonTextColor,
           padding: const EdgeInsets.symmetric(vertical: myPadding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

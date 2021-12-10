@@ -4,20 +4,25 @@ import 'package:mobile/constants.dart';
 import 'package:sizer/sizer.dart';
 
 class PostScreenAppBar extends StatelessWidget {
+  final ValueNotifier<bool> _isFooterVisibleProvider;
+
   const PostScreenAppBar({
     Key? key,
-  }) : super(key: key);
+    required ValueNotifier<bool> isAppBarVisibleProvider,
+  })  : _isFooterVisibleProvider = isAppBarVisibleProvider,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40.sp,
-      width: double.infinity,
+    return AnimatedPositioned(
+      right: 10.sp,
+      top: _isFooterVisibleProvider.value ? myPadding / 2 : -60.sp,
+      duration: const Duration(milliseconds: 500),
       child: TextButton(
         onPressed: () => Get.back(),
-        child: Icon(Icons.close, color: myMainColor, size: 16.sp),
+        child: Icon(Icons.close, color: myMainColor, size: 20.sp),
         style: TextButton.styleFrom(
-          fixedSize: Size(20.sp, 20.sp),
+          padding: EdgeInsets.all(10.sp),
           shape: const CircleBorder(),
           backgroundColor: myStrokeColor.withOpacity(.1),
         ),

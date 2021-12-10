@@ -5,8 +5,8 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:sizer/sizer.dart';
 
-class SearchRecommendList extends StatelessWidget {
-  const SearchRecommendList({
+class ExploreScreenRecommendedList extends StatelessWidget {
+  const ExploreScreenRecommendedList({
     Key? key,
   }) : super(key: key);
 
