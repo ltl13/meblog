@@ -4,9 +4,9 @@ import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/author_with_image.dart';
 import 'package:sizer/sizer.dart';
 
-class TrendingPostCard extends StatelessWidget {
+class PortraitPostCard extends StatelessWidget {
   final Post post;
-  const TrendingPostCard({
+  const PortraitPostCard({
     Key? key,
     required this.post,
   }) : super(key: key);

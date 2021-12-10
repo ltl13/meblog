@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/post_card.dart';
+import 'package:mobile/views/home/components/landscape_post_card.dart';
 import 'package:sizer/sizer.dart';
 
 class SearchRecommendList extends StatelessWidget {
@@ -46,7 +46,7 @@ class SearchRecommendList extends StatelessWidget {
                     horizontal: myPadding,
                     vertical: myPadding / 2,
                   ),
-                  child: PostCard(post: e),
+                  child: LandscapePostCard(post: e),
                 ),
               )
               .toList(),
