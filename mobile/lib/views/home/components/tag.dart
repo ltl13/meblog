@@ -19,7 +19,7 @@ class Tag extends StatelessWidget {
       margin: EdgeInsets.only(top: 5.sp, right: 5.sp),
       padding: EdgeInsets.all(5.sp),
       decoration: BoxDecoration(
-        color: myTertiaryColor,
+        color: mySecondaryColor,
         borderRadius: BorderRadius.circular(20.sp),
       ),
       child: Text(

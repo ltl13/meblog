@@ -36,8 +36,8 @@ class AuthorWithImage extends StatelessWidget {
           post.author.name,
           style: TextStyle(
             color: mode == AuthorWithImageMode.light
-                ? myParagraphColor
-                : myBackgroundColor,
+                ? myTextColor
+                : myMainColor,
             fontSize: size == AuthorWithImageSize.small
                 ? 12.sp
                 : size == AuthorWithImageSize.medium

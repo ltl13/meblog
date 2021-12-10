@@ -13,7 +13,7 @@ class SearchAppBar extends StatelessWidget {
       pinned: false,
       floating: false,
       automaticallyImplyLeading: false,
-      backgroundColor: myBackgroundColor,
+      backgroundColor: myMainColor,
       foregroundColor: myHeadlineColor,
       elevation: 0,
       centerTitle: false,

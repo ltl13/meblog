@@ -24,7 +24,7 @@ class PostBriefInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RichText(
-                maxLines: 3,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 text: TextSpan(
                   text: post.title,
@@ -55,7 +55,7 @@ class PostBriefInfo extends StatelessWidget {
         Flexible(
           flex: 1,
           child: Container(
-            height: 60.sp,
+            height: 50.sp,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
               image: DecorationImage(

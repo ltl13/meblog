@@ -4,9 +4,9 @@ import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/author_with_image.dart';
 import 'package:sizer/sizer.dart';
 
-class TrendingPostCard extends StatelessWidget {
+class PortraitPostCard extends StatelessWidget {
   final Post post;
-  const TrendingPostCard({
+  const PortraitPostCard({
     Key? key,
     required this.post,
   }) : super(key: key);
@@ -24,12 +24,15 @@ class TrendingPostCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
+          Container(
             height: 120.sp,
             width: 240.sp,
-            child: Image.asset(
-              post.image,
-              fit: BoxFit.fill,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              image: DecorationImage(
+                image: AssetImage(post.image),
+                fit: BoxFit.fill,
+              ),
             ),
           ),
           AuthorWithImage(
@@ -44,7 +47,7 @@ class TrendingPostCard extends StatelessWidget {
             text: TextSpan(
               text: post.title,
               style: TextStyle(
-                color: myBackgroundColor,
+                color: myMainColor,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.bold,
                 fontSize: 16.sp,

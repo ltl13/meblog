@@ -46,7 +46,7 @@ class SearchRecommendList extends StatelessWidget {
                     horizontal: myPadding,
                     vertical: myPadding / 2,
                   ),
-                  child: PostCard(post: e),
+                  child: PostCard(post: e, style: PostCardStyle.landscape),
                 ),
               )
               .toList(),

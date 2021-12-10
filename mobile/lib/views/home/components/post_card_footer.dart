@@ -9,12 +9,9 @@ class PostCardFooter extends StatelessWidget {
   const PostCardFooter({
     Key? key,
     required this.post,
-    required ValueNotifier<bool> isFavoriteProvider,
-  })  : _isFavoriteProvider = isFavoriteProvider,
-        super(key: key);
+  }) : super(key: key);
 
   final Post post;
-  final ValueNotifier<bool> _isFavoriteProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +24,15 @@ class PostCardFooter extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              onPressed: () {
-                post.isFavorite = !post.isFavorite;
-                _isFavoriteProvider.value = post.isFavorite;
-              },
-              icon: Consumer<ValueNotifier<bool>>(
-                builder: (context, isAdded, widget) => Icon(
-                  isAdded.value ? Icons.bookmark_added : Icons.bookmark_add,
-                  color: isAdded.value ? mySecondaryColor : myTertiaryColor,
+            Consumer<ValueNotifier<bool>>(
+              builder: (context, isFavorite, child) => IconButton(
+                onPressed: () {
+                  post.isFavorite = !post.isFavorite;
+                  isFavorite.value = post.isFavorite;
+                },
+                icon: Icon(
+                  isFavorite.value ? Icons.bookmark_added : Icons.bookmark_add,
+                  color: isFavorite.value ? myButtonColor : mySecondaryColor,
                 ),
               ),
             ),
@@ -48,7 +45,7 @@ class PostCardFooter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Roboto',
-                      color: myParagraphColor,
+                      color: myTextColor,
                     ),
                   ),
                 ),
@@ -58,7 +55,7 @@ class PostCardFooter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Roboto',
-                      color: myParagraphColor,
+                      color: myTextColor,
                     ),
                   ),
                 ),
@@ -68,7 +65,7 @@ class PostCardFooter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontFamily: 'Roboto',
-                      color: myParagraphColor,
+                      color: myTextColor,
                     ),
                   ),
                 ),

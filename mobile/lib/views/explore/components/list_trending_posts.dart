@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/explore/components/trending_post_card.dart';
+import 'package:mobile/views/home/components/post_card.dart';
 import 'package:sizer/sizer.dart';
 
 class ListTrendingPosts extends StatelessWidget {
@@ -14,7 +14,7 @@ class ListTrendingPosts extends StatelessWidget {
     return SliverList(
       delegate: SliverChildListDelegate([
         Container(
-          color: myParagraphColor,
+          color: myTextColor,
           padding: const EdgeInsets.symmetric(vertical: myPadding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class ListTrendingPosts extends StatelessWidget {
                 child: Text(
                   "What are people reading now?",
                   style: TextStyle(
-                    color: myBackgroundColor,
+                    color: myMainColor,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w900,
                     fontSize: 24.sp,
@@ -55,7 +55,12 @@ class ListTrendingPosts extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      ...posts.map((e) => TrendingPostCard(post: e)).toList(),
+                      ...posts
+                          .map((e) => PostCard(
+                                style: PostCardStyle.portrait,
+                                post: e,
+                              ))
+                          .toList(),
                       const SizedBox(width: myPadding),
                     ],
                   ),

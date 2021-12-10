@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/auth/auth_screen.dart';
+import 'package:mobile/views/auth/reset_password_screen.dart';
 import 'package:mobile/views/home/home_screen.dart';
 import 'package:mobile/views/main/main_screen.dart';
+import 'package:mobile/views/post/post_screen.dart';
 
 class AppPages {
   static const INIT = AppRoutes.ROOT;
@@ -23,5 +25,15 @@ class AppPages {
       page: () => const HomeScreen(),
       transition: Transition.fadeIn,
     ),
+    GetPage(
+      name: AppRoutes.RESET_PASSWORD,
+      page: () => const ResetPasswordScreen(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: AppRoutes.POST,
+      page: () => PostScreen(post: Get.arguments),
+      transition: Transition.downToUp,
+    )
   ];
 }
