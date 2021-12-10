@@ -24,12 +24,15 @@ class TrendingPostCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
+          Container(
             height: 120.sp,
             width: 240.sp,
-            child: Image.asset(
-              post.image,
-              fit: BoxFit.fill,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              image: DecorationImage(
+                image: AssetImage(post.image),
+                fit: BoxFit.fill,
+              ),
             ),
           ),
           AuthorWithImage(

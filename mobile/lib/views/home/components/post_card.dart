@@ -24,7 +24,7 @@ class PostCard extends StatelessWidget {
             listen: post.isFavorite,
           );
           return SizedBox(
-            height: 130.sp,
+            height: 110.sp,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,7 +38,7 @@ class PostCard extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                  flex: 3,
+                  flex: 2,
                   child: PostBriefInfo(post: post),
                 ),
                 Flexible(

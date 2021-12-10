@@ -64,7 +64,6 @@ class SearchBoxAndTags extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: myPadding / 2,
               top: myPadding / 2,
               bottom: myPadding / 2,
             ),
@@ -73,6 +72,7 @@ class SearchBoxAndTags extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: const [
+                  SizedBox(width: myPadding / 2),
                   Tag(tag: "Game", size: TagSize.medium),
                   Tag(tag: "Blockchain", size: TagSize.medium),
                   Tag(tag: "Rock & Roll", size: TagSize.medium),
