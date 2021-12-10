@@ -13,6 +13,7 @@ class PostAppBar extends StatelessWidget {
     return SliverAppBar(
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
+      elevation: 0,
       pinned: false,
       floating: true,
       snap: true,
@@ -22,7 +23,7 @@ class PostAppBar extends StatelessWidget {
           child: Icon(Icons.close, color: myMainColor, size: 16.sp),
           style: TextButton.styleFrom(
             fixedSize: Size(20.sp, 20.sp),
-            shape: CircleBorder(),
+            shape: const CircleBorder(),
             backgroundColor: myStrokeColor.withOpacity(.1),
           ),
         ),

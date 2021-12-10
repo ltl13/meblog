@@ -23,14 +23,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: myMainColor,
-      body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+    return Material(
+      color: myMainColor,
+      child: NestedScrollView(
+          headerSliverBuilder: (context, _) => [
                 HomeAppBar(
                   topTabController: _topTabController,
                   topTabs: _topTabs,
-                  innerBoxIsScrolled: innerBoxIsScrolled,
                 ),
               ],
           body: MediaQuery.removePadding(

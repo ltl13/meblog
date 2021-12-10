@@ -74,14 +74,14 @@ class AuthorCard extends StatelessWidget {
                     style: TextButton.styleFrom(
                       fixedSize: Size(80.sp, 20.sp),
                       backgroundColor:
-                          isFollowing.value ? mySecondaryColor : myButtonColor,
+                          isFollowing.value ? myMainColor : myButtonColor,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(color: myButtonColor, width: 1),
                         borderRadius: BorderRadius.circular(50.sp),
                       ),
                     ),
                     child: Text(
-                      isFollowing.value ? "Followed" : "Follow",
+                      isFollowing.value ? "Following" : "Follow",
                       style: TextStyle(
                         color: myButtonTextColor,
                         fontFamily: 'Roboto',

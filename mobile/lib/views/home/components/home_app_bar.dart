@@ -6,13 +6,11 @@ import 'package:sizer/sizer.dart';
 class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final TabController _topTabController;
   final List<String> _topTabs;
-  final bool innerBoxIsScrolled;
 
   const HomeAppBar({
     Key? key,
     required TabController topTabController,
     required List<String> topTabs,
-    required this.innerBoxIsScrolled,
   })  : _topTabController = topTabController,
         _topTabs = topTabs,
         super(key: key);
