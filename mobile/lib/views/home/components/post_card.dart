@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
+import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/home/components/landscape_post_card.dart';
 import 'package:mobile/views/home/components/portrait_post_card.dart';
 import 'package:sizer/sizer.dart';
@@ -17,56 +19,60 @@ class PostCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Offset _tapPosition = const Offset(0, 0);
     return GestureDetector(
-      onTap: null,
-      onLongPress: () {
-        showMenu(
-            context: context,
-            position: RelativeRect.fromLTRB(
-              _tapPosition.dx,
-              _tapPosition.dy,
-              double.infinity,
-              double.infinity,
-            ),
-            items: [
-              PopupMenuItem(
-                child: Text(
-                  "Follow this publication",
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontFamily: 'Roboto',
-                    color: myTextColor,
-                  ),
-                ),
-              ),
-              PopupMenuItem(
-                child: Text(
-                  "Mute this publication",
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontFamily: 'Roboto',
-                    color: myTextColor,
-                  ),
-                ),
-              ),
-              PopupMenuItem(
-                child: Text(
-                  "Save to reading list",
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontFamily: 'Roboto',
-                    color: myTextColor,
-                  ),
-                ),
-              ),
-            ]);
-      },
+      onTap: () => Get.toNamed(AppRoutes.POST, arguments: post),
+      onLongPress: () => _showPopUpMenuOnLongPress(context, _tapPosition),
       onTapDown: (detail) {
         _tapPosition = detail.globalPosition;
-        print(_tapPosition);
       },
       child: style == PostCardStyle.landscape
           ? LandscapePostCard(post: post)
           : PortraitPostCard(post: post),
     );
   }
+
+  Future<dynamic> _showPopUpMenuOnLongPress(
+    BuildContext context,
+    Offset _tapPosition,
+  ) =>
+      showMenu(
+        context: context,
+        position: RelativeRect.fromLTRB(
+          _tapPosition.dx,
+          _tapPosition.dy,
+          double.infinity,
+          double.infinity,
+        ),
+        items: [
+          PopupMenuItem(
+            child: Text(
+              "Follow this publication",
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontFamily: 'Roboto',
+                color: myTextColor,
+              ),
+            ),
+          ),
+          PopupMenuItem(
+            child: Text(
+              "Mute this publication",
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontFamily: 'Roboto',
+                color: myTextColor,
+              ),
+            ),
+          ),
+          PopupMenuItem(
+            child: Text(
+              "Save to reading list",
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontFamily: 'Roboto',
+                color: myTextColor,
+              ),
+            ),
+          ),
+        ],
+      );
 }
