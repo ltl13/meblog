@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/views/home/components/post_card.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/post_card.dart';
 import 'package:sizer/sizer.dart';
 
 class ListTrendingPosts extends StatelessWidget {

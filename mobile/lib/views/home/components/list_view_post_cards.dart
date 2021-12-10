@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/constants.dart';
-import 'package:mobile/controller/list_posts_controller.dart';
-import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/post_card.dart';
+import 'package:mobile/constants.dart';
+import 'package:mobile/controllers/list_posts_controller.dart';
+import 'package:mobile/models/post.dart';
 
 class ListViewPostCards extends StatefulWidget {
   const ListViewPostCards({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/constants.dart';
 import 'package:mobile/views/home/components/tag.dart';
+import 'package:mobile/constants.dart';
 import 'package:sizer/sizer.dart';
 
 class SearchBoxAndTags extends StatelessWidget {

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/constants.dart';
-import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/home_app_bar.dart';
 import 'package:mobile/views/home/components/list_view_post_cards.dart';
+import 'package:mobile/constants.dart';
+import 'package:mobile/views/home/components/home_screen_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       color: myMainColor,
       child: NestedScrollView(
           headerSliverBuilder: (context, _) => [
-                HomeAppBar(
+                HomeScreenAppBar(
                   topTabController: _topTabController,
                   topTabs: _topTabs,
                 ),

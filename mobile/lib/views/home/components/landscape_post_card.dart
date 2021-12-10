@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/author_with_image.dart';
 import 'package:mobile/views/home/components/post_brief_info.dart';
 import 'package:mobile/views/home/components/post_card_footer.dart';
+import 'package:mobile/models/post.dart';
+import 'package:mobile/views/home/components/author_with_image.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 

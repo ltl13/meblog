@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
 import 'package:sizer/sizer.dart';
 
-class SearchAppBar extends StatelessWidget {
-  const SearchAppBar({
+class ExploreScreenAppBar extends StatelessWidget {
+  const ExploreScreenAppBar({
     Key? key,
   }) : super(key: key);
 

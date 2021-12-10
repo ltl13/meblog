@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mobile/views/home/components/portrait_post_card.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/home/components/landscape_post_card.dart';
-import 'package:mobile/views/home/components/portrait_post_card.dart';
 import 'package:sizer/sizer.dart';
 
 enum PostCardStyle { portrait, landscape }
