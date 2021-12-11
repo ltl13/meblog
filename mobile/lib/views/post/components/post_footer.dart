@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/post_card.dart';
-import 'package:mobile/views/post/components/post_screen_about_author.dart';
+import 'package:mobile/views/post/components/post_about_author.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenFooter extends StatelessWidget {
-  const PostScreenFooter({
+class PostFooter extends StatelessWidget {
+  const PostFooter({
     Key? key,
     required this.post,
   }) : super(key: key);
@@ -43,7 +43,7 @@ class PostScreenFooter extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: myPadding,
             ),
-            child: PostScreenAboutAuthor(post: post),
+            child: PostAboutAuthor(post: post),
           ),
           SizedBox(height: 30.sp),
           Padding(
@@ -66,10 +66,7 @@ class PostScreenFooter extends StatelessWidget {
             child: Row(
               children: [
                 ...posts.map(
-                  (e) => PostCard(
-                    style: PostCardStyle.portrait,
-                    post: e,
-                  ),
+                  (e) => PostCard(style: PostCardStyle.portrait, post: e),
                 ),
                 const SizedBox(width: myPadding / 2),
               ],

@@ -4,8 +4,8 @@ import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/author_with_image.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenBody extends StatelessWidget {
-  const PostScreenBody({
+class PostBody extends StatelessWidget {
+  const PostBody({
     Key? key,
     required this.post,
   }) : super(key: key);

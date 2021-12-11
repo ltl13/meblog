@@ -4,8 +4,8 @@ import 'package:mobile/models/post.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenAboutAuthor extends StatelessWidget {
-  const PostScreenAboutAuthor({
+class PostAboutAuthor extends StatelessWidget {
+  const PostAboutAuthor({
     Key? key,
     required this.post,
   }) : super(key: key);

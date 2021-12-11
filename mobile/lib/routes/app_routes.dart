@@ -4,4 +4,5 @@ abstract class AppRoutes {
   static const HOME = '/home';
   static const RESET_PASSWORD = '/reset-password';
   static const POST = '/post';
+  static const COMMENT = '/comment';
 }

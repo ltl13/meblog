@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/auth/auth_screen.dart';
 import 'package:mobile/views/auth/reset_password_screen.dart';
+import 'package:mobile/views/comment/comment_screen.dart';
 import 'package:mobile/views/home/home_screen.dart';
 import 'package:mobile/views/main/main_screen.dart';
 import 'package:mobile/views/post/post_screen.dart';
@@ -34,6 +34,11 @@ class AppPages {
       name: AppRoutes.POST,
       page: () => PostScreen(post: Get.arguments),
       transition: Transition.downToUp,
+    ),
+    GetPage(
+      name: AppRoutes.COMMENT,
+      page: () => const CommentScreen(),
+      transition: Transition.rightToLeftWithFade
     )
   ];
 }

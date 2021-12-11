@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/post_card.dart';
-import 'package:mobile/views/post/components/post_screen_about_author.dart';
-import 'package:mobile/views/post/components/post_screen_app_bar.dart';
-import 'package:mobile/views/post/components/post_screen_body.dart';
-import 'package:mobile/views/post/components/post_screen_footer.dart';
-import 'package:mobile/views/post/components/post_screen_nav_bar.dart';
-import 'package:mobile/views/post/components/post_screen_list_tags.dart';
+import 'package:mobile/views/post/components/post_app_bar.dart';
+import 'package:mobile/views/post/components/post_body.dart';
+import 'package:mobile/views/post/components/post_footer.dart';
+import 'package:mobile/views/post/components/post_nav_bar.dart';
+import 'package:mobile/views/post/components/post_list_tags.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
 
 class PostScreen extends StatelessWidget {
   final Post post;
@@ -51,20 +48,20 @@ class PostScreen extends StatelessWidget {
                   controller: _scrollController,
                   child: Column(
                     children: [
-                      PostScreenBody(post: post),
-                      PostScreenListTags(post: post),
+                      PostBody(post: post),
+                      PostListTags(post: post),
                       const SizedBox(height: myPadding),
-                      PostScreenFooter(post: post),
+                      PostFooter(post: post),
                     ],
                   ),
                 ),
                 Consumer<ValueNotifier<bool>>(
-                  builder: (context, provider, child) => PostScreenAppBar(
+                  builder: (context, provider, child) => PostAppBar(
                     isAppBarVisibleProvider: _isScrollingDownProvider,
                   ),
                 ),
                 Consumer<ValueNotifier<bool>>(
-                  builder: (context, provider, child) => PostScreenNavBar(
+                  builder: (context, provider, child) => PostNavBar(
                     isNavBarVisibleProvider: _isScrollingDownProvider,
                   ),
                 ),

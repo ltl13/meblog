@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mobile/constants.dart';
+import 'package:mobile/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenNavBar extends StatelessWidget {
-  const PostScreenNavBar({
+class PostNavBar extends StatelessWidget {
+  const PostNavBar({
     Key? key,
     required ValueNotifier<bool> isNavBarVisibleProvider,
   })  : _isNavBarVisibleProvider = isNavBarVisibleProvider,
@@ -53,7 +55,7 @@ class PostScreenNavBar extends StatelessWidget {
                     );
                   }),
               TextButton.icon(
-                onPressed: null,
+                onPressed: () => Get.toNamed(AppRoutes.COMMENT),
                 icon: Icon(
                   Icons.comment_outlined,
                   size: 16.sp,

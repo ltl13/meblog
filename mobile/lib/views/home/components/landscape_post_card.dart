@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/views/home/components/post_brief_info.dart';
+import 'package:mobile/views/home/components/post_card_brief_info.dart';
 import 'package:mobile/views/home/components/post_card_footer.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/author_with_image.dart';
@@ -33,7 +33,7 @@ class LandscapePostCard extends StatelessWidget {
                 ),
                 Flexible(
                   flex: 2,
-                  child: PostBriefInfo(post: post),
+                  child: PostCardBriefInfo(post: post),
                 ),
                 Flexible(
                   flex: 1,
