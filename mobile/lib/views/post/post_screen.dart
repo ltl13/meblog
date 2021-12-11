@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/explore/components/explore_screen_recommended_list.dart';
-import 'package:mobile/views/home/components/author_with_image.dart';
-import 'package:mobile/views/home/components/post_brief_info.dart';
 import 'package:mobile/views/home/components/post_card.dart';
-import 'package:mobile/views/home/components/tag.dart';
 import 'package:mobile/views/post/components/post_screen_about_author.dart';
 import 'package:mobile/views/post/components/post_screen_app_bar.dart';
 import 'package:mobile/views/post/components/post_screen_body.dart';
@@ -34,7 +30,10 @@ class PostScreen extends StatelessWidget {
             final _scrollController = ScrollController();
 
             _scrollController.addListener(() {
-              if (_scrollController.position.userScrollDirection ==
+              if (_scrollController.position.maxScrollExtent ==
+                  _scrollController.position.pixels) {
+                _isScrollingDownProvider.value = true;
+              } else if (_scrollController.position.userScrollDirection ==
                       ScrollDirection.reverse &&
                   _isScrollingDownProvider.value) {
                 _isScrollingDownProvider.value = false;
