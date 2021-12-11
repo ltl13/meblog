@@ -4,6 +4,7 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/views/explore/components/explore_screen_recommended_list.dart';
 import 'package:mobile/views/home/components/tag.dart';
+import 'package:mobile/views/post/components/post_screen_about_author.dart';
 import 'package:mobile/views/post/components/post_screen_app_bar.dart';
 import 'package:mobile/views/post/components/post_screen_body.dart';
 import 'package:mobile/views/post/components/post_screen_footer.dart';
@@ -49,23 +50,14 @@ class PostScreen extends StatelessWidget {
                     children: [
                       PostScreenBody(post: post),
                       PostScreenListTags(post: post),
-                      SizedBox(height: 40.sp),
+                      const SizedBox(height: myPadding),
                       Container(
-                        color: myButtonTextColor,
+                        color: mySecondaryColor,
                         width: 100.w,
                         padding: const EdgeInsets.all(myPadding),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Author".toUpperCase(),
-                              style: TextStyle(
-                                color: myMainColor,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12.sp,
-                              ),
-                            ),
+                            PostScreenAboutAuthor(post: post),
                           ],
                         ),
                       ),
