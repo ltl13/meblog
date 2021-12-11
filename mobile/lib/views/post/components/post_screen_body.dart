@@ -18,9 +18,23 @@ class PostScreenBody extends StatelessWidget {
       padding: const EdgeInsets.all(myPadding),
       child: Column(
         children: [
-          AuthorWithImage(
-            post: post,
-            size: AuthorWithImageSize.big,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              AuthorWithImage(
+                post: post,
+                size: AuthorWithImageSize.big,
+              ),
+              SizedBox(width: 20.sp),
+              Text(
+                post.datePost,
+                style: TextStyle(
+                  color: mySubHeadlineColor.withOpacity(.7),
+                  fontSize: 12.sp,
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 16.sp),
           Text(
