@@ -20,7 +20,6 @@ class PostScreenBody extends StatelessWidget {
         children: [
           AuthorWithImage(
             post: post,
-            mode: AuthorWithImageMode.light,
             size: AuthorWithImageSize.big,
           ),
           SizedBox(height: 16.sp),

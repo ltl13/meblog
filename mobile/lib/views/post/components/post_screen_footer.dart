@@ -1,85 +1,83 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
+import 'package:mobile/models/post.dart';
+import 'package:mobile/views/home/components/post_card.dart';
+import 'package:mobile/views/post/components/post_screen_about_author.dart';
 import 'package:sizer/sizer.dart';
 
 class PostScreenFooter extends StatelessWidget {
   const PostScreenFooter({
     Key? key,
-    required ValueNotifier<bool> isFooterVisibleProvider,
-  })  : _isFooterVisibleProvider = isFooterVisibleProvider,
-        super(key: key);
+    required this.post,
+  }) : super(key: key);
 
-  final ValueNotifier<bool> _isFooterVisibleProvider;
+  final Post post;
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedPositioned(
-        duration: const Duration(milliseconds: 500),
-        bottom: _isFooterVisibleProvider.value ? 0 : -40.sp,
-        left: 0,
-        right: 0,
-        child: Container(
-          color: myMainColor,
-          height: 40.sp,
-          width: 100.w,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextButton.icon(
-                onPressed: null,
-                icon: Icon(
-                  Icons.thumb_up_outlined,
-                  size: 16.sp,
-                  color: myButtonColor,
-                ),
-                label: Text(
-                  "13.2k",
-                  style: TextStyle(
-                    color: myButtonColor,
-                    fontSize: 12.sp,
-                    fontFamily: 'Roboto',
-                  ),
-                ),
+    return Container(
+      color: mySecondaryColor,
+      width: 100.w,
+      padding: const EdgeInsets.symmetric(
+        vertical: myPadding,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: myPadding,
+            ),
+            child: Text(
+              "Author".toUpperCase(),
+              style: TextStyle(
+                color: myHeadlineColor,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.bold,
+                fontSize: 14.sp,
               ),
-              TextButton.icon(
-                onPressed: null,
-                icon: Icon(
-                  Icons.comment_outlined,
-                  size: 16.sp,
-                  color: myButtonColor,
-                ),
-                label: Text(
-                  "21.2k",
-                  style: TextStyle(
-                    color: myButtonColor,
-                    fontSize: 12.sp,
-                    fontFamily: 'Roboto',
-                  ),
-                ),
-              ),
-              IconButton(
-                onPressed: null,
-                icon: Icon(Icons.share, size: 16.sp, color: myButtonColor),
-              ),
-              IconButton(
-                onPressed: null,
-                icon: Icon(
-                  Icons.bookmark_add_outlined,
-                  size: 16.sp,
-                  color: myButtonColor,
-                ),
-              ),
-              PopupMenuButton(
-                itemBuilder: (context) => [],
-                icon: Icon(
-                  Icons.more_vert,
-                  size: 16.sp,
-                  color: myButtonColor,
-                ),
-              ),
-            ],
+            ),
           ),
-        ));
+          SizedBox(height: 10.sp),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: myPadding,
+            ),
+            child: PostScreenAboutAuthor(post: post),
+          ),
+          SizedBox(height: 30.sp),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: myPadding,
+            ),
+            child: Text(
+              "What you should read next".toUpperCase(),
+              style: TextStyle(
+                color: myHeadlineColor,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.bold,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(height: 10.sp),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                ...posts.map(
+                  (e) => PostCard(
+                    style: PostCardStyle.portrait,
+                    post: e,
+                  ),
+                ),
+                const SizedBox(width: myPadding / 2),
+              ],
+            ),
+          ),
+          SizedBox(height: 40.sp),
+        ],
+      ),
+    );
   }
 }

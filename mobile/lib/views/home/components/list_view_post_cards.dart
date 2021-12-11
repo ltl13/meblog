@@ -46,7 +46,7 @@ class _ListViewPostCardsState extends State<ListViewPostCards> {
                       vertical: myPadding / 2,
                     ),
                     child: PostCard(
-                      style: PostCardStyle.landscape1,
+                      style: PostCardStyle.landscape,
                       post: snapshot.data![index],
                     ),
                   ),

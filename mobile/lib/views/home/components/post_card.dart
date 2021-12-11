@@ -5,11 +5,9 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/routes/app_routes.dart';
 import 'package:mobile/views/home/components/landscape_post_card.dart';
-import 'package:mobile/views/post/components/post_screen_recommeded_post_card.dart';
-import 'package:mobile/views/post/post_screen.dart';
 import 'package:sizer/sizer.dart';
 
-enum PostCardStyle { portrait, landscape1, landscape2 }
+enum PostCardStyle { portrait, landscape }
 
 class PostCard extends StatelessWidget {
   final PostCardStyle style;
@@ -30,11 +28,9 @@ class PostCard extends StatelessWidget {
       onTapDown: (detail) {
         _tapPosition = detail.globalPosition;
       },
-      child: style == PostCardStyle.landscape1
+      child: style == PostCardStyle.landscape
           ? LandscapePostCard(post: post)
-          : style == PostCardStyle.landscape2
-              ? PostScreenRecommededPostCard(post: post)
-              : PortraitPostCard(post: post),
+          : PortraitPostCard(post: post),
     );
   }
 

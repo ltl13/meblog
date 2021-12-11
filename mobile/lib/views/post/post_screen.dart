@@ -7,6 +7,7 @@ import 'package:mobile/views/post/components/post_screen_about_author.dart';
 import 'package:mobile/views/post/components/post_screen_app_bar.dart';
 import 'package:mobile/views/post/components/post_screen_body.dart';
 import 'package:mobile/views/post/components/post_screen_footer.dart';
+import 'package:mobile/views/post/components/post_screen_nav_bar.dart';
 import 'package:mobile/views/post/components/post_screen_list_tags.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -53,44 +54,7 @@ class PostScreen extends StatelessWidget {
                       PostScreenBody(post: post),
                       PostScreenListTags(post: post),
                       const SizedBox(height: myPadding),
-                      Container(
-                        color: mySecondaryColor,
-                        width: 100.w,
-                        padding: const EdgeInsets.all(myPadding),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Author".toUpperCase(),
-                              style: TextStyle(
-                                color: myHeadlineColor,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14.sp,
-                              ),
-                            ),
-                            SizedBox(height: 10.sp),
-                            PostScreenAboutAuthor(post: post),
-                            SizedBox(height: 20.sp),
-                            Text(
-                              "Recommend".toUpperCase(),
-                              style: TextStyle(
-                                color: myHeadlineColor,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14.sp,
-                              ),
-                            ),
-                            SizedBox(height: 10.sp),
-                            ...posts.map(
-                              (e) => PostCard(
-                                style: PostCardStyle.landscape2,
-                                post: e,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      PostScreenFooter(post: post),
                     ],
                   ),
                 ),
@@ -100,8 +64,8 @@ class PostScreen extends StatelessWidget {
                   ),
                 ),
                 Consumer<ValueNotifier<bool>>(
-                  builder: (context, provider, child) => PostScreenFooter(
-                    isFooterVisibleProvider: _isScrollingDownProvider,
+                  builder: (context, provider, child) => PostScreenNavBar(
+                    isNavBarVisibleProvider: _isScrollingDownProvider,
                   ),
                 ),
               ],

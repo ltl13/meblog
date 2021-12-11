@@ -3,16 +3,13 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:sizer/sizer.dart';
 
-enum AuthorWithImageMode { light, dark }
 enum AuthorWithImageSize { small, medium, big }
 
 class AuthorWithImage extends StatelessWidget {
-  final AuthorWithImageMode mode;
   final AuthorWithImageSize size;
   const AuthorWithImage({
     Key? key,
     required this.post,
-    required this.mode,
     required this.size,
   }) : super(key: key);
 
@@ -35,9 +32,8 @@ class AuthorWithImage extends StatelessWidget {
         Text(
           post.author.name,
           style: TextStyle(
-            color: mode == AuthorWithImageMode.light
-                ? myTextColor
-                : myMainColor,
+            color:
+                myTextColor,
             fontSize: size == AuthorWithImageSize.small
                 ? 12.sp
                 : size == AuthorWithImageSize.medium
