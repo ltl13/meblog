@@ -67,5 +67,6 @@ class PostBriefInfo extends StatelessWidget {
         ),
       ],
     );
+
   }
 }

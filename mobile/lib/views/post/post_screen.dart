@@ -3,6 +3,9 @@ import 'package:flutter/rendering.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:mobile/views/explore/components/explore_screen_recommended_list.dart';
+import 'package:mobile/views/home/components/author_with_image.dart';
+import 'package:mobile/views/home/components/post_brief_info.dart';
+import 'package:mobile/views/home/components/post_card.dart';
 import 'package:mobile/views/home/components/tag.dart';
 import 'package:mobile/views/post/components/post_screen_about_author.dart';
 import 'package:mobile/views/post/components/post_screen_app_bar.dart';
@@ -56,8 +59,36 @@ class PostScreen extends StatelessWidget {
                         width: 100.w,
                         padding: const EdgeInsets.all(myPadding),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Text(
+                              "Author".toUpperCase(),
+                              style: TextStyle(
+                                color: myHeadlineColor,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                            SizedBox(height: 10.sp),
                             PostScreenAboutAuthor(post: post),
+                            SizedBox(height: 20.sp),
+                            Text(
+                              "Recommend".toUpperCase(),
+                              style: TextStyle(
+                                color: myHeadlineColor,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                            SizedBox(height: 10.sp),
+                            ...posts.map(
+                              (e) => PostCard(
+                                style: PostCardStyle.landscape2,
+                                post: e,
+                              ),
+                            ),
                           ],
                         ),
                       ),

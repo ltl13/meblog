@@ -46,7 +46,7 @@ class ExploreScreenRecommendedList extends StatelessWidget {
                     horizontal: myPadding,
                     vertical: myPadding / 2,
                   ),
-                  child: PostCard(post: e, style: PostCardStyle.landscape),
+                  child: PostCard(post: e, style: PostCardStyle.landscape1),
                 ),
               )
               .toList(),
