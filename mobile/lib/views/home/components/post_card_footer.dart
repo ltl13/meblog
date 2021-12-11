@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/views/home/components/tag.dart';
 import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
-import 'package:mobile/views/home/components/tag.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -19,8 +19,12 @@ class PostCardFooter extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          children:
-              post.tags.map((e) => Tag(tag: e, size: TagSize.small)).toList(),
+          children: post.tags.length >= 3
+              ? post.tags
+                  .map((e) => Tag(tag: e, size: TagSize.small))
+                  .toList()
+                  .sublist(0, 2)
+              : post.tags.map((e) => Tag(tag: e, size: TagSize.small)).toList(),
         ),
         Row(
           children: [
@@ -31,8 +35,10 @@ class PostCardFooter extends StatelessWidget {
                   isFavorite.value = post.isFavorite;
                 },
                 icon: Icon(
-                  isFavorite.value ? Icons.bookmark_added : Icons.bookmark_add,
-                  color: isFavorite.value ? myButtonColor : mySecondaryColor,
+                  isFavorite.value
+                      ? Icons.bookmark_added
+                      : Icons.bookmark_add_outlined,
+                  color: myButtonColor,
                 ),
               ),
             ),
