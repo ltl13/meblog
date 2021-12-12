@@ -51,7 +51,8 @@ List<Comment> comments = [
         time: "Dec 11",
       ),
     ],
-    content: "Ok, that's good",
+    content:
+        "Ok, that's good.Ok, that's good. Ok, that's good. Ok, that's good. Ok, that's good. Ok, that's good. Ok, that's good. Ok, that's good.",
     author: authors[2],
     time: "Dec 11",
   ),
