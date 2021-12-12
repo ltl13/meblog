@@ -27,7 +27,7 @@ class LandscapePostCard extends StatelessWidget {
                 Flexible(
                   flex: 1,
                   child: AuthorWithImage(
-                    post: post,
+                    author: post.author,
                     size: AuthorWithImageSize.small,
                   ),
                 ),

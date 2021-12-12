@@ -23,12 +23,11 @@ class PostBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AuthorWithImage(
-                post: post,
+                author: post.author,
                 size: AuthorWithImageSize.big,
               ),
-              SizedBox(width: 20.sp),
               Text(
-                post.datePost,
+                "  •  " + post.datePost,
                 style: TextStyle(
                   color: mySubHeadlineColor.withOpacity(.7),
                   fontSize: 12.sp,

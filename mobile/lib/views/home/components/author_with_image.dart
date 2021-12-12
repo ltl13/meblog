@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/constants.dart';
-import 'package:mobile/models/post.dart';
+import 'package:mobile/models/author.dart';
 import 'package:sizer/sizer.dart';
 
 enum AuthorWithImageSize { small, medium, big }
@@ -9,11 +9,11 @@ class AuthorWithImage extends StatelessWidget {
   final AuthorWithImageSize size;
   const AuthorWithImage({
     Key? key,
-    required this.post,
+    required this.author,
     required this.size,
   }) : super(key: key);
 
-  final Post post;
+  final Author author;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class AuthorWithImage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircleAvatar(
-          foregroundImage: AssetImage(post.author.image),
+          foregroundImage: AssetImage(author.image),
           radius: size == AuthorWithImageSize.small
               ? 8.sp
               : size == AuthorWithImageSize.medium
@@ -30,7 +30,7 @@ class AuthorWithImage extends StatelessWidget {
         ),
         SizedBox(width: 8.sp),
         Text(
-          post.author.name,
+          author.name,
           style: TextStyle(
             color:
                 myTextColor,

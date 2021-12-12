@@ -36,7 +36,7 @@ class PortraitPostCard extends StatelessWidget {
             ),
           ),
           AuthorWithImage(
-            post: post,
+            author: post.author,
             size: AuthorWithImageSize.medium,
           ),
           RichText(
