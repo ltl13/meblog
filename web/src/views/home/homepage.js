@@ -1,7 +1,7 @@
 import { Container, CssBaseline, Grid } from "@mui/material";
 import React from "react";
 import Header from "./header/header"
-import UserNavBar from "../NavBar/UserNavBar";
+import UserNavBar from "./NavBar/UserNavBar";
 import PostCards from "./postCard/postCard";
 import NewPost from "./newPost/newPosts";
 import Sidebar from "./sidebar/sidebar";
