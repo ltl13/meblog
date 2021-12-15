@@ -36,8 +36,7 @@ class PortraitPostCard extends StatelessWidget {
             ),
           ),
           AuthorWithImage(
-            post: post,
-            mode: AuthorWithImageMode.dark,
+            author: post.author,
             size: AuthorWithImageSize.medium,
           ),
           RichText(
@@ -47,7 +46,7 @@ class PortraitPostCard extends StatelessWidget {
             text: TextSpan(
               text: post.title,
               style: TextStyle(
-                color: myMainColor,
+                color: myHeadlineColor,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.bold,
                 fontSize: 16.sp,
@@ -57,7 +56,7 @@ class PortraitPostCard extends StatelessWidget {
           Text(
             post.datePost + "  •  " + post.timeReading.toString() + " min read",
             style: TextStyle(
-              color: myMainColor.withOpacity(.7),
+              color: mySubHeadlineColor.withOpacity(.7),
               fontFamily: 'Roboto',
               fontSize: 14.sp,
               fontWeight: FontWeight.normal,

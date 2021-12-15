@@ -4,8 +4,8 @@ import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/tag.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenListTags extends StatelessWidget {
-  const PostScreenListTags({
+class PostListTags extends StatelessWidget {
+  const PostListTags({
     Key? key,
     required this.post,
   }) : super(key: key);

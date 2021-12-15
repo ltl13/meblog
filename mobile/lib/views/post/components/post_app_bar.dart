@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:mobile/constants.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenAppBar extends StatelessWidget {
+class PostAppBar extends StatelessWidget {
   final ValueNotifier<bool> _isFooterVisibleProvider;
 
-  const PostScreenAppBar({
+  const PostAppBar({
     Key? key,
     required ValueNotifier<bool> isAppBarVisibleProvider,
   })  : _isFooterVisibleProvider = isAppBarVisibleProvider,

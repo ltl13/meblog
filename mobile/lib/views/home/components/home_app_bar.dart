@@ -3,11 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile/constants.dart';
 import 'package:sizer/sizer.dart';
 
-class HomeScreenAppBar extends StatelessWidget with PreferredSizeWidget {
+class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final TabController _topTabController;
   final List<String> _topTabs;
 
-  const HomeScreenAppBar({
+  const HomeAppBar({
     Key? key,
     required TabController topTabController,
     required List<String> topTabs,

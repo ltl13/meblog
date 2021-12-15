@@ -4,8 +4,8 @@ import 'package:mobile/models/post.dart';
 import 'package:mobile/views/home/components/author_with_image.dart';
 import 'package:sizer/sizer.dart';
 
-class PostScreenBody extends StatelessWidget {
-  const PostScreenBody({
+class PostBody extends StatelessWidget {
+  const PostBody({
     Key? key,
     required this.post,
   }) : super(key: key);
@@ -18,10 +18,22 @@ class PostScreenBody extends StatelessWidget {
       padding: const EdgeInsets.all(myPadding),
       child: Column(
         children: [
-          AuthorWithImage(
-            post: post,
-            mode: AuthorWithImageMode.light,
-            size: AuthorWithImageSize.big,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              AuthorWithImage(
+                author: post.author,
+                size: AuthorWithImageSize.big,
+              ),
+              Text(
+                "  •  " + post.datePost,
+                style: TextStyle(
+                  color: mySubHeadlineColor.withOpacity(.7),
+                  fontSize: 12.sp,
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 16.sp),
           Text(

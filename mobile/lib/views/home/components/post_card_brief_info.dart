@@ -3,8 +3,8 @@ import 'package:mobile/constants.dart';
 import 'package:mobile/models/post.dart';
 import 'package:sizer/sizer.dart';
 
-class PostBriefInfo extends StatelessWidget {
-  const PostBriefInfo({
+class PostCardBriefInfo extends StatelessWidget {
+  const PostCardBriefInfo({
     Key? key,
     required this.post,
   }) : super(key: key);
