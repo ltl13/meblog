@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import HomePage from './views/home/homepage';
 import { CssBaseline } from '@mui/material';
 
