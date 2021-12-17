@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import useStyles from "./UserNavBarStyle";
 
+import logo from "../../../image/logo.svg"
 
 const UserNavBar = () => {
     const classes = useStyles();
@@ -13,7 +14,7 @@ const UserNavBar = () => {
                 sx={{
                     borderBottom: "1px solid #000000",
                     padding: '1rem 2rem',
-                    backgroundColor: "#fec016",
+                    backgroundColor: "#f8eee7",
                     position: "sticky",
                     top: 0,
                     zIndex: 10,
@@ -29,9 +30,10 @@ const UserNavBar = () => {
 
                     >
                         <Grid xs={12} sm={12} md={6} lg={6}>
-                            <Typography variant="h3" component="div" className={classes.userNavBar_logo}>
+                            {/* <Typography variant="h3" component="div" className={classes.userNavBar_logo}>
                                 MeBlog
-                            </Typography>
+                            </Typography> */}
+                            <img className={classes.userNavBar_logo} src={logo}/>
                         </Grid>
                         <Grid
                             xs={12} sm={12} md={6} lg={6}
