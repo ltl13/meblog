@@ -1,11 +1,14 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 
 export const PostPage = () => {
   return (
     <AppBar>
       <Toolbar>
-        <Typography>Meblog</Typography>
+        <Typography>Luan Le</Typography>
+        <Button color="secondary" variant="contained">
+          Follow
+        </Button>
       </Toolbar>
     </AppBar>
   );
