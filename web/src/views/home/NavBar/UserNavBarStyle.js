@@ -1,9 +1,12 @@
+import { Autocomplete } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { height } from '@mui/system';
 const useStyles = makeStyles(theme => ({
     userNavBar_logo: {
         fontSize: "3rem",
         fontWeight: "700 !important",
-        fontFamily: "Playfair Display !important"
+        fontFamily: "Playfair Display !important",
+        height: 50
     },
     userNavBar_links: {
         display: 'inline-flex',
@@ -26,7 +29,6 @@ const useStyles = makeStyles(theme => ({
         fontSize: '1rem',
         fontWeight: "400"
     }
-
 }));
 
 export default useStyles;

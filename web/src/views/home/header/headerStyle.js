@@ -9,13 +9,12 @@ const useStyles = makeStyles(theme => ({
     },
     header: {
         // padding: '.5rem 3rem',
-        backgroundColor: "#fec016",
+        backgroundColor: "#f8eee7",
         // padding: '0 0 2rem 0'
     },
     header_left_content: {
         // display: "flex",
         // flexDirection: 'column',
-
     },
     left_content_title: {
         // fontSize: '64px !important'
