@@ -1,13 +1,12 @@
 import { Container, Grid, Link, Typography } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import React from 'react';
-import useStyles from './headerStyle';
 
 import Lottie from 'react-lottie';
 import blogGirl from '../../../lottie-animation/blog-girl.json';
-
+import theme from '../theme';
 const Header = () => {
-  const classes = useStyles();
   const blogGirlOptions = {
     loop: true,
     autoplay: true,
@@ -18,72 +17,115 @@ const Header = () => {
   };
   return (
     <React.Fragment>
-      <Box
-        sx={{
-          borderBottom: '1px solid #000000',
-          padding: '0 2rem 2rem 2rem',
-          backgroundColor: '#f8eee7',
-        }}
-      >
-        <Container maxWidth="xl">
-          <Grid
-            container
-            direction="row"
-            justifyContent="space-evenly"
-            className={classes.header}
-          >
+      <ThemeProvider theme={theme}>
+        <Box
+          sx={{
+            borderBottom: '1px solid #000000',
+            padding: {
+              xs: '0rem 0rem 1rem 0rem',
+              sm: '0rem 0rem 2rem 0rem',
+              lg: '0 2rem 2rem 2rem',
+            },
+            backgroundColor: '#f8eee7',
+          }}
+        >
+          <Container maxWidth="xl">
             <Grid
-              item
               container
-              direction="column"
-              alignItems="flex-start"
-              align
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              className={classes.header_left_content}
-            >
-              <Typography
-                variant="h1"
-                component="div"
-                className={classes.left_content_title}
-              >
-                Meblog is a place to write, read, and connect
-              </Typography>
-              <Typography
-                variant="h6"
-                component="div"
-                className={classes.left_content_subtitle}
-              >
-                It's easy and free to post your thinking on any topic and
-                connect with millions of readers.
-              </Typography>
-              <Link
-                mt={2}
-                href="#"
-                underline="none"
-                color="#000000"
-                className={classes.start_button}
-              >
-                Start Writing
-              </Link>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              className={classes.header_right_content}
               direction="row"
-              justifyContent="flex-end"
+              justifyContent="flex-start"
+              sx={{ position: 'relative' }}
             >
-              <Lottie options={blogGirlOptions} />
+              <Grid
+                item
+                container
+                direction="column"
+                alignItems="flex-start"
+                align
+                xs={12}
+                sm={8}
+                md={8}
+                lg={6}
+              >
+                <Typography
+                  variant="h1"
+                  component="span"
+                  sx={{
+                    fontFamily: "'Playfair Display'",
+                    display: {
+                      xs: 'none',
+                      sm: 'none',
+                      md: 'none',
+                      lg: 'block',
+                    },
+                    zIndex: 2,
+                  }}
+                >
+                  Meblog is a place to write, read, and connect
+                </Typography>
+                <Typography
+                  variant="h1"
+                  component="div"
+                  sx={{
+                    fontFamily: "'Playfair Display'",
+                    display: { md: 'block', lg: 'none' },
+                    zIndex: 2,
+                  }}
+                >
+                  Meblog write, read, and connect
+                </Typography>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    display: { xs: 'none', sm: 'none', md: 'block' },
+                    zIndex: 2,
+                  }}
+                >
+                  It's easy and free to post your thinking on any topic and
+                  connect with millions of readers.
+                </Typography>
+                <Link
+                  mt={2}
+                  href="#"
+                  underline="none"
+                  color="secondary.primaryText"
+                  sx={{
+                    padding: '0.5rem 1rem',
+                    border: '1px solid #000000',
+                    borderRadius: '20px',
+                    backgroundColor: 'secondary.background',
+                  }}
+                >
+                  Start Writing
+                </Link>
+              </Grid>
+              <Box
+                sx={{
+                  position: 'absolute',
+                  right: '0',
+                  bottom: 0,
+                  top: 0,
+                  zIndex: 1,
+                }}
+              >
+                <Lottie options={blogGirlOptions} />
+              </Box>
+              {/* <Grid
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                direction="row"
+                justifyContent="flex-end"
+              >
+                <Lottie options={blogGirlOptions} />
+              </Grid> */}
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
+          </Container>
+        </Box>
+      </ThemeProvider>
     </React.Fragment>
   );
 };

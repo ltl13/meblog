@@ -1,98 +1,66 @@
-import { Container, CssBaseline, Grid, Link, Typography } from '@mui/material';
+import { Container, CssBaseline, Link, Stack } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import useStyles from './UserNavBarStyle';
-
 import logo from '../../../image/logo.svg';
 
 const UserNavBar = () => {
-  const classes = useStyles();
   return (
     <React.Fragment>
       <CssBaseline />
       <Box
         sx={{
           borderBottom: '1px solid #000000',
-          padding: '1rem 2rem',
+          padding: { xs: '0.25rem 0', md: '0.25rem 2rem' },
           backgroundColor: '#f8eee7',
           position: 'sticky',
           top: 0,
-          zIndex: 10,
+          zIndex: 20,
           transition: '350ms ease-in-out',
         }}
-        className={classes.userNavBar}
       >
         <Container maxWidth="xl">
-          <Grid container alignItems="center">
-            <Grid xs={12} sm={12} md={6} lg={6}>
-              {/* <Typography variant="h3" component="div" className={classes.userNavBar_logo}>
-                                MeBlog
-                            </Typography> */}
-              <img className={classes.userNavBar_logo} src={logo} />
-            </Grid>
-            <Grid
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              container
-              direction="row"
-              justifyContent="flex-end"
-            >
-              <ul className={classes.userNavBar_links}>
-                <li>
-                  <Link
-                    href="#"
-                    underline="none"
-                    color="#000000"
-                    className={classes.userNavBar_link_item}
-                  >
-                    Our story
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className={classes.userNavBar_link_item}
-                    underline="none"
-                    color="#000000"
-                  >
-                    Membership
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className={classes.userNavBar_link_item}
-                    underline="none"
-                    color="#000000"
-                  >
-                    Write
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className={classes.userNavBar_link_item}
-                    underline="none"
-                    color="#000000"
-                  >
-                    Sign in
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className={`${classes.userNavBar_link_item} ${classes.getStart_item}`}
-                    underline="none"
-                    color="#ffffff"
-                  >
-                    Get started
-                  </Link>
-                </li>
-              </ul>
-            </Grid>
-          </Grid>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Link href="/">
+              <Box component="img" src={logo} sx={{ height: 50 }}></Box>
+            </Link>
+            <Stack direction="row" alignItems="center" spacing={2}>
+              <Link
+                href="#"
+                underline="none"
+                color="#000000"
+                sx={{ display: { xs: 'none', md: 'block' } }}
+              >
+                Our story
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                color="#000000"
+                sx={{ display: { xs: 'none', md: 'block' } }}
+              >
+                Write
+              </Link>
+              <Link href="#" underline="none" color="#000000">
+                Sign in
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                color="#ffffff"
+                sx={{
+                  backgroundColor: '#000000',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '20px',
+                }}
+              >
+                Get started
+              </Link>
+            </Stack>
+          </Stack>
         </Container>
       </Box>
     </React.Fragment>

@@ -1,13 +1,12 @@
-import { Chip, Link } from '@mui/material';
+import { Chip } from '@mui/material';
 import { withStyles } from '@mui/styles';
-import { Box } from '@mui/system';
 import React from 'react';
 
 const StyleChip = withStyles({
   root: {
     color: '#757575',
     backgroundColor: '#F0F0F0',
-    margin: '0 0.5rem 0.5rem 0',
+    // margin: '0 0.5rem 0.5rem 0',
     fontFamily: 'Roboto',
     fontSize: '1rem',
     fontWeight: '400',
@@ -15,9 +14,9 @@ const StyleChip = withStyles({
   },
 })(Chip);
 
-const CategoryItem = props => {
-  const { name, href } = props;
-  return <StyleChip label={name} component="a" href="#" clickable />;
+const TopicItem = props => {
+  const { name, href, ...other } = props;
+  return <StyleChip label={name} component="a" href="#" clickable {...other} />;
 };
 
-export default CategoryItem;
+export default TopicItem;

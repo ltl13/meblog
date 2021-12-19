@@ -38,7 +38,6 @@ const Sidebar = props => {
           flexDirection: 'row',
           flexWrap: 'wrap',
           paddingBottom: '1.5rem',
-          borderBottom: '1px solid #757575',
         }}
       >
         {categories.map(item => {
