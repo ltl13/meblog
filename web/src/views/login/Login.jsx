@@ -10,7 +10,7 @@ function closeForm() {
 
 const Login = () => {
   return (
-    <div className="login open">
+    <div className="login">
       <div className="wrapper">
         <div className="iconbutton">
           <img src={X} alt="" className="icon x" onClick={closeForm} />
