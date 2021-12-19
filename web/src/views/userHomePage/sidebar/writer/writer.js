@@ -44,7 +44,8 @@ const Writer = props => {
             fontWeight: following ? 400 : 500,
             '&:hover': {
               backgroundColor: following ? '#000000' : '#ffffff',
-              color: following ? '#ffffff' : '#757575',
+              color: following ? '#ffffff' : '#000000',
+              borderColor: '#000000',
             },
           }}
           onClick={() => {
