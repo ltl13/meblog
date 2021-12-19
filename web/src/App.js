@@ -1,5 +1,5 @@
 import HomePage from "./views/home/homepage";
-import { PostPage } from "./views/post/postpage";
+import { PostPage } from "./views/post/post_page";
 
 import { CssBaseline } from "@mui/material";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
