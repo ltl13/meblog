@@ -44,7 +44,14 @@ const UserNavBar = () => {
               >
                 Write
               </Link>
-              <Link href="#" underline="none" color="#000000">
+              <Link
+                href="#"
+                underline="none"
+                color="#000000"
+                onClick={() =>
+                  document.querySelector('.login').classList.add('open')
+                }
+              >
                 Sign in
               </Link>
               <Link
