@@ -6,14 +6,15 @@ import Footer from './footer/footer';
 import Writer from './writer/writer';
 
 function InitCategories() {
-  const categories = [];
-  for (let i = 0; i < 10; i++) {
-    const name = 'programing learning listening'.slice(
-      Math.ceil(Math.random() * 10),
-      Math.ceil(Math.random() * 20 + 4),
-    );
-    categories.push({ name: name, link: '#' });
-  }
+  const categories = [
+    { name: 'E-learning', link: '#' },
+    { name: 'Cryptocurrency', link: '#' },
+    { name: 'Accessibility', link: '#' },
+    { name: 'Family', link: '#' },
+    { name: 'Science', link: '#' },
+    { name: 'Education', link: '#' },
+    { name: 'Covid-19', link: '#' },
+  ];
   return categories;
 }
 
@@ -22,28 +23,32 @@ const Sidebar = props => {
   const writers = [
     {
       name: 'Captain America',
-      description: 'Novelist: Veil, Breach, Borderless, Bandwidth, Neon',
+      description:
+        'Captain America is a superhero appearing in American comic books.',
       avatar:
         'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
       href: '#',
     },
     {
       name: 'Thor',
-      description: 'Novelist: Veil, Breach, Borderless, Bandwidth, Neon',
+      description:
+        'Thor Odinson, or simply Thor is a fictional character appearing in American comic.',
       avatar:
         'https://ss-images.saostar.vn/pc/1594175247996/avengers-endgame-thor-feature.jpg',
       href: '#',
     },
     {
       name: 'Iron Man',
-      description: 'Novelist: Veil, Breach, Borderless, Bandwidth, Neon',
+      description:
+        'Iron Man is a superhero appearing in American comic books published by Marvel Comics',
       avatar:
         'https://media.vov.vn/sites/default/files/styles/large/public/2020-11/1-1605511846508372305113.jpg',
       href: '#',
     },
     {
       name: 'Spider Man',
-      description: 'Novelist: Veil, Breach, Borderless, Bandwidth, Neon',
+      description:
+        'Spider-Man is a superhero created by writer-editor Stan Lee and writer-artist Steve Ditko',
       avatar:
         'https://br.atsit.in/vi/wp-content/uploads/2021/06/video-concept-spider-man-4-tiet-lo-tran-chien-sieu-pham-tu-phan-tiep-theo-bi-loai-bo-cua-sam-raimi-spider-man-4.jpg',
       href: '#',

@@ -31,7 +31,7 @@ const UserHomePage = () => {
                 md={8}
                 lg={8}
                 sx={{
-                  borderRight: { md: '1px solid #757575' },
+                  borderRight: { md: '1px solid #c0c0c0' },
                 }}
               >
                 <Header />
@@ -43,7 +43,7 @@ const UserHomePage = () => {
                   paddingTop={4}
                   sx={{
                     paddingRight: { md: '2rem' },
-                    borderTop: { md: '2px solid #757575' },
+                    borderTop: { md: '1px solid #c0c0c0' },
                   }}
                 >
                   <NewPost />

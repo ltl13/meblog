@@ -3,14 +3,15 @@ import React, { Fragment } from 'react';
 import TopicItem from 'views/userHomePage/Topic/Topic';
 
 function InitTopics() {
-  const categories = [];
-  for (let i = 0; i < 10; i++) {
-    const name = 'programing learning listening'.slice(
-      Math.ceil(Math.random() * 10),
-      Math.ceil(Math.random() * 20 + 4),
-    );
-    categories.push({ name: name, href: '#' });
-  }
+  const categories = [
+    { name: 'E-learning', link: '#' },
+    { name: 'Cryptocurrency', link: '#' },
+    { name: 'Accessibility', link: '#' },
+    { name: 'Family', link: '#' },
+    { name: 'Science', link: '#' },
+    { name: 'Education', link: '#' },
+    { name: 'Covid-19', link: '#' },
+  ];
   return categories;
 }
 
@@ -39,15 +40,17 @@ const Topics = props => {
         <Typography
           variant="h7"
           sx={{
+            fontSize: 16,
             fontWeight: 600,
             minWidth: '90px',
-            paddingBottom: '10px',
-            color: '#757575',
+            paddingBottom: '18px',
+            color: '#000000',
           }}
         >
           Your topics
         </Typography>
         <Stack
+          marginLeft="10px"
           direction="row"
           alignItems="center"
           sx={{
