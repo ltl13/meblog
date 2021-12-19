@@ -1,8 +1,7 @@
-import HomePage from "./views/home/homepage";
-import { PostPage } from "./views/post/post_page";
+import HomePage from './views/home/homepage';
 
-import { CssBaseline } from "@mui/material";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <div className="App">
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/post" element={<PostPage />} />
         </Routes>
       </div>
     </Router>
