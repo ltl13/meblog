@@ -13,8 +13,8 @@ function post() {
       },
       title: 'Cách tôi vượt qua trầm cảm trong cuộc sống',
       subtitle:
-        'Your brain is the control center for all activities in your body. It regulates your breathing, heartbeat, and many more vital activities.',
-      time: 'Nov 3',
+        'Bộ não của bạn là trung tâm điều khiển mọi hoạt động trong cơ thể. Nó điều chỉnh nhịp thở, nhịp tim và nhiều hoạt động quan trọng khác của bạn.',
+      time: '3 tháng 11',
       timeSpend: '8',
       category: {
         name: 'Blockchain',

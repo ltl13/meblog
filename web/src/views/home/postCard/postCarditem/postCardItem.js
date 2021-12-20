@@ -58,7 +58,7 @@ const PostCardItem = props => {
                   }}
                 >
                   {' '}
-                  Title read, and connect
+                  Đọc, chia sẻ và kết nối
                 </Box>
               </Typography>
             </Link>
@@ -75,8 +75,7 @@ const PostCardItem = props => {
               }}
             >
               {' '}
-              Title itle MeBlog is a place to write, r MeBlog is a place to
-              write, read, and connect
+              Meblog là nơi bạn có thể đọc, chia sẻ và kết nối
             </Box>
           </Link>
           <Typography

@@ -61,7 +61,7 @@ const Header = () => {
                     zIndex: 2,
                   }}
                 >
-                  Meblog nơi bạn viết, đọc, và kết nối
+                  Meblog nơi để đọc, chia sẻ và kết nối
                 </Typography>
                 <Typography
                   variant="h1"
@@ -72,7 +72,7 @@ const Header = () => {
                     zIndex: 2,
                   }}
                 >
-                  Meblog viết, đọc, và kết nối
+                  Meblog đọc, chia sẻ và kết nối
                 </Typography>
                 <Typography
                   variant="h6"
@@ -82,8 +82,8 @@ const Header = () => {
                     zIndex: 2,
                   }}
                 >
-                  It's easy and free to post your thinking on any topic and
-                  connect with millions of readers.
+                  Thật dễ dàng để thể hiện cảm nghĩ của bạn về bất kỳ chủ đề nào
+                  và kết nối với hàng triệu độc giả.
                 </Typography>
                 <Link
                   mt={2}
