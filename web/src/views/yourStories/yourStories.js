@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import UserNavBar from 'views/userHomePage/NavBar/UserNavBar';
 import Sidebar from 'views/userHomePage/sidebar/sidebar';
 import StoriesTabs from './storiesTabs';
-import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
 
 const YourStories = () => {
   return (
@@ -22,44 +21,27 @@ const YourStories = () => {
                   fontFamily="Roboto"
                   fontStyle="normal"
                   marginLeft="25px"
+                  marginTop="-15px"
                 >
-                  Your stories
+                  Bài viết của bạn
                 </Box>
-                <Box>
+                <Box marginRight="25px">
                   <Link
-                    href="#"
+                    href="/write"
                     underline="none"
                     color="#ffffff"
-                    marginLeft="1rem !important"
                     fontFamily="Roboto"
                     padding="0.75rem 1.5rem"
                     backgroundColor="#ab92bf"
                     borderRadius="25px"
                     fontSize="1rem"
                     fontWeight="400"
-                    marginY="auto"
                     whiteSpace="no-wrap"
-                    display={{ xs: 'none' }}
+                    display={{ xs: 'none', sm: 'block' }}
                   >
-                    Write a story
-                  </Link>
-                  <Link
-                    href="#"
-                    underline="none"
-                    color="#ffffff"
-                    fontFamily="Roboto"
-                    backgroundColor="#ab92bf"
-                    borderRadius="50%"
-                    fontSize="1rem"
-                    fontWeight="400"
-                    marginY="auto"
-                    display={{ lg: 'none' }}
-                  >
-                    <DriveFileRenameOutlineRoundedIcon />
+                    Bài viết mới
                   </Link>
                 </Box>
-
-                {/* <Box marginTop="1.5rem" marginRight="25px"></Box> */}
               </Box>
               <StoriesTabs />
             </Grid>

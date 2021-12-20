@@ -3,7 +3,7 @@ import React from 'react';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-const StoryCard = () => {
+const StoryCard = props => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -35,7 +35,7 @@ const StoryCard = () => {
                   fontFamily="Roboto"
                   fontStyle="normal"
                 >
-                  5 websites that will pay you every single day
+                  {props.title}
                 </Box>
               </Typography>
             </Link>
@@ -50,10 +50,7 @@ const StoryCard = () => {
               fontFamily="Roboto"
               fontStyle="normal"
             >
-              I make 1000$ in a week by working at home — Hey what’s good
-              Friends, I got something exciting to share with you today. I’m
-              gonna show you 05 websites that will pay you every single day just
-              by working with them from...
+              {props.subtitle}
             </Box>
           </Link>
 
@@ -65,7 +62,7 @@ const StoryCard = () => {
               fontWeight="400"
               color="#757575"
             >
-              Last edited 6 days ago · Dec 9 2021 · 10 min read (2366 words)
+              Chỉnh sữa lần cuối 6 ngày trước · Dec 9 2021 · 10 phút đọc (2366 từ)
               <span>
                 <Link
                   href="#"
@@ -96,9 +93,9 @@ const StoryCard = () => {
                     horizontal: 'left',
                   }}
                 >
-                  <MenuItem onClick={handleClose}>Edit story</MenuItem>
-                  <MenuItem onClick={handleClose}>Delete story</MenuItem>
-                  <MenuItem onClick={handleClose}>View stats</MenuItem>
+                  <MenuItem onClick={handleClose}>Chỉnh sữa</MenuItem>
+                  <MenuItem onClick={handleClose}>Xóa</MenuItem>
+                  <MenuItem onClick={handleClose}>Thống kê</MenuItem>
                 </Menu>
               </span>
             </Box>
