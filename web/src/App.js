@@ -25,6 +25,7 @@ function App() {
           <Route exact path="/me" element={<YourList />} />
           <Route exact path="/user/yourStories" element={<YourStories />} />
           <Route exact path="/write" element={<WritePage />} />
+          <Route exact path="/edit" element={<WritePage edit={true} />} />
           <Route exact path="/404" element={<PageNotFound />} />
           <Route exact path="/:user/:post" element={<ReadPage />} />
           {/* <Route exact path="/:user" element={<ReadPage />} /> */}
