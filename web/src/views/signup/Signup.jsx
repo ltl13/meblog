@@ -1,5 +1,5 @@
-import X from "../../image/x.png";
-import "./signup.css";
+import X from '../../image/x.png';
+import './signup.css';
 
 function closeForm() {
   document.querySelector('.signup').classList.remove('open');
@@ -21,8 +21,8 @@ const Signup = () => {
           Click "Sign in" to agree to our Terms of service and acknowledge that
           our Privacy Policy applies to you
         </h3>
-        </div>
+      </div>
     </div>
-)
-}
-export default Signup
+  );
+};
+export default Signup;

@@ -1,7 +1,6 @@
 import HomePage from './views/home/homepage';
-
-import { CssBaseline } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import WritePage from 'views/WritePage';
 import UserHomePage from 'views/userHomePage/userHomepage';
 import YourList from 'views/YourList/YourList';
 
@@ -12,13 +11,13 @@ import Signup from 'views/signup/Signup';
 function App() {
   return (
     <Router>
-      <CssBaseline />
       <div className="App">
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/user" element={<UserHomePage />} />
           <Route exact path="/me" element={<YourList />} />
           <Route exact path="/user/yourStories" element={<YourStories />} />
+          <Route exact path="/write" element={<WritePage />} />
         </Routes>
       </div>
       <div>

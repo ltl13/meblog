@@ -58,7 +58,7 @@ const UserNavBar = () => {
                 href="#"
                 underline="none"
                 color="#ffffff"
-                onClick={()=>
+                onClick={() =>
                   document.querySelector('.signup').classList.add('open')
                 }
                 sx={{

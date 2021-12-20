@@ -1,85 +1,85 @@
-.signup{
-    height: 100%;
-    width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
+.signup {
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.wrapper{
-    width: 20%;
-    height: 80px;
-    margin: 20px;
-    min-width: 350px;
-    min-height: 500px;
-    -webkit-box-shadow: 0px 5px 33px -21px rgba(66 88 60);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 5px;
-    position: relative;
-    box-sizing: border-box;
-    background: #fff;
+.wrapper {
+  width: 20%;
+  height: 80px;
+  margin: 20px;
+  min-width: 350px;
+  min-height: 500px;
+  -webkit-box-shadow: 0px 5px 33px -21px rgba(66 88 60);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
 }
 
-.wrapper h1{
-    font-size: 20;
+.wrapper h1 {
+  font-size: 20;
 }
 
-.iconbutton{
-    width: 150px;
-    padding: 15px 25px;
-    border-radius: 5px;
-    display: flex;
-    margin: 10px;
+.iconbutton {
+  width: 150px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  display: flex;
+  margin: 10px;
 }
 
-.iconbutton .x{
-    width: 5%;
-    display: flex;
-    position: absolute;
-    right: 10px;
-    top: 10px;
+.iconbutton .x {
+  width: 5%;
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
-.wrapper input{
-    border: 1px  solid;
-    border-radius: 50px;
-    padding: 20px;
-    font-size: 16px;
-    width: 80%;
-    display: block;
-    margin: 10px;
-    box-shadow: 5px 5px #ccc;
+.wrapper input {
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 20px;
+  font-size: 16px;
+  width: 80%;
+  display: block;
+  margin: 10px;
+  box-shadow: 5px 5px #ccc;
 }
 
-.iconbutton img{
-    width: 100%;
-    display: block;
+.iconbutton img {
+  width: 100%;
+  display: block;
 }
 
-.wrapper h3{
-    font-size: 12px;
-    color: #ccc;
-    padding: 20px;
-    font-weight: lighter;
-    display: inline;
-    align-items: center;
-    text-align: center;
+.wrapper h3 {
+  font-size: 12px;
+  color: #ccc;
+  padding: 20px;
+  font-weight: lighter;
+  display: inline;
+  align-items: center;
+  text-align: center;
 }
 
-.wrapper a{
-    color: rgb(31, 170, 170);
-    text-decoration: none;
+.wrapper a {
+  color: rgb(31, 170, 170);
+  text-decoration: none;
 }
 
-.open{
-    display: flex;
-    z-index: 100;
+.open {
+  display: flex;
+  z-index: 100;
 }
