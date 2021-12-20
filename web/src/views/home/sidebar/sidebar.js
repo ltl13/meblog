@@ -7,11 +7,11 @@ import Footer from './footer/footer';
 function InitCategories() {
   const categories = [
     { name: 'E-learning', link: '#' },
-    { name: 'Cryptocurrency', link: '#' },
-    { name: 'Accessibility', link: '#' },
-    { name: 'Family', link: '#' },
-    { name: 'Science', link: '#' },
-    { name: 'Education', link: '#' },
+    { name: 'Tiền ảo', link: '#' },
+    { name: 'Âm nhạc', link: '#' },
+    { name: 'Gia đình', link: '#' },
+    { name: 'Khoa học', link: '#' },
+    { name: 'Giáo dục', link: '#' },
     { name: 'Covid-19', link: '#' },
   ];
   return categories;
@@ -31,7 +31,7 @@ const Sidebar = props => {
           fontWeight: 'bold',
         }}
       >
-        DISCOVER MORE OF WHAT MATTERS TO YOU
+        KHÁM PHÁ NHỮNG CHỦ ĐỀ KHÁC
       </Typography>
       <Box
         sx={{
