@@ -7,6 +7,7 @@ import {
   Divider,
   Grid,
   IconButton,
+  Link,
   MenuItem,
   Slide,
   Stack,
@@ -15,6 +16,8 @@ import {
 } from '@mui/material';
 import CustomizeButton from 'components/CustomizeButton';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import Chip from '@mui/material/Chip';
+import Autocomplete from '@mui/material/Autocomplete';
 import Dante from 'Dante2';
 import logo from 'image/logo.svg';
 import React, { useState } from 'react';
@@ -105,6 +108,7 @@ function WritePage(props) {
           right: 0,
           left: 0,
           zIndex: 10,
+          backgroundColor: '#f8eee7',
         }}
       >
         <Box
@@ -118,7 +122,10 @@ function WritePage(props) {
             m: '0 auto',
           }}
         >
-          <img src={logo} alt="logo" style={{ height: '50px' }} />
+          <Link href="/">
+            <img src={logo} alt="logo" style={{ height: '50px' }} />
+          </Link>
+
           <Stack direction="row" spacing="10px" sx={{ alignItems: 'center' }}>
             <CustomizeButton
               height="30px"
@@ -131,7 +138,7 @@ function WritePage(props) {
                 handleOpenPublishDialog();
               }}
             >
-              Xuất bản
+              Đăng bài
             </CustomizeButton>
 
             {/* <IconButton
@@ -153,6 +160,7 @@ function WritePage(props) {
             </IconButton>
 
             <Avatar
+              src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
               onClick={e => {
                 setAnchorEl(e.currentTarget);
               }}
@@ -254,7 +262,7 @@ function WritePage(props) {
           <Grid item xs={5} sm={12} md={12} lg={5}>
             <Stack spacing="15px">
               <TextField
-                focused
+                // focused
                 multiline
                 value={title}
                 onChange={e => setTitle(e.target.value)}
@@ -266,7 +274,7 @@ function WritePage(props) {
                 }}
               />
               <TextField
-                focused
+                // focused
                 multiline
                 value={subTitle}
                 onChange={e => setSubTitle(e.target.value)}
@@ -274,7 +282,30 @@ function WritePage(props) {
                 variant="standard"
                 placeholder="Tiêu đề phụ"
               />
-
+              <Autocomplete
+                backgroundColor="#fff"
+                multiple
+                id="tags-filled"
+                options={tags.map(option => option)}
+                freeSolo
+                renderTags={(value, getTagProps) =>
+                  value.map((option, index) => (
+                    <Chip
+                      variant="outlined"
+                      label={option}
+                      {...getTagProps({ index })}
+                    />
+                  ))
+                }
+                renderInput={params => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    // label="Add a tags"
+                    placeholder="Thêm thẻ chủ đề..."
+                  />
+                )}
+              />
               <CustomizeButton
                 height="40px"
                 width="100px"
@@ -295,5 +326,7 @@ function WritePage(props) {
     </>
   );
 }
+
+const tags = ['Education', 'Marvel Studio', 'Javascript', 'Cryptocurrentcy'];
 
 export default WritePage;
