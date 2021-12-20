@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { Box, fontFamily } from '@mui/system';
+import { Box } from '@mui/system';
 import React from 'react';
 import CategoryItem from './category/categoryItem';
 import Footer from './footer/footer';

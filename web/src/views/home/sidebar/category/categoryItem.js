@@ -1,6 +1,5 @@
-import { Chip, Link } from '@mui/material';
+import { Chip } from '@mui/material';
 import { withStyles } from '@mui/styles';
-import { Box } from '@mui/system';
 import React from 'react';
 
 const StyleChip = withStyles({
