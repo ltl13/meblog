@@ -15,6 +15,7 @@ import Signup from 'views/signup/Signup';
 import Settings from 'views/Setting/Seting';
 import PageNotFound from 'views/PageNotFound';
 import ReadPage from 'views/ReadPage';
+import ListView from 'views/ListView/ListView';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/write" element={<WritePage />} />
           <Route exact path="/404" element={<PageNotFound />} />
           <Route exact path="/:user/:post" element={<ReadPage />} />
+          <Route path="/list/:id" element={<ListView />} />
           {/* <Route exact path="/:user" element={<ReadPage />} /> */}
 
           <Route

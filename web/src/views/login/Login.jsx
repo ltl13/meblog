@@ -29,7 +29,16 @@ const Login = () => {
             <img src={Github} alt="" className="icon"></img>
           </div>
         </div>
-        <a href="">Sign in</a>
+        <a
+          href="#"
+          onClick={event => {
+            event.preventDefault();
+            document.querySelector('.login').classList.remove('open');
+            document.querySelector('.signup').classList.add('open');
+          }}
+        >
+          Sign in
+        </a>
         <h3>
           Click "Sign in" to agree to our Terms of service and acknowledge that
           our Privacy Policy applies to you

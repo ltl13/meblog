@@ -87,7 +87,7 @@ const Header = () => {
                 </Typography>
                 <Link
                   mt={2}
-                  href="/signup"
+                  href="#"
                   underline="none"
                   color="secondary.primaryText"
                   sx={{
@@ -96,6 +96,9 @@ const Header = () => {
                     borderRadius: '20px',
                     backgroundColor: 'secondary.background',
                   }}
+                  onClick={() =>
+                    document.querySelector('.login').classList.add('open')
+                  }
                 >
                   Bắt đầu viết
                 </Link>
@@ -111,17 +114,6 @@ const Header = () => {
               >
                 <Lottie options={blogGirlOptions} />
               </Box>
-              {/* <Grid
-                item
-                xs={12}
-                sm={12}
-                md={6}
-                lg={6}
-                direction="row"
-                justifyContent="flex-end"
-              >
-                <Lottie options={blogGirlOptions} />
-              </Grid> */}
             </Grid>
           </Container>
         </Box>

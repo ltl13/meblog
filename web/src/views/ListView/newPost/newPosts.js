@@ -3,11 +3,12 @@ import React from 'react';
 import NewPostItem from './newPostItem/newPostItem';
 import { posts } from '../../../data/posts';
 
-const NewPost = () => {
+const NewPost = props => {
+  const { list, ...other } = props;
   const postList = posts;
   return (
     <Stack sx={{}}>
-      {postList.map(item => {
+      {list.stories.map(item => {
         var newObj = { ...item };
         const date = new Date();
         newObj.time = date.toLocaleDateString();

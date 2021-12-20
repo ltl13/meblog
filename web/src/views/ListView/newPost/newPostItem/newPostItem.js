@@ -1,9 +1,35 @@
-import { Avatar, CssBaseline, Link, Stack, Typography } from '@mui/material';
+import {
+  Avatar,
+  CssBaseline,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
+import BookMarkDialog from '../BookMarkDialog/BookMarkDialog';
 const NewPostItem = props => {
   const { post } = props;
+  const [bookmarkAdded, setBookmarkAdded] = useState(1);
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const openBookmarkDialog = () => {
+    setBookmarkAdded(!bookmarkAdded);
+    setOpenDialog(true);
+  };
+
+  const closeBookMarkDialog = () => {
+    setOpenDialog(false);
+  };
+
+  const addBookMark = event => {
+    if (event.target.checked) setBookmarkAdded(bookmarkAdded + 1);
+    else setBookmarkAdded(bookmarkAdded - 1);
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -46,7 +72,6 @@ const NewPostItem = props => {
                 fontWeight: 'bold',
                 fontFamily: 'Roboto',
                 fontStyle: 'normal',
-                maxLines: 2,
               }}
             >
               {post.title}
@@ -54,7 +79,7 @@ const NewPostItem = props => {
           </Link>
           <Typography
             variant="subtitle1"
-            component="div"
+            component="h6"
             sx={{
               color: '#757575',
               fontWeight: '400',
@@ -64,7 +89,6 @@ const NewPostItem = props => {
                 xs: 'none',
                 sm: 'none',
                 md: 'block',
-                maxLines: 2,
               },
             }}
           >
@@ -88,9 +112,9 @@ const NewPostItem = props => {
                   fontStyle: 'normal',
                 }}
               >
-                {`${post.time} - ${post.timeSpend}`} phút để đọc
+                Tiếp tục - {post.timeSpend} phút
               </Typography>
-              <Link underline="none" href="#">
+              <Link underline="none" href={post.topic[0]}>
                 <Typography variant="h2" component="div">
                   <Box
                     sx={{
@@ -109,17 +133,25 @@ const NewPostItem = props => {
                 </Typography>
               </Link>
             </Stack>
-            <Link
-              href="#"
-              underline="none"
-              color="#757575"
-              onClick={event => {
-                event.preventDefault();
-                document.querySelector('.login').classList.add('open');
-              }}
-            >
-              <BookmarkAddOutlinedIcon></BookmarkAddOutlinedIcon>
-            </Link>
+            <Box sx={{ position: 'relative' }}>
+              <IconButton
+                onClick={() => {
+                  openBookmarkDialog();
+                }}
+              >
+                {bookmarkAdded ? (
+                  <BookmarkAddedIcon sx={{ color: '#000000' }} />
+                ) : (
+                  <BookmarkAddOutlinedIcon />
+                )}
+              </IconButton>
+              {openDialog && (
+                <BookMarkDialog
+                  onClose={closeBookMarkDialog}
+                  onAdded={addBookMark}
+                />
+              )}
+            </Box>
           </Stack>
         </Box>
         <Box
@@ -148,6 +180,7 @@ const NewPostItem = props => {
             objectFit: 'cover',
           }}
         />
+        {/* </Box> */}
       </Box>
     </React.Fragment>
   );

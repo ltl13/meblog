@@ -68,12 +68,12 @@ const Sidebar = props => {
           paddingBottom: '1.5rem',
         }}
       >
-        {categories.map(item => {
+        {categories.map((item, index) => {
           return (
             <TopicItem
+              key={index}
               name={item.name}
               link={item.link}
-              marginBottom={1}
               sx={{
                 marginBottom: '0.5rem',
                 marginRight: '0.5rem',
@@ -92,8 +92,8 @@ const Sidebar = props => {
           Tác giả nổi bật
         </Typography>
 
-        {writers.map(item => {
-          return <Writer writer={item} />;
+        {writers.map((item, index) => {
+          return <Writer key={index} writer={item} />;
         })}
       </Stack>
       <Footer />

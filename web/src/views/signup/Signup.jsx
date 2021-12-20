@@ -16,7 +16,16 @@ const Signup = () => {
         <input type="text" placeholder="User name"></input>
         <input type="password" placeholder="Password"></input>
         <input type="password" placeholder="Confirm password"></input>
-        <a href="">Sign up</a>
+        <a
+          href="#"
+          onClick={event => {
+            event.preventDefault();
+            document.querySelector('.signup').classList.remove('open');
+            document.querySelector('.login').classList.add('open');
+          }}
+        >
+          Sign up
+        </a>
         <h3>
           Click "Sign in" to agree to our Terms of service and acknowledge that
           our Privacy Policy applies to you

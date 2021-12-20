@@ -14,7 +14,7 @@ const Writer = props => {
           justifyContent="flex-start"
           sx={{ padding: '0 0.75rem' }}
         >
-          <Typography variant="h7" sx={{ fontWeight: 500 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
             {writer.name}
           </Typography>
           <Typography

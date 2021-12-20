@@ -5,6 +5,13 @@ const post_1 = {
   subTitle:
     "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De",
   img: 'https://loremipsum.io/assets/images/lorem-ipsum-15th-century-typesetter.jpg',
+  author: {
+    id: 1,
+    name: 'John',
+    avatar:
+      'https://ss-images.saostar.vn/pc/1594175247996/avengers-endgame-thor-feature.jpg',
+    href: '/@john',
+  },
   topic: ['Công Nghệ'],
   content: {
     blocks: [
@@ -236,6 +243,13 @@ const post_2 = {
   subTitle:
     'Public speaking often seems as though it goes hand in hand with extroversion because extroverts are much more at home in a crowd. In fact, m',
   img: 'https://images.unsplash.com/photo-1639914762542-d9fc900be066?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+  author: {
+    id: 1,
+    name: 'John',
+    avatar:
+      'https://ss-images.saostar.vn/pc/1594175247996/avengers-endgame-thor-feature.jpg',
+    href: '/@john',
+  },
   topic: ['Thời trang'],
   content: {
     blocks: [
@@ -465,6 +479,12 @@ const post_3 = {
     "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actual",
   'img':
     'https://loremipsum.io/assets/images/lorem-ipsum-generator-cicero-engraving.png',
+  'author': {
+    'id': 2,
+    'name': 'Kakabanlaai',
+    'avatar':
+      'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
+  },
   'content': {
     'blocks': [
       {
@@ -664,6 +684,13 @@ const post_4 = {
   subTitle:
     "Among design professionals, there's a bit of controversy surrounding the filler text. Controversy, as in Death to Lorem Ipsum.",
   img: 'https://loremipsum.io/assets/images/lorem-ipsum-star-wars.jpg',
+  author: {
+    id: 2,
+    name: 'Kakabanlaai',
+    avatar:
+      'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
+    href: '/@john',
+  },
   topic: ['Đời Sống'],
   content: {
     blocks: [
@@ -1020,6 +1047,13 @@ const post_6 = {
   subTitle:
     'At tempor commodo ullamcorper a lacus vestibulum sed. Libero justo laoreet sit amet. Dictum non consectetur a erat nam at. Risus in hendreri',
   img: 'https://i.picsum.photos/id/1084/536/354.jpg?grayscale&hmac=Ux7nzg19e1q35mlUVZjhCLxqkR30cC-CarVg-nlIf60',
+  author: {
+    id: 2,
+    name: 'Kakabanlaai',
+    avatar:
+      'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
+    href: '/@john',
+  },
   topic: ['Thời trang'],
   content: {
     blocks: [
@@ -1140,6 +1174,13 @@ const post_7 = {
   subTitle:
     'In fermentum et sollicitudin ac. Quis auctor elit sed vulputate mi sit amet mauris. Est ante in nibh mauris cursus mattis molestie a. Accums',
   img: 'https://i.picsum.photos/id/870/536/354.jpg?blur=2&grayscale&hmac=A5T7lnprlMMlQ18KQcVMi3b7Bwa1Qq5YJFp8LSudZ84',
+  author: {
+    id: 1,
+    name: 'John',
+    avatar:
+      'https://ss-images.saostar.vn/pc/1594175247996/avengers-endgame-thor-feature.jpg',
+    href: '/@john',
+  },
   topic: [],
   content: {
     blocks: [
@@ -1268,6 +1309,13 @@ const post_8 = {
   subTitle:
     'Pointing out the spaces & practices emerging at this intersection.',
   img: 'https://images.unsplash.com/photo-1639815188508-13f7370f664a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+  author: {
+    id: 2,
+    name: 'Kakabanlaai',
+    avatar:
+      'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
+    href: '/@john',
+  },
   topic: ['Công Nghệ'],
   content: {
     blocks: [
@@ -1615,6 +1663,13 @@ const post_9 = {
   title: 'How to Stop Procrastinating by Using the “2-Minute Rule”',
   subTitle:
     'TWYLA THARP IS widely regarded as one of the greatest dancers and choreographers of the modern era. In 1992, she was awarded a MacArthur Fel',
+  author: {
+    id: 2,
+    name: 'Kakabanlaai',
+    avatar:
+      'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
+    href: '/@john',
+  },
   topic: ['Đời Sống'],
   content: {
     blocks: [
