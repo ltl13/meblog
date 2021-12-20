@@ -7,6 +7,7 @@ import {
   Divider,
   Grid,
   IconButton,
+  Link,
   MenuItem,
   Slide,
   Stack,
@@ -15,10 +16,13 @@ import {
 } from '@mui/material';
 import CustomizeButton from 'components/CustomizeButton';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import Chip from '@mui/material/Chip';
+import Autocomplete from '@mui/material/Autocomplete';
 import Dante from 'Dante2';
 import logo from 'image/logo.svg';
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
+import { makeStyles, styled } from '@mui/material/styles';
 
 const typeOfDanteText = [
   'unstyled',
@@ -105,6 +109,7 @@ function WritePage(props) {
           right: 0,
           left: 0,
           zIndex: 10,
+          backgroundColor: '#f8eee7',
         }}
       >
         <Box
@@ -118,7 +123,10 @@ function WritePage(props) {
             m: '0 auto',
           }}
         >
-          <img src={logo} alt="logo" style={{ height: '50px' }} />
+          <Link href="/">
+            <img src={logo} alt="logo" style={{ height: '50px' }} />
+          </Link>
+
           <Stack direction="row" spacing="10px" sx={{ alignItems: 'center' }}>
             <CustomizeButton
               height="30px"
@@ -131,7 +139,7 @@ function WritePage(props) {
                 handleOpenPublishDialog();
               }}
             >
-              Xuất bản
+              Đăng bài
             </CustomizeButton>
 
             {/* <IconButton
@@ -153,6 +161,7 @@ function WritePage(props) {
             </IconButton>
 
             <Avatar
+              src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
               onClick={e => {
                 setAnchorEl(e.currentTarget);
               }}
@@ -253,28 +262,46 @@ function WritePage(props) {
           <Grid item xs={1} sm={0} md={0} lg={1}></Grid>
           <Grid item xs={5} sm={12} md={12} lg={5}>
             <Stack spacing="15px">
-              <TextField
-                focused
+              <TextFieldCustom
                 multiline
                 value={title}
                 onChange={e => setTitle(e.target.value)}
-                color=""
                 variant="standard"
                 placeholder="Tiêu đề chính"
                 inputProps={{
                   style: { fontWeight: 700, fontSize: 28 },
                 }}
               />
-              <TextField
-                focused
+              <TextFieldCustom
                 multiline
                 value={subTitle}
                 onChange={e => setSubTitle(e.target.value)}
-                color=""
                 variant="standard"
                 placeholder="Tiêu đề phụ"
               />
-
+              <AutocompleteCustom
+                multiple
+                id="tags-filled"
+                options={tags.map(option => option)}
+                freeSolo
+                renderTags={(value, getTagProps) =>
+                  value.map((option, index) => (
+                    <Chip
+                      variant="outlined"
+                      label={option}
+                      {...getTagProps({ index })}
+                    />
+                  ))
+                }
+                renderInput={params => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    // label="Add a tags"
+                    placeholder="Thêm thẻ chủ đề..."
+                  />
+                )}
+              />
               <CustomizeButton
                 height="40px"
                 width="100px"
@@ -295,5 +322,41 @@ function WritePage(props) {
     </>
   );
 }
+
+const tags = ['Education', 'Marvel Studio', 'Javascript', 'Cryptocurrentcy'];
+
+const TextFieldCustom = styled(TextField)({
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#000',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#000',
+    },
+    '&:hover fieldset': {
+      borderColor: '#000',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#000',
+    },
+  },
+});
+
+const AutocompleteCustom = styled(Autocomplete)({
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#000',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#000',
+    },
+    '&:hover fieldset': {
+      borderColor: '#000',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#000',
+    },
+  },
+});
 
 export default WritePage;
