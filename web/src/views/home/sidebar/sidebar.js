@@ -31,7 +31,7 @@ const Sidebar = props => {
           fontWeight: 'bold',
         }}
       >
-        DISCOVER MORE OF WHAT MATTERS TO YOU
+        KHÁM PHÁ THÊM CÁC CHỦ ĐỀ KHÁC
       </Typography>
       <Box
         sx={{

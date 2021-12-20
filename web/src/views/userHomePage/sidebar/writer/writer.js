@@ -12,7 +12,7 @@ const Writer = props => {
           direction="column"
           alignItems="flex-start"
           justifyContent="flex-start"
-          sx={{ padding: '0 1rem' }}
+          sx={{ padding: '0 0.75rem' }}
         >
           <Typography variant="h7" sx={{ fontWeight: 500 }}>
             {writer.name}
@@ -35,24 +35,25 @@ const Writer = props => {
         <Button
           variant="outlined"
           sx={{
-            backgroundColor: following ? '#000000' : '#ffffff',
+            backgroundColor: following ? '#AB92BF' : '#ffffff',
             borderRadius: '20px',
-            border: '1px solid #757575',
-            color: following ? '#ffffff' : '#757575',
+            border: following ? '1px solid #AB92BF' : '1px solid #757575',
+            color: following ? '#000000' : '#757575',
             textTransform: 'none',
-            padding: '0.25rem 1.5rem',
+            padding: '0.25rem 2rem',
             fontWeight: following ? 400 : 500,
             '&:hover': {
-              backgroundColor: following ? '#000000' : '#ffffff',
-              color: following ? '#ffffff' : '#000000',
+              backgroundColor: following ? '#AB92BF' : '#ffffff',
+              color: following ? '#000000' : '#000000',
               borderColor: '#000000',
             },
+            whiteSpace: 'nowrap',
           }}
           onClick={() => {
             setFollowing(!following);
           }}
         >
-          {following ? 'Following' : 'Follow'}
+          {following ? 'Đã theo dõi' : 'Theo dõi'}
         </Button>
       </Stack>
     </Stack>

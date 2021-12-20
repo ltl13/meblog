@@ -77,28 +77,28 @@ const Setting = props => {
             sx={{ padding: '0.5rem 1rem', borderBottom: '1px solid #757575' }}
           >
             <Link
-              href="#"
+              href="/write"
               underline="none"
               marginTop={0.75}
               marginBottom={0.5}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Write a story
+                Viết bài
               </Typography>
             </Link>
-            <Link
-              href="#"
+            {/* <Link
+              href="/me"
               underline="none"
               marginTop={0.75}
               marginBottom={0.5}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Stories
+                Bài viết
               </Typography>
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="#"
               underline="none"
               marginTop={0.75}
@@ -106,29 +106,18 @@ const Setting = props => {
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Stats
+                Chỉnh sửa thông tin
               </Typography>
-            </Link>
+            </Link> */}
             <Link
-              href="#"
+              href="/settings"
               underline="none"
               marginTop={0.75}
               marginBottom={0.5}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Design your profile
-              </Typography>
-            </Link>
-            <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}>
-                Settings
+                Cài đặt
               </Typography>
             </Link>
             <Link
@@ -147,17 +136,28 @@ const Setting = props => {
             sx={{ padding: '0.5rem 1rem', borderBottom: '1px solid #757575' }}
           >
             <Link
-              href="#"
+              href="/me"
               underline="none"
               marginTop={0.75}
               marginBottom={0.5}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Lists
+                Lưu trữ
               </Typography>
             </Link>
             <Link
+              href="/user/yourStories"
+              underline="none"
+              marginTop={0.75}
+              marginBottom={0.5}
+              color="#000000"
+            >
+              <Typography variant="subtitle2" fontWeight={500}>
+                Ấn phẩm
+              </Typography>
+            </Link>
+            {/* <Link
               href="#"
               underline="none"
               marginTop={0.75}
@@ -165,31 +165,9 @@ const Setting = props => {
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Publications
+                Chỉnh sửa đề xuất của bạn
               </Typography>
-            </Link>
-            <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}>
-                Control your recommendations
-              </Typography>
-            </Link>
-            <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}>
-                MeBlog Partner Program
-              </Typography>
-            </Link>
+            </Link> */}
           </Stack>
           <Stack
             direction="column"
@@ -204,18 +182,18 @@ const Setting = props => {
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Help
+                Trợ giúp
               </Typography>
             </Link>
             <Link
-              href="#"
+              href="/"
               underline="none"
               marginTop={0.75}
               marginBottom={0.5}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
-                Sign out
+                Đăng xuất
               </Typography>
             </Link>
           </Stack>

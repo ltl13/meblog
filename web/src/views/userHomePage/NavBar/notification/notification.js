@@ -44,7 +44,7 @@ const Notification = props => {
           {...other}
         >
           <Typography variant="subtitle1" textAlign="center" color="#757575">
-            No notifications yet.
+            Không có thông báo mới.
           </Typography>
           <Stack
             direction="row"

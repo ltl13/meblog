@@ -58,7 +58,7 @@ const Sidebar = props => {
   return (
     <Box paddingTop={1}>
       <Typography mb={1} variant="h6" fontWeight={600}>
-        Recommended topics
+        Có thể bạn quan tâm
       </Typography>
       <Box
         sx={{
@@ -89,7 +89,7 @@ const Sidebar = props => {
         paddingBottom={3}
       >
         <Typography variant="h6" fontWeight={600}>
-          Who to follow
+          Tác giả nổi bật
         </Typography>
 
         {writers.map(item => {

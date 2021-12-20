@@ -12,6 +12,7 @@ import YourList from 'views/YourList/YourList';
 import YourStories from 'views/yourStories/yourStories';
 import Login from './views/login/Login';
 import Signup from 'views/signup/Signup';
+import Settings from 'views/Setting/Seting';
 import PageNotFound from 'views/PageNotFound';
 import ReadPage from 'views/ReadPage';
 import PersonalPage from 'views/PersonalPage';
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/user" element={<UserHomePage />} />
           <Route exact path="/me" element={<YourList />} />
           <Route exact path="/user/yourStories" element={<YourStories />} />
+          <Route exact path="/settings" element={<Settings />} />
           <Route exact path="/write" element={<WritePage />} />
           <Route exact path="/edit" element={<WritePage edit={true} />} />
           <Route exact path="/404" element={<PageNotFound />} />

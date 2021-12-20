@@ -36,7 +36,7 @@ const UserHomePage = () => {
               >
                 <Header />
                 <Typography variant="h5" fontWeight={600}>
-                  Recommended
+                  Gợi ý cho bạn
                 </Typography>
                 <Box
                   mb={2}
