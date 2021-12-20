@@ -6,7 +6,7 @@ function post() {
   let posts = [];
   for (let i = 0; i < 10; i++) {
     posts.push({
-      href: '#',
+      href: '/@john/1',
       author: {
         name: 'Personal Growth',
         cover: 'https://miro.medium.com/fit/c/200/134/0*DTiOkmELkfMaaes9',
