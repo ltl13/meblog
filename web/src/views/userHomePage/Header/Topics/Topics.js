@@ -42,12 +42,13 @@ const Topics = props => {
           sx={{
             fontSize: 16,
             fontWeight: 600,
-            minWidth: '90px',
+            minWidth: '110px',
             paddingBottom: '18px',
             color: '#000000',
+            whiteSpace: 'nowrap',
           }}
         >
-          Your topics
+          Chủ đề của bạn
         </Typography>
         <Stack
           marginLeft="10px"

@@ -4,14 +4,14 @@ import React from 'react';
 
 const Footer = props => {
   const footerItems = [
-    { name: 'Help', href: '#' },
-    { name: 'Status', href: '#' },
-    { name: 'Writers', href: '#' },
+    { name: 'Trợ giúp', href: '#' },
+    { name: '', href: '#' },
+    { name: 'Tác giả', href: '#' },
     { name: 'Blog', href: '#' },
     { name: 'Careers', href: '#' },
-    { name: 'Privacy', href: '#' },
+    { name: 'Bảo mật', href: '#' },
     { name: 'Term', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'Giới thiệu', href: '#' },
   ];
   return (
     <Box

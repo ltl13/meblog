@@ -8,6 +8,7 @@ import YourList from 'views/YourList/YourList';
 import YourStories from 'views/yourStories/yourStories';
 import Login from './views/login/Login';
 import Signup from 'views/signup/Signup';
+import Settings from 'views/Setting/Seting';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/user" element={<UserHomePage />} />
           <Route exact path="/me" element={<YourList />} />
           <Route exact path="/user/yourStories" element={<YourStories />} />
+          <Route exact path="/settings" element={<Settings />} />
         </Routes>
       </div>
       <div>

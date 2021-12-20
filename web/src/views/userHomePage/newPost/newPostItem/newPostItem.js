@@ -10,9 +10,26 @@ import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
+import BookMarkDialog from '../BookMarkDialog/BookMarkDialog';
 const NewPostItem = props => {
   const { post } = props;
-  const [bookmarkAdded, setBookmarkAdded] = useState(false);
+  const [bookmarkAdded, setBookmarkAdded] = useState(0);
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const openBookmarkDialog = () => {
+    setBookmarkAdded(!bookmarkAdded);
+    setOpenDialog(true);
+  };
+
+  const closeBookMarkDialog = () => {
+    setOpenDialog(false);
+  };
+
+  const addBookMark = event => {
+    if (event.target.checked) setBookmarkAdded(bookmarkAdded + 1);
+    else setBookmarkAdded(bookmarkAdded - 1);
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -94,7 +111,7 @@ const NewPostItem = props => {
                   fontStyle: 'normal',
                 }}
               >
-                {`${post.time} - ${post.timeSpend}`}
+                {`${post.time} - ${post.timeSpend}`} phút để đọc
               </Typography>
               <Link underline="none" href={post.category.href}>
                 <Typography variant="h2" component="div">
@@ -115,17 +132,25 @@ const NewPostItem = props => {
                 </Typography>
               </Link>
             </Stack>
-            <IconButton
-              onClick={() => {
-                setBookmarkAdded(!bookmarkAdded);
-              }}
-            >
-              {bookmarkAdded ? (
-                <BookmarkAddedIcon sx={{ color: '#000000' }} />
-              ) : (
-                <BookmarkAddOutlinedIcon />
+            <Box sx={{ position: 'relative' }}>
+              <IconButton
+                onClick={() => {
+                  openBookmarkDialog();
+                }}
+              >
+                {bookmarkAdded ? (
+                  <BookmarkAddedIcon sx={{ color: '#000000' }} />
+                ) : (
+                  <BookmarkAddOutlinedIcon />
+                )}
+              </IconButton>
+              {openDialog && (
+                <BookMarkDialog
+                  onClose={closeBookMarkDialog}
+                  onAdded={addBookMark}
+                />
               )}
-            </IconButton>
+            </Box>
           </Stack>
         </Box>
         <Link sx={{ maxHeight: '100%', padding: '0' }}>

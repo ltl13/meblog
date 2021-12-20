@@ -15,7 +15,7 @@ function post() {
       subtitle:
         'Your brain is the control center for all activities in your body. It regulates your breathing, heartbeat, and many more vital activities.',
       time: 'Nov 3',
-      timeSpend: '8 min read',
+      timeSpend: '8',
       category: {
         name: 'Blockchain',
         href: '#',

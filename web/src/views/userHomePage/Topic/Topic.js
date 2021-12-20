@@ -4,7 +4,7 @@ import React from 'react';
 
 const StyleChip = withStyles({
   root: {
-    color: '#050505',
+    color: '#757575',
     backgroundColor: '#F0F0F0',
     margin: '0 0.5rem 0.5rem 0',
     fontFamily: 'Roboto',

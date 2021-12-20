@@ -87,7 +87,7 @@ const NewPostItem = props => {
                   fontStyle: 'normal',
                 }}
               >
-                {`${post.time} - ${post.timeSpend}`}
+                {`${post.time} - ${post.timeSpend}`} phút để đọc
               </Typography>
               <Link underline="none" href={post.category.href}>
                 <Typography variant="h2" component="div">
@@ -108,7 +108,9 @@ const NewPostItem = props => {
                 </Typography>
               </Link>
             </Stack>
-            <BookmarkAddOutlinedIcon></BookmarkAddOutlinedIcon>
+            <Link href="/signin" underline="none" color="#757575">
+              <BookmarkAddOutlinedIcon></BookmarkAddOutlinedIcon>
+            </Link>
           </Stack>
         </Box>
         <Link sx={{ maxHeight: '100%', padding: '0' }}>

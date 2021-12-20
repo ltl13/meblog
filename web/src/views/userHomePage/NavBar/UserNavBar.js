@@ -66,7 +66,7 @@ const UserNavBar = () => {
                         outline: '0px',
                       },
                     }}
-                    placeholder="Search"
+                    placeholder="Tìm kiếm"
                   >
                     {' '}
                   </TextField>

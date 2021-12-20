@@ -35,13 +35,12 @@ export default function Colection(props) {
               border: '1px solid #000000',
               color: '#000000',
             }}
+            href={colection.href}
           >
-            View list
+            Chi tiết
           </Link>
           <Typography variant="subtitle1">
-            {colection.count > 1
-              ? `${colection.count} stories`
-              : `${colection.count} story`}
+            {colection.count} bài viết
           </Typography>
         </Stack>
       </Stack>

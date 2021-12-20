@@ -36,7 +36,7 @@ const HomePage = () => {
               >
                 <Box mb={2}>
                   <Typography variant="h6" sx={{ fontWeight: '600' }}>
-                    RECOMMENED
+                    ĐỀ XUẤT
                   </Typography>
                 </Box>
 
