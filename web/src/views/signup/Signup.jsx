@@ -5,7 +5,7 @@ function closeForm() {
   document.querySelector('.signup').classList.remove('open');
 }
 
-const Signup = () => {
+const Signup = props => {
   return (
     <div className="signup">
       <div className="wrapper">
@@ -16,7 +16,7 @@ const Signup = () => {
         <input type="text" placeholder="User name"></input>
         <input type="password" placeholder="Password"></input>
         <input type="password" placeholder="Confirm password"></input>
-        <a href="">Sign up</a>
+        <a href={props.link}>Sign up</a>
         <h3>
           Click "Sign in" to agree to our Terms of service and acknowledge that
           our Privacy Policy applies to you

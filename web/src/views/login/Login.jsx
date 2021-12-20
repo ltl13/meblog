@@ -8,7 +8,7 @@ function closeForm() {
   document.querySelector('.login').classList.remove('open');
 }
 
-const Login = () => {
+const Login = props => {
   return (
     <div className="login">
       <div className="wrapper">
@@ -29,7 +29,7 @@ const Login = () => {
             <img src={Github} alt="" className="icon"></img>
           </div>
         </div>
-        <a href="">Sign in</a>
+        <a href="/user">Sign in</a>
         <h3>
           Click "Sign in" to agree to our Terms of service and acknowledge that
           our Privacy Policy applies to you
