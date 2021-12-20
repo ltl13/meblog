@@ -13,16 +13,16 @@ export default function Trending(props) {
   var items = [];
   for (let i = 0; i < 6; i++) {
     items.push({
-      title: 'How Much YouTube Paid Me for a 68,000,000 Viewed Video',
+      title: 'Cách tôi vượt qua trầm cảm trong cuộc sống',
       image:
         'https://images.unsplash.com/photo-1639815189096-f75717eaecfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
       subtitle:
-        'Your brain is the control center for all activities in your body. It regulates your breathing, heartbeat, and many more vital activities.',
-      author: 'No name',
+        'Bộ não của bạn là trung tâm điều khiển mọi hoạt động trong cơ thể. Nó điều chỉnh nhịp thở, nhịp tim và nhiều hoạt động quan trọng khác của bạn.',
+      author: 'Luân Lê',
       href: '#',
       authorImage: '',
-      time: 'Dec 9',
-      timeSpend: '6min',
+      time: '9 tháng 12',
+      timeSpend: '6',
     });
   }
 
