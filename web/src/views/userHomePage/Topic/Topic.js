@@ -16,9 +16,9 @@ const StyleChip = withStyles({
   },
 })(Chip);
 
-const CategoryItem = props => {
-  const { name, href } = props;
-  return <StyleChip label={name} component="a" href="#" clickable />;
+const TopicItem = props => {
+  const { name, href, ...other } = props;
+  return <StyleChip label={name} component="a" href="#" clickable {...other} />;
 };
 
-export default CategoryItem;
+export default TopicItem;

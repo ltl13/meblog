@@ -1,30 +1,28 @@
 import { Container, CssBaseline, Grid, Typography } from '@mui/material';
 import React from 'react';
-import Header from './header/header';
 import UserNavBar from './NavBar/UserNavBar';
 import NewPost from './newPost/newPosts';
 import Sidebar from './sidebar/sidebar';
 import { Box } from '@mui/system';
-import Trending from './Trending/Trending';
+import Header from './Header/Header';
 
-const HomePage = () => {
+const UserHomePage = () => {
   return (
     <React.Fragment>
       <CssBaseline />
       <Box>
         <UserNavBar />
-        <Header />
 
         {/* <PostCards /> */}
+
         <Box>
-          <Container maxWidth="lg" sx={{ paddingTop: '3rem' }}>
-            <Trending />
+          <Container maxWidth="lg">
             <Grid
               container
               direction="row"
               justifyContent="space-between"
               alignItems="flex-start"
-              sx={{ paddingTop: '4rem' }}
+              sx={{ paddingTop: '0rem' }}
             >
               <Grid
                 item
@@ -32,15 +30,24 @@ const HomePage = () => {
                 sm={12}
                 md={8}
                 lg={8}
-                sx={{ paddingRight: { md: '2rem' } }}
+                sx={{
+                  borderRight: { md: '1px solid #c0c0c0' },
+                }}
               >
-                <Box mb={2}>
-                  <Typography variant="h6" sx={{ fontWeight: '600' }}>
-                    RECOMMENED
-                  </Typography>
+                <Header />
+                <Typography variant="h5" fontWeight={600}>
+                  Recommended
+                </Typography>
+                <Box
+                  mb={2}
+                  paddingTop={4}
+                  sx={{
+                    paddingRight: { md: '2rem' },
+                    borderTop: { md: '1px solid #c0c0c0' },
+                  }}
+                >
+                  <NewPost />
                 </Box>
-
-                <NewPost />
               </Grid>
               <Grid
                 item
@@ -60,4 +67,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default UserHomePage;

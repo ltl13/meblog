@@ -1,9 +1,18 @@
-import { Avatar, CssBaseline, Link, Stack, Typography } from '@mui/material';
+import {
+  Avatar,
+  CssBaseline,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 const NewPostItem = props => {
   const { post } = props;
+  const [bookmarkAdded, setBookmarkAdded] = useState(false);
   return (
     <React.Fragment>
       <CssBaseline />
@@ -45,7 +54,6 @@ const NewPostItem = props => {
                 fontWeight: 'bold',
                 fontFamily: 'Roboto',
                 fontStyle: 'normal',
-                maxLines: 2,
               }}
             >
               {post.title}
@@ -63,7 +71,6 @@ const NewPostItem = props => {
                 xs: 'none',
                 sm: 'none',
                 md: 'block',
-                maxLines: 2,
               },
             }}
           >
@@ -108,7 +115,17 @@ const NewPostItem = props => {
                 </Typography>
               </Link>
             </Stack>
-            <BookmarkAddOutlinedIcon></BookmarkAddOutlinedIcon>
+            <IconButton
+              onClick={() => {
+                setBookmarkAdded(!bookmarkAdded);
+              }}
+            >
+              {bookmarkAdded ? (
+                <BookmarkAddedIcon sx={{ color: '#000000' }} />
+              ) : (
+                <BookmarkAddOutlinedIcon />
+              )}
+            </IconButton>
           </Stack>
         </Box>
         <Link sx={{ maxHeight: '100%', padding: '0' }}>
