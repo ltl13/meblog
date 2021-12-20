@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import UserNavBar from 'views/userHomePage/NavBar/UserNavBar';
 import Sidebar from 'views/userHomePage/sidebar/sidebar';
 import StoriesTabs from './storiesTabs';
+import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
 
 const YourStories = () => {
   return (
@@ -24,7 +25,7 @@ const YourStories = () => {
                 >
                   Your stories
                 </Box>
-                <Box marginTop="1.5rem" marginRight="25px">
+                <Box>
                   <Link
                     href="#"
                     underline="none"
@@ -36,25 +37,29 @@ const YourStories = () => {
                     borderRadius="25px"
                     fontSize="1rem"
                     fontWeight="400"
+                    marginY="auto"
+                    whiteSpace="no-wrap"
+                    display={{ xs: 'none' }}
                   >
                     Write a story
                   </Link>
                   <Link
                     href="#"
                     underline="none"
-                    color="#000000"
-                    marginLeft="1rem !important"
+                    color="#ffffff"
                     fontFamily="Roboto"
-                    padding="0.75rem 1.5rem"
-                    backgroundColor="#ffffff"
-                    borderRadius="25px"
-                    border="1px solid #000000"
+                    backgroundColor="#ab92bf"
+                    borderRadius="50%"
                     fontSize="1rem"
                     fontWeight="400"
+                    marginY="auto"
+                    display={{ lg: 'none' }}
                   >
-                    Import a story
+                    <DriveFileRenameOutlineRoundedIcon />
                   </Link>
                 </Box>
+
+                {/* <Box marginTop="1.5rem" marginRight="25px"></Box> */}
               </Box>
               <StoriesTabs />
             </Grid>
