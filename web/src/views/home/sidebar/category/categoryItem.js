@@ -4,13 +4,15 @@ import React from 'react';
 
 const StyleChip = withStyles({
   root: {
-    color: '#757575',
+    color: '#050505',
     backgroundColor: '#F0F0F0',
     margin: '0 0.5rem 0.5rem 0',
     fontFamily: 'Roboto',
     fontSize: '1rem',
     fontWeight: '400',
-    border: '1px solid #757575',
+    '&:hover': {
+      backgroundColor: '#dadada',
+    },
   },
 })(Chip);
 
