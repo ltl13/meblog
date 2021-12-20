@@ -22,6 +22,7 @@ import Dante from 'Dante2';
 import logo from 'image/logo.svg';
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
+import { makeStyles, styled } from '@mui/material/styles';
 
 const typeOfDanteText = [
   'unstyled',
@@ -261,29 +262,24 @@ function WritePage(props) {
           <Grid item xs={1} sm={0} md={0} lg={1}></Grid>
           <Grid item xs={5} sm={12} md={12} lg={5}>
             <Stack spacing="15px">
-              <TextField
-                // focused
+              <TextFieldCustom
                 multiline
                 value={title}
                 onChange={e => setTitle(e.target.value)}
-                color=""
                 variant="standard"
                 placeholder="Tiêu đề chính"
                 inputProps={{
                   style: { fontWeight: 700, fontSize: 28 },
                 }}
               />
-              <TextField
-                // focused
+              <TextFieldCustom
                 multiline
                 value={subTitle}
                 onChange={e => setSubTitle(e.target.value)}
-                color=""
                 variant="standard"
                 placeholder="Tiêu đề phụ"
               />
-              <Autocomplete
-                backgroundColor="#fff"
+              <AutocompleteCustom
                 multiple
                 id="tags-filled"
                 options={tags.map(option => option)}
@@ -328,5 +324,39 @@ function WritePage(props) {
 }
 
 const tags = ['Education', 'Marvel Studio', 'Javascript', 'Cryptocurrentcy'];
+
+const TextFieldCustom = styled(TextField)({
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#000',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#000',
+    },
+    '&:hover fieldset': {
+      borderColor: '#000',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#000',
+    },
+  },
+});
+
+const AutocompleteCustom = styled(Autocomplete)({
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#000',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#000',
+    },
+    '&:hover fieldset': {
+      borderColor: '#000',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#000',
+    },
+  },
+});
 
 export default WritePage;
