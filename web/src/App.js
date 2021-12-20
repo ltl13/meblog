@@ -14,6 +14,7 @@ import Login from './views/login/Login';
 import Signup from 'views/signup/Signup';
 import PageNotFound from 'views/PageNotFound';
 import ReadPage from 'views/ReadPage';
+import PersonalPage from 'views/PersonalPage';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route exact path="/edit" element={<WritePage edit={true} />} />
           <Route exact path="/404" element={<PageNotFound />} />
           <Route exact path="/:user/:post" element={<ReadPage />} />
-          {/* <Route exact path="/:user" element={<ReadPage />} /> */}
+          <Route exact path="/@john" element={<PersonalPage />} />
 
           <Route
             exact
