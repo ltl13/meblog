@@ -51,6 +51,7 @@ const YourList = () => {
     {
       name: 'Reading list',
       count: '5',
+      href: '/user/yourStories',
       stories: [
         {
           title: 'stories 1',
@@ -140,22 +141,29 @@ const YourList = () => {
                 component="div"
                 sx={{ fontWeight: '600' }}
               >
-                Your lists
+                Kho lưu trữ
               </Typography>
               {value === 0 && (
                 <Button
                   sx={{
                     padding: '0.3rem 1rem 0.2rem 1rem',
-                    backgroundColor: '#1a8917',
-                    color: '#ffffff',
+                    backgroundColor: '#AB92BF',
+                    color: '#000000',
+                    fontWeight: '500',
+                    border: '1px solid #AB92BF',
                     borderRadius: '20px',
-                    fontWeight: 400,
                     textTransform: 'none',
+                    '&:hover': {
+                      backgroundColor: '#AB92BF',
+                      color: '#ffffff',
+                      border: '1px solid #AB92BF',
+                    },
+                    whiteSpace: 'nowrap',
                   }}
                   variant="outlined"
                   onClick={handleOpen}
                 >
-                  New List
+                  Thêm mới
                 </Button>
               )}
             </Stack>
@@ -163,7 +171,7 @@ const YourList = () => {
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="me">
                   <Tab
-                    label="Saved"
+                    label="Đã lưu"
                     {...a11yProps(0)}
                     sx={{
                       borderBottom: 0,
@@ -177,7 +185,7 @@ const YourList = () => {
                     }}
                   />
                   <Tab
-                    label="Recently viewed"
+                    label="Đã xem gần đây"
                     {...a11yProps(1)}
                     sx={{
                       borderBottom: 0,

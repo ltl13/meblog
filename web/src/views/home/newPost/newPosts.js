@@ -6,16 +6,16 @@ function post() {
   let posts = [];
   for (let i = 0; i < 10; i++) {
     posts.push({
-      href: '#',
+      href: '/@john/1',
       author: {
         name: 'Luân Lê',
         cover: 'https://miro.medium.com/fit/c/200/134/0*DTiOkmELkfMaaes9',
       },
       title: 'Cách tôi vượt qua trầm cảm trong cuộc sống',
       subtitle:
-        'Bộ não của bạn là trung tâm điều khiển mọi hoạt động trong cơ thể. Nó điều chỉnh nhịp thở, nhịp tim và nhiều hoạt động quan trọng khác của bạn.',
-      time: '3 tháng 11',
-      timeSpend: '8 phút đọc',
+        'Your brain is the control center for all activities in your body. It regulates your breathing, heartbeat, and many more vital activities.',
+      time: 'Nov 3',
+      timeSpend: '8',
       category: {
         name: 'Blockchain',
         href: '#',

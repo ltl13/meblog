@@ -18,7 +18,7 @@ const StyleChip = withStyles({
 
 const CategoryItem = props => {
   const { name, href } = props;
-  return <StyleChip label={name} component="a" href="#" clickable />;
+  return <StyleChip label={name} component="a" href={href || '#'} clickable />;
 };
 
 export default CategoryItem;

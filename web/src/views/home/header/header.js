@@ -61,7 +61,7 @@ const Header = () => {
                     zIndex: 2,
                   }}
                 >
-                  Meblog is a place to write, read, and connect
+                  Meblog nơi bạn viết, đọc, và kết nối
                 </Typography>
                 <Typography
                   variant="h1"
@@ -72,7 +72,7 @@ const Header = () => {
                     zIndex: 2,
                   }}
                 >
-                  Meblog write, read, and connect
+                  Meblog viết, đọc, và kết nối
                 </Typography>
                 <Typography
                   variant="h6"
@@ -87,7 +87,7 @@ const Header = () => {
                 </Typography>
                 <Link
                   mt={2}
-                  href="#"
+                  href="/signup"
                   underline="none"
                   color="secondary.primaryText"
                   sx={{
@@ -97,7 +97,7 @@ const Header = () => {
                     backgroundColor: 'secondary.background',
                   }}
                 >
-                  Start Writing
+                  Bắt đầu viết
                 </Link>
               </Grid>
               <Box

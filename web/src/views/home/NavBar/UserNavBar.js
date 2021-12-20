@@ -27,14 +27,14 @@ const UserNavBar = () => {
             <Link href="/">
               <Box component="img" src={logo} sx={{ height: 50 }}></Box>
             </Link>
-            <Stack direction="row" alignItems="center" spacing={2}>
+            <Stack direction="row" alignItems="center" spacing={3}>
               <Link
                 href="#"
                 underline="none"
                 color="#000000"
                 sx={{ display: { xs: 'none', md: 'block' } }}
               >
-                Our story
+                Giới thiệu
               </Link>
               <Link
                 href="#"
@@ -42,7 +42,7 @@ const UserNavBar = () => {
                 color="#000000"
                 sx={{ display: { xs: 'none', md: 'block' } }}
               >
-                Write
+                Viết bài
               </Link>
               <Link
                 href="#"
@@ -52,7 +52,7 @@ const UserNavBar = () => {
                   document.querySelector('.login').classList.add('open')
                 }
               >
-                Sign in
+                Đăng nhập
               </Link>
               <Link
                 href="#"
@@ -67,7 +67,7 @@ const UserNavBar = () => {
                   borderRadius: '20px',
                 }}
               >
-                Get started
+                Bắt đầu
               </Link>
             </Stack>
           </Stack>
