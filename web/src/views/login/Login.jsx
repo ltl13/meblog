@@ -1,8 +1,8 @@
-import Google from "../../image/google.png";
-import Facebook from "../../image/facebook.png";
-import Github from "../../image/github.png";
-import X from "../../image/x.png";
-import "./login.css";
+import Google from '../../image/google.png';
+import Facebook from '../../image/facebook.png';
+import Github from '../../image/github.png';
+import X from '../../image/x.png';
+import './login.css';
 
 function closeForm() {
   document.querySelector('.login').classList.remove('open');
@@ -34,8 +34,8 @@ const Login = () => {
           Click "Sign in" to agree to our Terms of service and acknowledge that
           our Privacy Policy applies to you
         </h3>
-        </div>
+      </div>
     </div>
-)
-}
-export default Login
+  );
+};
+export default Login;
