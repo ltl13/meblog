@@ -29,7 +29,16 @@ const Login = props => {
             <img src={Github} alt="" className="icon"></img>
           </div>
         </div>
-        <a href="/user">Đăng nhập</a>
+        <a
+          href="#"
+          onClick={event => {
+            event.preventDefault();
+            document.querySelector('.login').classList.remove('open');
+            document.querySelector('.signup').classList.add('open');
+          }}
+        >
+          Sign in
+        </a>
         <h3>
           Nhấp vào "Đăng nhập" để đồng ý với Điều khoản dịch vụ và xác nhận
           Chính sách bảo mật của chúng tôi

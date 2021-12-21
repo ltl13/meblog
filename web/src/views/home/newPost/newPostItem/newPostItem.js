@@ -13,6 +13,7 @@ const NewPostItem = props => {
           flexDirection: 'row',
           flexWrap: 'nowrap',
           marginBottom: '3rem',
+          justifyContent: 'space-between',
         }}
       >
         <Box sx={{ marginRight: '1.25rem' }}>
@@ -20,9 +21,9 @@ const NewPostItem = props => {
             <Avatar
               sx={{ width: '1.5rem', height: '1.5rem' }}
               alt=""
-              src={post.author.cover}
+              src={post.author && post.author.avatar}
             />
-            <Link href={post.href} underline="none">
+            <Link href={post.author && post.author.href} underline="none">
               <Typography
                 variant="subtitle"
                 sx={{
@@ -32,7 +33,7 @@ const NewPostItem = props => {
                   fontStyle: 'normal',
                 }}
               >
-                {post.author.name}
+                {post.author && post.author.name}
               </Typography>
             </Link>
           </Stack>
@@ -52,8 +53,8 @@ const NewPostItem = props => {
             </Typography>
           </Link>
           <Typography
-            variant="h7"
-            component="h7"
+            variant="subtitle1"
+            component="div"
             sx={{
               color: '#757575',
               fontWeight: '400',
@@ -67,7 +68,7 @@ const NewPostItem = props => {
               },
             }}
           >
-            {post.subtitle}
+            {post.subTitle}
           </Typography>
           <Stack
             direction="row"
@@ -89,7 +90,7 @@ const NewPostItem = props => {
               >
                 {`${post.time} - ${post.timeSpend}`} phút để đọc
               </Typography>
-              <Link underline="none" href={post.category.href}>
+              <Link underline="none" href="#">
                 <Typography variant="h2" component="div">
                   <Box
                     sx={{
@@ -103,24 +104,50 @@ const NewPostItem = props => {
                       borderRadius: '10px',
                     }}
                   >
-                    {post.category.className}
+                    {post.topic[0]}
                   </Box>
                 </Typography>
               </Link>
             </Stack>
-            <Link href="/signin" underline="none" color="#757575">
+            <Link
+              href="#"
+              underline="none"
+              color="#757575"
+              onClick={event => {
+                event.preventDefault();
+                document.querySelector('.login').classList.add('open');
+              }}
+            >
               <BookmarkAddOutlinedIcon></BookmarkAddOutlinedIcon>
             </Link>
           </Stack>
         </Box>
-        <Link sx={{ maxHeight: '100%', padding: '0' }}>
-          <img
-            src={'https://miro.medium.com/fit/c/200/134/0*DTiOkmELkfMaaes9'}
-            srcSet={''}
-            alt={''}
-          />
-        </Link>
-        {/* </Box> */}
+        <Box
+          component="img"
+          src={`${post.img}`}
+          srcSet={`${post.img}`}
+          alt={post.title}
+          sx={{
+            padding: '0',
+            maxHeight: {
+              xs: '100px',
+              sm: '100px',
+              md: '200px',
+            },
+            maxWidth: {
+              xs: '100px',
+              sm: '150px',
+              md: '200px',
+            },
+            minWidth: {
+              xs: '100px',
+              sm: '150px',
+              md: '200px',
+            },
+            overflow: 'hidden',
+            objectFit: 'cover',
+          }}
+        />
       </Box>
     </React.Fragment>
   );

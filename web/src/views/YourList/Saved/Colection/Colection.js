@@ -54,8 +54,8 @@ export default function Colection(props) {
         <Box
           component="img"
           src={
-            colection.stories[0].cover
-              ? colection.stories[0].cover
+            colection.stories[0]
+              ? colection.stories[0].img
               : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCr1HXUxFrqfiljR6HgDWSjlw_LkV8LpEoIA&usqp=CAU'
           }
           sx={{
@@ -68,8 +68,8 @@ export default function Colection(props) {
         <Box
           component="img"
           src={
-            colection.stories[1].cover
-              ? colection.stories[1].cover
+            colection.stories[1]
+              ? colection.stories[1].img
               : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCr1HXUxFrqfiljR6HgDWSjlw_LkV8LpEoIA&usqp=CAU'
           }
           sx={{
@@ -83,8 +83,8 @@ export default function Colection(props) {
         <Box
           component="img"
           src={
-            colection.stories[2].cover
-              ? colection.stories[2].cover
+            colection.stories[2]
+              ? colection.stories[2].img
               : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCr1HXUxFrqfiljR6HgDWSjlw_LkV8LpEoIA&usqp=CAU'
           }
           sx={{

@@ -20,8 +20,8 @@ export default function SavedList(props) {
         spacing={2}
         paddingTop={3}
       >
-        {list.map(item => {
-          return <Colection colection={item} />;
+        {list.map((item, index) => {
+          return <Colection key={item.id} colection={item} />;
         })}
       </Stack>
     </Box>

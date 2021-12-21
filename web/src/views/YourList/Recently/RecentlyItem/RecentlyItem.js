@@ -1,4 +1,5 @@
 import {
+  Avatar,
   CssBaseline,
   IconButton,
   Link,
@@ -7,11 +8,28 @@ import {
 } from '@mui/material';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
+import BookMarkDialog from '../../../userHomePage/newPost/BookMarkDialog/BookMarkDialog';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 const NewPostItem = props => {
   const { post } = props;
-  const [bookmarkAdded, setBookmarkAdded] = useState(true);
+  const [bookmarkAdded, setBookmarkAdded] = useState(0);
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const openBookmarkDialog = () => {
+    setBookmarkAdded(!bookmarkAdded);
+    setOpenDialog(true);
+  };
+
+  const closeBookMarkDialog = () => {
+    setOpenDialog(false);
+  };
+
+  const addBookMark = event => {
+    if (event.target.checked) setBookmarkAdded(bookmarkAdded + 1);
+    else setBookmarkAdded(bookmarkAdded - 1);
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -23,6 +41,7 @@ const NewPostItem = props => {
           alignItems: 'center',
           borderBottom: '1px solid #d1d1d1',
           padding: '1.5rem 0rem',
+          justifyContent: 'space-between',
         }}
       >
         <Box sx={{ marginRight: '1.25rem' }}>
@@ -55,7 +74,7 @@ const NewPostItem = props => {
               },
             }}
           >
-            {post.subtitle}
+            {post.subTitle}
           </Typography>
           <Stack
             direction="row"
@@ -73,9 +92,9 @@ const NewPostItem = props => {
                   fontStyle: 'normal',
                 }}
               >
-                {`${post.time} - ${post.timeSpend}`}
+                {`Tiếp tục - ${post.timeSpend}`} phút để đọc
               </Typography>
-              <Link underline="none" href={post.category.href}>
+              <Link underline="none" href={post.topic[0]}>
                 <Typography variant="h2" component="div">
                   <Box
                     sx={{
@@ -89,36 +108,63 @@ const NewPostItem = props => {
                       borderRadius: '10px',
                     }}
                   >
-                    {post.category.className}
+                    {post.topic[0]}
                   </Box>
                 </Typography>
               </Link>
             </Stack>
-            <IconButton
-              onClick={() => {
-                setBookmarkAdded(!bookmarkAdded);
-              }}
-            >
-              {bookmarkAdded ? (
-                <BookmarkAddedIcon sx={{ color: '#000000' }} />
-              ) : (
-                <BookmarkAddOutlinedIcon />
+            <Box sx={{ position: 'relative' }}>
+              <IconButton
+                onClick={() => {
+                  openBookmarkDialog();
+                }}
+              >
+                {bookmarkAdded ? (
+                  <BookmarkAddedIcon sx={{ color: '#000000' }} />
+                ) : (
+                  <BookmarkAddOutlinedIcon />
+                )}
+              </IconButton>
+              {openDialog && (
+                <BookMarkDialog
+                  onClose={closeBookMarkDialog}
+                  onAdded={addBookMark}
+                />
               )}
-            </IconButton>
+            </Box>
           </Stack>
         </Box>
-        <Link sx={{ maxHeight: '100%', padding: '0' }}>
-          <Box
-            component="img"
-            src={'https://miro.medium.com/fit/c/200/134/0*DTiOkmELkfMaaes9'}
-            srcSet={''}
-            alt={''}
-            sx={{
-              width: '80xpx',
-              height: '80px',
-            }}
-          />
-        </Link>
+        <Box
+          component="img"
+          src={`${post.img}`}
+          srcSet={`${post.img}`}
+          alt={post.title}
+          sx={{
+            padding: '0',
+            minHeight: {
+              xs: '80px',
+              sm: '100px',
+              md: '150px',
+            },
+            maxHeight: {
+              xs: '80px',
+              sm: '100px',
+              md: '150px',
+            },
+            maxWidth: {
+              xs: '80px',
+              sm: '100px',
+              md: '150px',
+            },
+            minWidth: {
+              xs: '80px',
+              sm: '100px',
+              md: '150px',
+            },
+            overflow: 'hidden',
+            objectFit: 'cover',
+          }}
+        />
         {/* </Box> */}
       </Box>
     </React.Fragment>

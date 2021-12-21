@@ -14,8 +14,6 @@ const HomePage = () => {
       <Box>
         <UserNavBar />
         <Header />
-
-        {/* <PostCards /> */}
         <Box>
           <Container maxWidth="lg" sx={{ paddingTop: '3rem' }}>
             <Trending />

@@ -1,36 +1,19 @@
 import { Stack } from '@mui/material';
 import React from 'react';
 import NewPostItem from './newPostItem/newPostItem';
-
-function post() {
-  let posts = [];
-  for (let i = 0; i < 10; i++) {
-    posts.push({
-      href: '/@john/1',
-      author: {
-        name: 'Personal Growth',
-        cover: 'https://miro.medium.com/fit/c/200/134/0*DTiOkmELkfMaaes9',
-      },
-      title: 'How Much YouTube Paid Me for a 68,000,000 Viewed Video',
-      subtitle:
-        'Your brain is the control center for all activities in your body. It regulates your breathing, heartbeat, and many more vital activities.',
-      time: 'Nov 3',
-      timeSpend: '8',
-      category: {
-        name: 'Blockchain',
-        href: '#',
-      },
-    });
-  }
-  return posts;
-}
+import { posts } from '../../../data/posts';
 
 const NewPost = () => {
-  const posts = post();
+  const postList = posts;
   return (
-    <Stack>
-      {posts.map(item => {
-        return <NewPostItem post={item} />;
+    <Stack sx={{}}>
+      {postList.map(item => {
+        var newObj = { ...item };
+        const date = new Date();
+        newObj.time = date.toLocaleDateString();
+        newObj.timeSpend = Math.floor(Math.random() * 5 + 5);
+        if (!item.href) newObj.href = '/@john/1';
+        return <NewPostItem key={item.id} post={newObj} />;
       })}
     </Stack>
   );

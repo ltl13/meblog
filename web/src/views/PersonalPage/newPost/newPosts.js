@@ -1,13 +1,12 @@
 import { Stack } from '@mui/material';
 import React from 'react';
 import NewPostItem from './newPostItem/newPostItem';
-import { posts } from '../../../data/posts';
 
-const NewPost = () => {
-  const postList = posts;
+const NewPost = props => {
+  const { posts, ...other } = props;
   return (
-    <Stack sx={{}}>
-      {postList.map(item => {
+    <Stack {...other}>
+      {posts.map(item => {
         var newObj = { ...item };
         const date = new Date();
         newObj.time = date.toLocaleDateString();
