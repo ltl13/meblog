@@ -67,7 +67,6 @@ const Sidebar = props => {
             <TopicItem
               name={item.name}
               link={item.link}
-              marginBottom={1}
               sx={{
                 marginBottom: '0.5rem',
                 marginRight: '0.5rem',

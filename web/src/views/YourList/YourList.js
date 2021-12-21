@@ -15,10 +15,12 @@ import Recently from './Recently/Recently';
 import NewColection from './Saved/NewCollection/NewCollection';
 import Sidebar from './sidebar/sidebar';
 import UserNavBar from 'views/userHomePage/NavBar/UserNavBar';
+import lists from 'data/bookMark';
+import { users } from 'data/users';
+import { posts } from 'data/posts';
 
 const YourList = () => {
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -27,81 +29,20 @@ const YourList = () => {
   const handleOpen = () => setOpenNewCollection(true);
   const handleClose = () => setOpenNewCollection(false);
 
-  let posts = [];
-  for (let i = 0; i < 3; i++) {
-    posts.push({
-      href: '#',
-      author: {
-        name: 'Personal Growth',
-        cover: 'https://miro.medium.com/fit/c/200/134/0*DTiOkmELkfMaaes9',
-      },
-      title: 'How Much YouTube Paid Me for a 68,000,000 Viewed Video',
-      subtitle:
-        'Your brain is the control center for all activities in your body. It regulates your breathing, heartbeat, and many more vital activities.',
-      time: 'Nov 3',
-      timeSpend: '8 min read',
-      category: {
-        name: 'Blockchain',
-        href: '#',
-      },
-    });
-  }
+  const user = users.find(item => item.id == '1');
+  if (!user) return;
+  var recenList = [];
+  var bookmarkList = [];
 
-  const list = [
-    {
-      name: 'Reading list',
-      count: '5',
-      href: '/user/yourStories',
-      stories: [
-        {
-          title: 'stories 1',
-          cover:
-            'https://images.unsplash.com/photo-1639903520702-5fddbeec9d39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-        },
-        {
-          title: 'stories 2',
-          cover:
-            'https://images.unsplash.com/photo-1639914756841-8e7b6a37ab95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-        },
-        {
-          title: 'stories 3',
-          cover:
-            'https://images.unsplash.com/photo-1639733755368-7d0b2507e429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
-        },
-        {
-          title: 'stories 4',
-          cover:
-            'https://images.unsplash.com/photo-1639873179448-2e7eb329d3aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-        },
-      ],
-    },
-    {
-      name: 'Reading list',
-      count: '5',
-      stories: [
-        {
-          title: 'stories 1',
-          cover:
-            'https://images.unsplash.com/photo-1639903520702-5fddbeec9d39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-        },
-        {
-          title: 'stories 2',
-          cover:
-            'https://images.unsplash.com/photo-1639914756841-8e7b6a37ab95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-        },
-        {
-          title: 'stories 3',
-          cover:
-            'https://images.unsplash.com/photo-1639733755368-7d0b2507e429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
-        },
-        {
-          title: 'stories 4',
-          cover:
-            'https://images.unsplash.com/photo-1639873179448-2e7eb329d3aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-        },
-      ],
-    },
-  ];
+  user.recently.forEach(recenItem => {
+    const post = posts.find(postItem => postItem.id == recenItem);
+    if (post) recenList.push(post);
+  });
+
+  user.lists.forEach(listItem => {
+    const term = lists.find(bookmark => bookmark.id == listItem);
+    if (term) bookmarkList.push(term);
+  });
 
   return (
     <React.Fragment>
@@ -199,8 +140,8 @@ const YourList = () => {
                   />
                 </Tabs>
               </Box>
-              <SavedList value={value} index={0} list={list} />
-              <Recently value={value} index={1} posts={posts} />
+              <SavedList value={value} index={0} list={bookmarkList} />
+              <Recently value={value} index={1} posts={recenList} />
             </Box>
           </Grid>
           <Grid

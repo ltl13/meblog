@@ -1,31 +1,30 @@
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import {
   Avatar,
   Box,
-  Divider,
-  Drawer,
+  Container,
+  Grid,
   IconButton,
   Link,
   Stack,
-  TextField,
   Typography,
 } from '@mui/material';
 import CustomizeButton from 'components/CustomizeButton';
-import Dante from 'Dante2';
 import logo from 'image/logo.svg';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import PageNotFound from 'views/PageNotFound';
-import { styled } from '@mui/system';
+import { posts } from 'data/posts';
+import NewPost from './newPost/newPosts';
+import Sidebar from 'views/userHomePage/sidebar/sidebar';
+import Notification from 'views/userHomePage/NavBar/notification/notification';
+import Setting from 'views/userHomePage/NavBar/Setting/Setting';
 
 function PersonalPage(props) {
   const [following, setFollowing] = useState(false);
-
+  const [openSetting, setOpenSetting] = useState(false);
+  const [openNotification, setOpenNotification] = useState(false);
+  const postOf = posts.filter(post => post.author.id == '1');
+  // console.log(postOf);
+  const writer = 'JOHN';
   return (
     <>
       <Box
@@ -74,29 +73,98 @@ function PersonalPage(props) {
           </Stack>
 
           <Stack direction="row" spacing="10px" sx={{ alignItems: 'center' }}>
-            <IconButton
-              disableRipple
-              onClick={e => {
-                // setAnchorEl(e.currentTarget);
-              }}
-            >
-              <NotificationsNoneOutlinedIcon />
-            </IconButton>
+            <Box sx={{ position: 'relative' }}>
+              {' '}
+              <IconButton
+                disableRipple
+                onClick={() => {
+                  setOpenNotification(!openNotification);
+                }}
+              >
+                <NotificationsNoneOutlinedIcon />
+              </IconButton>
+              {openNotification && (
+                <Notification
+                  onClose={() => {
+                    setOpenNotification(false);
+                  }}
+                />
+              )}
+            </Box>
 
-            <Avatar
-              src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
-              onClick={e => {
-                // setAnchorEl(e.currentTarget);
-              }}
-              sx={{
-                height: '35px',
-                width: '35px',
-                cursor: 'pointer',
-              }}
-            />
+            <Box sx={{ position: 'relative' }}>
+              {' '}
+              <Avatar
+                src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
+                onClick={() => {
+                  setOpenSetting(!openSetting);
+                }}
+                sx={{
+                  height: '35px',
+                  width: '35px',
+                  cursor: 'pointer',
+                }}
+              />
+              {openSetting && (
+                <Setting
+                  user={{
+                    name: 'Võ Quốc Minh',
+                    id: '@voquocminh',
+                    avatar:
+                      'https://image.thanhnien.vn/w660/Uploaded/2021/ygtmjz/2021_05_15/loki_vrkk.jpg',
+                  }}
+                  onClose={() => {
+                    setOpenSetting(false);
+                  }}
+                />
+              )}
+            </Box>
           </Stack>
         </Box>
       </Box>
+      <Container maxWidth="lg" sx={{ marginTop: '6rem' }}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="flex-start"
+          sx={{ paddingTop: '0rem' }}
+        >
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={8}
+            lg={8}
+            sx={{
+              borderRight: { md: '1px solid #c0c0c0' },
+            }}
+          >
+            <Typography variant="h5" fontWeight={600}>
+              {writer}
+            </Typography>
+            <Box
+              mb={2}
+              paddingTop={4}
+              sx={{
+                paddingRight: { md: '2rem' },
+              }}
+            >
+              <NewPost posts={postOf} />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            lg={4}
+            sx={{ paddingLeft: { md: '2rem' } }}
+          >
+            <Sidebar />
+          </Grid>
+        </Grid>
+      </Container>
     </>
   );
 }

@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import BookMarkDialog from '../BookMarkDialog/BookMarkDialog';
 const NewPostItem = props => {
   const { post } = props;
-  const [bookmarkAdded, setBookmarkAdded] = useState(0);
+  const [bookmarkAdded, setBookmarkAdded] = useState(1);
   const [openDialog, setOpenDialog] = useState(false);
 
   const openBookmarkDialog = () => {
@@ -112,7 +112,7 @@ const NewPostItem = props => {
                   fontStyle: 'normal',
                 }}
               >
-                {`${post.time} - ${post.timeSpend}`} phút để đọc
+                Tiếp tục - {post.timeSpend} phút
               </Typography>
               <Link underline="none" href={post.topic[0]}>
                 <Typography variant="h2" component="div">

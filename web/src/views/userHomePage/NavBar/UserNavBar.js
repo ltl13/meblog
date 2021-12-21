@@ -73,9 +73,11 @@ const UserNavBar = () => {
                 )}
               </Box>
               <Box>
-                <IconButton sx={{ color: '#000000' }}>
-                  <BookmarkBorderIcon />
-                </IconButton>
+                <Link href="/me" underline="none">
+                  <IconButton sx={{ color: '#000000' }}>
+                    <BookmarkBorderIcon />
+                  </IconButton>
+                </Link>
               </Box>
               <Box sx={{ position: 'relative' }}>
                 {' '}

@@ -74,124 +74,56 @@ const Setting = props => {
           <Stack
             direction="column"
             alignItems="stretch"
-            sx={{ padding: '0.5rem 1rem', borderBottom: '1px solid #757575' }}
+            sx={{ padding: '0.75rem 1rem', borderBottom: '1px solid #757575' }}
           >
             <Link
               href="/write"
               underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
+              marginBottom={1.25}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
                 Viết bài
               </Typography>
             </Link>
-            {/* <Link
-              href="/me"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}>
-                Bài viết
-              </Typography>
-            </Link> */}
-            {/* <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}>
-                Chỉnh sửa thông tin
-              </Typography>
-            </Link> */}
-            <Link
-              href="/settings"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
+            <Link href="/settings" underline="none" color="#000000">
               <Typography variant="subtitle2" fontWeight={500}>
                 Cài đặt
               </Typography>
-            </Link>
-            <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}></Typography>
             </Link>
           </Stack>
           <Stack
             direction="column"
             alignItems="stretch"
-            sx={{ padding: '0.5rem 1rem', borderBottom: '1px solid #757575' }}
+            sx={{ padding: '0.75rem 1rem', borderBottom: '1px solid #757575' }}
           >
             <Link
               href="/me"
               underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
+              marginBottom={1.25}
               color="#000000"
             >
               <Typography variant="subtitle2" fontWeight={500}>
                 Lưu trữ
               </Typography>
             </Link>
-            <Link
-              href="/user/yourStories"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
+            <Link href="/user/yourStories" underline="none" color="#000000">
               <Typography variant="subtitle2" fontWeight={500}>
                 Ấn phẩm
               </Typography>
             </Link>
-            {/* <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
-              <Typography variant="subtitle2" fontWeight={500}>
-                Chỉnh sửa đề xuất của bạn
-              </Typography>
-            </Link> */}
           </Stack>
           <Stack
             direction="column"
             alignItems="stretch"
-            sx={{ padding: '0.5rem 1rem' }}
+            sx={{ padding: '0.75rem 1rem' }}
           >
-            <Link
-              href="#"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
+            <Link href="#" underline="none" marginBottom={1.25} color="#000000">
               <Typography variant="subtitle2" fontWeight={500}>
                 Trợ giúp
               </Typography>
             </Link>
-            <Link
-              href="/"
-              underline="none"
-              marginTop={0.75}
-              marginBottom={0.5}
-              color="#000000"
-            >
+            <Link href="/" underline="none" color="#000000">
               <Typography variant="subtitle2" fontWeight={500}>
                 Đăng xuất
               </Typography>

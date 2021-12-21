@@ -1,31 +1,17 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import {
-  Paper,
-  Button,
-  Box,
-  Typography,
-  ThemeProvider,
-  Link,
-} from '@mui/material';
+import { Box, Typography, ThemeProvider, Link } from '@mui/material';
 import theme from '../theme';
+import { posts } from '../../../data/posts';
 export default function Trending(props) {
-  var items = [];
-  for (let i = 0; i < 6; i++) {
-    items.push({
-      title: 'Cách tôi vượt qua trầm cảm trong cuộc sống',
-      image:
-        'https://images.unsplash.com/photo-1639815189096-f75717eaecfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
-      subtitle:
-        'Bộ não của bạn là trung tâm điều khiển mọi hoạt động trong cơ thể. Nó điều chỉnh nhịp thở, nhịp tim và nhiều hoạt động quan trọng khác của bạn.',
-      author: 'Luân Lê',
-      href: '#',
-      authorImage: '',
-      time: '9 tháng 12',
-      timeSpend: '6',
-    });
-  }
-
+  const items = posts.map(item => {
+    var newObj = { ...item };
+    const date = new Date();
+    newObj.time = date.toLocaleDateString();
+    newObj.timeSpend = Math.floor(Math.random() * 5 + 5);
+    if (!item.href) newObj.href = '/@john/1';
+    return newObj;
+  });
   return (
     <Carousel
       indicatorContainerProps={{
@@ -56,7 +42,7 @@ function Item(props) {
               display: 'block',
               paddingTop: '35%',
               width: '100%',
-              backgroundImage: `url('${item.image}')`,
+              backgroundImage: `url('${item.img}')`,
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
               backgroundOrigin: 'center',
@@ -96,7 +82,7 @@ function Item(props) {
               fontFamily: 'Roboto',
             }}
           >
-            {item.subtitle}
+            {item.subTitle}
           </Typography>
         </Box>
       </Link>

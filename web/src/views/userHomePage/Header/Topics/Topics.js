@@ -38,7 +38,7 @@ const Topics = props => {
         props
       >
         <Typography
-          variant="h7"
+          variant="subtitle1"
           sx={{
             fontSize: 16,
             fontWeight: 600,

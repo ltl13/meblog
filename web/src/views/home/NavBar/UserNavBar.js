@@ -36,21 +36,22 @@ const UserNavBar = () => {
               >
                 Giới thiệu
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 underline="none"
                 color="#000000"
                 sx={{ display: { xs: 'none', md: 'block' } }}
               >
                 Viết bài
-              </Link>
+              </Link> */}
               <Link
                 href="#"
                 underline="none"
                 color="#000000"
-                onClick={() =>
-                  document.querySelector('.login').classList.add('open')
-                }
+                onClick={event => {
+                  event.preventDefault();
+                  document.querySelector('.login').classList.add('open');
+                }}
               >
                 Đăng nhập
               </Link>
@@ -58,9 +59,10 @@ const UserNavBar = () => {
                 href="#"
                 underline="none"
                 color="#ffffff"
-                onClick={() =>
-                  document.querySelector('.signup').classList.add('open')
-                }
+                onClick={event => {
+                  event.preventDefault();
+                  document.querySelector('.signup').classList.add('open');
+                }}
                 sx={{
                   backgroundColor: '#000000',
                   padding: '0.5rem 1rem',
