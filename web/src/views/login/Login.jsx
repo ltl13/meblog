@@ -30,14 +30,9 @@ const Login = props => {
           </div>
         </div>
         <a
-          href="#"
-          onClick={event => {
-            event.preventDefault();
-            document.querySelector('.login').classList.remove('open');
-            document.querySelector('.signup').classList.add('open');
-          }}
+          href="/user"
         >
-          Sign in
+          Đăng nhập
         </a>
         <h3>
           Nhấp vào "Đăng nhập" để đồng ý với Điều khoản dịch vụ và xác nhận
