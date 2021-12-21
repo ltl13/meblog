@@ -26,7 +26,7 @@ const StoryCard = props => {
       >
         <Box>
           <Box>
-            <Link href="#" underline="none">
+            <Link href="/@john/1" underline="none">
               <Typography variant="h4">
                 <Box
                   color="#000000"
