@@ -209,7 +209,7 @@ function WritePage(props) {
                 <Box sx={{ position: 'relative' }}>
                   <Avatar
                     alt="Remy Sharp"
-                    src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
+                    src="https://image.thanhnien.vn/w660/Uploaded/2021/ygtmjz/2021_05_15/loki_vrkk.jpg"
                     onClick={() => {
                       setOpenSetting(!openSetting);
                     }}

@@ -48,6 +48,14 @@
   top: 10px;
 }
 
+.iconbutton .x:hover{
+  cursor: pointer;
+}
+
+.icon:hover{
+  cursor: pointer;
+}
+
 .wrapper input {
   border: 1px solid;
   border-radius: 50px;

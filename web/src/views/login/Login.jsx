@@ -20,20 +20,22 @@ const Login = props => {
         <input type="password" placeholder="Mật khẩu"></input>
         <div className="iconbutton">
           <div className="google">
-            <img src={Google} alt="" className="icon"></img>
+            <a href="/user">
+              <img src={Google} alt="" className="icon"></img>
+            </a>
           </div>
           <div className="facebook">
-            <img src={Facebook} alt="" className="icon"></img>
+            <a href="/user">
+              <img src={Facebook} alt="" className="icon"></img>
+            </a>
           </div>
           <div className="github">
-            <img src={Github} alt="" className="icon"></img>
+            <a href="/user">
+              <img src={Github} alt="" className="icon"></img>
+            </a>
           </div>
         </div>
-        <a
-          href="/user"
-        >
-          Đăng nhập
-        </a>
+        <a href="/user">Đăng nhập</a>
         <h3>
           Nhấp vào "Đăng nhập" để đồng ý với Điều khoản dịch vụ và xác nhận
           Chính sách bảo mật của chúng tôi
