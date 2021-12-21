@@ -23,6 +23,8 @@ import logo from 'image/logo.svg';
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { makeStyles, styled } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const typeOfDanteText = [
   'unstyled',
@@ -37,12 +39,16 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 function WritePage(props) {
+  const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = useState(null);
   const [title, setTitle] = useState('');
   const [subTitle, setSubTitle] = useState('');
   const [featuredImgs, setFeaturedImgs] = useState([]);
   const [idxFeaturedImg, setIdxFeaturedImg] = useState(-1);
   const [content, setContent] = useState({});
+
+  const posts = useSelector(state => state.posts.current);
 
   const handleEditorsChange = editor => {
     setContent(editor.emitSerializedOutput());
@@ -139,7 +145,7 @@ function WritePage(props) {
                 handleOpenPublishDialog();
               }}
             >
-              Đăng bài
+              {props.edit ? 'Lưu chỉnh sửa' : 'Đăng bài'}
             </CustomizeButton>
 
             {/* <IconButton
@@ -177,7 +183,7 @@ function WritePage(props) {
       <Box sx={{ maxWidth: '740px', m: '0px auto', pt: '68px' }}>
         <Dante
           body_placeholder={'Viết ở đây'}
-          // onChange={editor => handleEditorsChange(editor)}
+          content={props.edit ? posts[4].content : ''}
           onChange={handleEditorsChange}
         />
       </Box>
@@ -304,16 +310,17 @@ function WritePage(props) {
               />
               <CustomizeButton
                 height="40px"
-                width="100px"
+                width={props.edit ? '150px' : '100px'}
                 backgroundColor="#ab92bf"
                 color="#fff"
                 fontSize="15px"
                 variant="filled"
                 onClick={() => {
                   handleExport();
+                  navigate('/user/yourStories', { replace: true });
                 }}
               >
-                Xuất bản
+                {props.edit ? 'Lưu chỉnh sửa' : 'Đăng bài'}
               </CustomizeButton>
             </Stack>
           </Grid>

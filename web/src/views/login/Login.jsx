@@ -8,7 +8,7 @@ function closeForm() {
   document.querySelector('.login').classList.remove('open');
 }
 
-const Login = () => {
+const Login = props => {
   return (
     <div className="login">
       <div className="wrapper">

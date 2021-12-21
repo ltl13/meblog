@@ -685,10 +685,10 @@ const post_4 = {
     "Among design professionals, there's a bit of controversy surrounding the filler text. Controversy, as in Death to Lorem Ipsum.",
   img: 'https://loremipsum.io/assets/images/lorem-ipsum-star-wars.jpg',
   author: {
-    id: 2,
-    name: 'Kakabanlaai',
+    id: 1,
+    name: 'John',
     avatar:
-      'https://cafebiz.cafebizcdn.vn/thumb_w/600/2019/photo1557224364584-1557224364877-crop-15572243735951912688033.jpg',
+      'https://ss-images.saostar.vn/pc/1594175247996/avengers-endgame-thor-feature.jpg',
     href: '/@john',
   },
   topic: ['Đời Sống'],
@@ -944,6 +944,14 @@ const post_5 = {
   subTitle:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique senect',
   topic: ['Công Nghệ'],
+  img: 'https://loremipsum.io/assets/images/lorem-ipsum-star-wars.jpg',
+  author: {
+    id: 1,
+    name: 'John',
+    avatar:
+      'https://ss-images.saostar.vn/pc/1594175247996/avengers-endgame-thor-feature.jpg',
+    href: '/@john',
+  },
   content: {
     blocks: [
       {

@@ -5,7 +5,7 @@ function closeForm() {
   document.querySelector('.signup').classList.remove('open');
 }
 
-const Signup = () => {
+const Signup = props => {
   return (
     <div className="signup">
       <div className="wrapper">
