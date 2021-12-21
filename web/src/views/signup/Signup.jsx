@@ -16,7 +16,7 @@ const Signup = props => {
         <input type="text" placeholder="Tên đăng nhập"></input>
         <input type="password" placeholder="Mật khẩu"></input>
         <input type="password" placeholder="Xác nhận mật khẩu"></input>
-        <a href={props.link}>Đăng ký</a>
+        <a href='/user'>Đăng ký</a>
         <h3>
           Nhấp vào "Đăng ký" để đồng ý với Điều khoản dịch vụ và xác nhận
           Chính sách bảo mật của chúng tôi

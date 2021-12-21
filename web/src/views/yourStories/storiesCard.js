@@ -62,7 +62,8 @@ const StoryCard = props => {
               fontWeight="400"
               color="#757575"
             >
-              Chỉnh sữa lần cuối 6 ngày trước · Dec 9 2021 · 10 phút đọc (2366 từ)
+              Chỉnh sữa lần cuối 6 ngày trước · Dec 9 2021 · 10 phút đọc (2366
+              từ)
               <span>
                 <Link
                   href="#"
@@ -93,7 +94,12 @@ const StoryCard = props => {
                     horizontal: 'left',
                   }}
                 >
-                  <MenuItem onClick={handleClose}>Chỉnh sữa</MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    {' '}
+                    <Link color="#000" underline="none" href="/edit">
+                      Chỉnh sửa
+                    </Link>
+                  </MenuItem>
                   <MenuItem onClick={handleClose}>Xóa</MenuItem>
                 </Menu>
               </span>
