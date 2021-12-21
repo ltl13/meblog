@@ -27,8 +27,8 @@ const Signup = props => {
           Sign up
         </a>
         <h3>
-          Click "Sign in" to agree to our Terms of service and acknowledge that
-          our Privacy Policy applies to you
+          Nhấp vào "Đăng ký" để đồng ý với Điều khoản dịch vụ và xác nhận Chính
+          sách bảo mật của chúng tôi
         </h3>
       </div>
     </div>

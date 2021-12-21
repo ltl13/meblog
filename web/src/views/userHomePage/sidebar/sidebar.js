@@ -7,12 +7,12 @@ import Writer from './writer/writer';
 
 function InitCategories() {
   const categories = [
-    { name: 'E-learning', link: '#' },
-    { name: 'Cryptocurrency', link: '#' },
-    { name: 'Accessibility', link: '#' },
-    { name: 'Family', link: '#' },
-    { name: 'Science', link: '#' },
-    { name: 'Education', link: '#' },
+    { name: 'Tình yêu', link: '#' },
+    { name: 'Tiền ảo', link: '#' },
+    { name: 'Âm nhạc', link: '#' },
+    { name: 'Gia đình', link: '#' },
+    { name: 'Khoa học', link: '#' },
+    { name: 'Giáo dục', link: '#' },
     { name: 'Covid-19', link: '#' },
   ];
   return categories;

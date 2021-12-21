@@ -1671,6 +1671,7 @@ const post_9 = {
   title: 'How to Stop Procrastinating by Using the “2-Minute Rule”',
   subTitle:
     'TWYLA THARP IS widely regarded as one of the greatest dancers and choreographers of the modern era. In 1992, she was awarded a MacArthur Fel',
+  img: 'https://images.unsplash.com/photo-1639815189096-f75717eaecfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
   author: {
     id: 2,
     name: 'Kakabanlaai',

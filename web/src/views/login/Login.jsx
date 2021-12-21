@@ -15,9 +15,9 @@ const Login = props => {
         <div className="iconbutton">
           <img src={X} alt="" className="icon x" onClick={closeForm} />
         </div>
-        <h1 className="LoginTitle">Welcome back</h1>
-        <input type="text" placeholder="User name"></input>
-        <input type="password" placeholder="Password"></input>
+        <h1 className="LoginTitle">Chào mừng trở lại</h1>
+        <input type="text" placeholder="Tên tài khoản"></input>
+        <input type="password" placeholder="Mật khẩu"></input>
         <div className="iconbutton">
           <div className="google">
             <img src={Google} alt="" className="icon"></img>
@@ -40,8 +40,8 @@ const Login = props => {
           Sign in
         </a>
         <h3>
-          Click "Sign in" to agree to our Terms of service and acknowledge that
-          our Privacy Policy applies to you
+          Nhấp vào "Đăng nhập" để đồng ý với Điều khoản dịch vụ và xác nhận
+          Chính sách bảo mật của chúng tôi
         </h3>
       </div>
     </div>
