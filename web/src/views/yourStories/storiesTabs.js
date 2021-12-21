@@ -82,9 +82,48 @@ const StoriesTabs = () => {
                 indicatorColor="secondary"
                 aria-label="basic tabs example"
               >
-                <Tab label="Bài viết" {...a11yProps(0)} />
-                <Tab label="Phản hồi" {...a11yProps(1)} />
-                <Tab label="Thùng rác" {...a11yProps(2)} />
+                <Tab
+                  sx={{
+                    borderBottom: 0,
+                    padding: 0,
+                    marginRight: 2,
+                    minWidth: 0,
+                    textTransform: 'none',
+                    '&.Mui-selected': {
+                      color: '#000000',
+                    },
+                  }}
+                  label="Bài viết"
+                  {...a11yProps(0)}
+                />
+                <Tab
+                  sx={{
+                    borderBottom: 0,
+                    padding: 0,
+                    marginRight: 2,
+                    minWidth: 0,
+                    textTransform: 'none',
+                    '&.Mui-selected': {
+                      color: '#000000',
+                    },
+                  }}
+                  label="Phản hồi"
+                  {...a11yProps(1)}
+                />
+                <Tab
+                  sx={{
+                    borderBottom: 0,
+                    padding: 0,
+                    marginRight: 2,
+                    minWidth: 0,
+                    textTransform: 'none',
+                    '&.Mui-selected': {
+                      color: '#000000',
+                    },
+                  }}
+                  label="Thùng rác"
+                  {...a11yProps(2)}
+                />
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
@@ -95,18 +134,10 @@ const StoriesTabs = () => {
               })}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              {data.map(item => {
-                return (
-                  <StoryCard title={item.title} subtitle={item.subtitle} />
-                );
-              })}
+              <StoryCard title={data[2].title} subtitle={data[2].subtitle} />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              {data.map(item => {
-                return (
-                  <StoryCard title={item.title} subtitle={item.subtitle} />
-                );
-              })}
+              <StoryCard title={data[1].title} subtitle={data[1].subtitle} />
             </TabPanel>
           </Box>
         </Container>

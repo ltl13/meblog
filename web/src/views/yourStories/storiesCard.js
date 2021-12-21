@@ -31,7 +31,7 @@ const StoryCard = props => {
                 <Box
                   color="#000000"
                   fontWeight="bold"
-                  fontSize="1.75rem"
+                  fontSize="1.25rem"
                   fontFamily="Roboto"
                   fontStyle="normal"
                 >
@@ -95,7 +95,6 @@ const StoryCard = props => {
                 >
                   <MenuItem onClick={handleClose}>Chỉnh sữa</MenuItem>
                   <MenuItem onClick={handleClose}>Xóa</MenuItem>
-                  <MenuItem onClick={handleClose}>Thống kê</MenuItem>
                 </Menu>
               </span>
             </Box>
@@ -103,8 +102,8 @@ const StoryCard = props => {
         </Box>
       </Box>
       <Box
-        marginTop="15px"
-        marginBottom="15px"
+        marginTop="25px"
+        marginBottom="25px"
         height="1px"
         backgroundColor="divider"
       ></Box>

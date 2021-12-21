@@ -25,6 +25,11 @@ import Carousel from 'react-material-ui-carousel';
 import { makeStyles, styled } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Setting from 'views/userHomePage/NavBar/Setting/Setting';
+import { Container } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import Notification from 'views/userHomePage/NavBar/notification/notification';
 
 const typeOfDanteText = [
   'unstyled',
@@ -47,6 +52,9 @@ function WritePage(props) {
   const [featuredImgs, setFeaturedImgs] = useState([]);
   const [idxFeaturedImg, setIdxFeaturedImg] = useState(-1);
   const [content, setContent] = useState({});
+  const [openSearch, setOpenSearch] = useState(false);
+  const [openSetting, setOpenSetting] = useState(false);
+  const [openNotification, setOpenNotification] = useState(false);
 
   const posts = useSelector(state => state.posts.current);
 
@@ -120,64 +128,110 @@ function WritePage(props) {
       >
         <Box
           sx={{
-            maxWidth: '1032px',
-            height: '65px',
-            p: '0 20px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            m: '0 auto',
+            borderBottom: '1px solid #000000',
+            padding: { xs: '0.25rem 0', md: '0.25rem 2rem' },
+            backgroundColor: '#f8eee7',
+            position: 'sticky',
+            top: 0,
+            zIndex: 20,
+            transition: '350ms ease-in-out',
           }}
         >
-          <Link href="/">
-            <img src={logo} alt="logo" style={{ height: '50px' }} />
-          </Link>
-
-          <Stack direction="row" spacing="10px" sx={{ alignItems: 'center' }}>
-            <CustomizeButton
-              height="30px"
-              backgroundColor="#ab92bf"
-              color="#fff"
-              fontSize="15px"
-              variant="filled"
-              onClick={() => {
-                handlePublish();
-                handleOpenPublishDialog();
-              }}
+          <Container maxWidth="xl">
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="space-between"
             >
-              {props.edit ? 'Lưu chỉnh sửa' : 'Đăng bài'}
-            </CustomizeButton>
-
-            {/* <IconButton
-              disableRipple
-              onClick={e => {
-                setAnchorEl(e.currentTarget);
-              }}
-            >
-              <MoreHorizRoundedIcon />
-            </IconButton> */}
-
-            <IconButton
-              disableRipple
-              onClick={e => {
-                setAnchorEl(e.currentTarget);
-              }}
-            >
-              <NotificationsNoneOutlinedIcon />
-            </IconButton>
-
-            <Avatar
-              src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
-              onClick={e => {
-                setAnchorEl(e.currentTarget);
-              }}
-              sx={{
-                height: '35px',
-                width: '35px',
-                cursor: 'pointer',
-              }}
-            />
-          </Stack>
+              <Link href="/">
+                <Box component="img" src={logo} sx={{ height: 50 }}></Box>
+              </Link>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <Box>
+                  <IconButton
+                    sx={{ color: '#000000' }}
+                    onClick={() => {
+                      setOpenSearch(!openSearch);
+                    }}
+                  >
+                    <SearchIcon />
+                  </IconButton>
+                  {openSearch && (
+                    <TextField
+                      size="small"
+                      type="search"
+                      variant="standard"
+                      inputProps={{
+                        style: {
+                          textAlign: 'left',
+                          padding: '0.35rem',
+                          border: '0px',
+                          outline: '0px',
+                        },
+                      }}
+                      placeholder="Tìm kiếm"
+                    >
+                      {' '}
+                    </TextField>
+                  )}
+                </Box>
+                <CustomizeButton
+                  height="30px"
+                  backgroundColor="#ab92bf"
+                  color="#fff"
+                  fontSize="15px"
+                  variant="filled"
+                  onClick={() => {
+                    handlePublish();
+                    handleOpenPublishDialog();
+                  }}
+                >
+                  {props.edit ? 'Lưu chỉnh sửa' : 'Đăng bài'}
+                </CustomizeButton>
+                <Box sx={{ position: 'relative' }}>
+                  {' '}
+                  <IconButton
+                    sx={{ color: '#000000' }}
+                    onClick={() => {
+                      setOpenNotification(!openNotification);
+                    }}
+                  >
+                    <NotificationsNoneIcon />
+                  </IconButton>
+                  {openNotification && (
+                    <Notification
+                      onClose={() => {
+                        setOpenNotification(false);
+                      }}
+                    />
+                  )}
+                </Box>
+                <Box sx={{ position: 'relative' }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://i.pinimg.com/736x/69/5f/eb/695febfc4d7bf517892f37076bbaf48b.jpg"
+                    onClick={() => {
+                      setOpenSetting(!openSetting);
+                    }}
+                    sx={{ cursor: 'pointer' }}
+                  />
+                  {openSetting && (
+                    <Setting
+                      user={{
+                        name: 'Võ Quốc Minh',
+                        id: '@voquocminh',
+                        avatar:
+                          'https://image.thanhnien.vn/w660/Uploaded/2021/ygtmjz/2021_05_15/loki_vrkk.jpg',
+                      }}
+                      onClose={() => {
+                        setOpenSetting(false);
+                      }}
+                    />
+                  )}
+                </Box>
+              </Stack>
+            </Stack>
+          </Container>
         </Box>
       </Box>
       <Box sx={{ maxWidth: '740px', m: '0px auto', pt: '68px' }}>
